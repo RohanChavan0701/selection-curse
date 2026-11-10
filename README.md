@@ -1,3 +1,28 @@
+# Selection curse: do self-improvement gains survive re-scoring?
+
+Seven pre-registered and exploratory runs on one question: when a loop edits an agent's
+harness and keeps what scores best, how much of the reported gain is real?
+
+**Latest (run 7, pre-registered, 300 fresh FinQA tasks).** Picking the best of 8 harness edits
+on 150 tasks reports +5.1 points when selecting on true labels, for a real gain of +2.4. An
+LLM judge without a reference answer makes the inflation about a third larger (multiplier
+1.36, 95% interval 1.06 to 1.82; the primary criterion was not met, so this is inconclusive),
+and a variance formula predicts that multiplier (1.37). Selection did not teach the loop to
+game the judge. FinQA is public and may be in the student's pretraining data; one domain, one
+student, one judge model. Details: `RUN7_DESIGN.md`, `PREDICTION_run7.md`, `RUN6_DESIGN.md`.
+
+**About this repository.** It was extracted from the `rsi_pilot/` directory of
+[Chiron](https://github.com/RohanChavan0701/Chiron), where runs 1 to 7 were done. Commit dates
+are the original ones; commit hashes differ because author metadata was normalized during
+extraction. The run 7 predictions were committed before the run (Chiron commit `1bddf6d`,
+here "run 7: register predictions"). Paths written as `rsi_pilot/...` in the documents refer
+to this repository's root. `harness/evaluator.py` is copied unchanged from Chiron.
+`third_party/spider_eval/` is vendored under Apache 2.0 with its LICENSE.
+
+The rest of this file is the write-up of runs 1 to 5 (text-to-SQL), as it stood in Chiron.
+
+---
+
 # Regularized RSI pilot (AgentWatch / Chiron)
 
 **Question.** When an LLM rewrites an agent's harness to score better on a tuning set,

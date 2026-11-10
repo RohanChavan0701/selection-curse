@@ -59,10 +59,11 @@ def order_matters(gold_sql: str) -> bool:
 
 
 def compare_agentwatch(gold_rows: list, pred_rows: list, gold_sql: str) -> bool:
-    """AgentWatch's checker (harness/evaluator.py in the parent repo), imported, not copied."""
+    """AgentWatch's checker (harness/evaluator.py, copied unchanged from the Chiron repo this
+    project was extracted from), imported from the repo root."""
     import sys
     from pathlib import Path
-    root = str(Path(__file__).resolve().parents[2])
+    root = str(Path(__file__).resolve().parents[1])
     if root not in sys.path:
         sys.path.append(root)
     from harness.evaluator import _has_order_by, _normalize_row
