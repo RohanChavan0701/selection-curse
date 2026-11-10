@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 430" font-family="Helvetica, Arial, sans-serif">
+<rect width="760" height="430" fill="#ffffff"/>
+<text x="70" y="30" font-size="17" font-weight="bold" fill="#1f2933">Run 7: what the loop reports and what is real</text>
+<text x="70" y="50" font-size="12.5" fill="#1f2933">Best of 8 harness edits chosen on 150 FinQA tasks, by selector. Gain over baseline in accuracy points.</text>
+<line x1="70" x2="730" y1="320.0" y2="320.0" stroke="#d5dbe1" stroke-width="1.4"/>
+<text x="62" y="324.0" font-size="11" text-anchor="end" fill="#1f2933">+0</text>
+<line x1="70" x2="730" y1="284.3" y2="284.3" stroke="#d5dbe1" stroke-width="0.7"/>
+<text x="62" y="288.3" font-size="11" text-anchor="end" fill="#1f2933">+1</text>
+<line x1="70" x2="730" y1="248.6" y2="248.6" stroke="#d5dbe1" stroke-width="0.7"/>
+<text x="62" y="252.6" font-size="11" text-anchor="end" fill="#1f2933">+2</text>
+<line x1="70" x2="730" y1="212.9" y2="212.9" stroke="#d5dbe1" stroke-width="0.7"/>
+<text x="62" y="216.9" font-size="11" text-anchor="end" fill="#1f2933">+3</text>
+<line x1="70" x2="730" y1="177.1" y2="177.1" stroke="#d5dbe1" stroke-width="0.7"/>
+<text x="62" y="181.1" font-size="11" text-anchor="end" fill="#1f2933">+4</text>
+<line x1="70" x2="730" y1="141.4" y2="141.4" stroke="#d5dbe1" stroke-width="0.7"/>
+<text x="62" y="145.4" font-size="11" text-anchor="end" fill="#1f2933">+5</text>
+<line x1="70" x2="730" y1="105.7" y2="105.7" stroke="#d5dbe1" stroke-width="0.7"/>
+<text x="62" y="109.7" font-size="11" text-anchor="end" fill="#1f2933">+6</text>
+<line x1="70" x2="730" y1="70.0" y2="70.0" stroke="#d5dbe1" stroke-width="0.7"/>
+<text x="62" y="74.0" font-size="11" text-anchor="end" fill="#1f2933">+7</text>
+<rect x="96.5" y="138.7" width="52" height="181.3" fill="#c9a227"/>
+<text x="122.5" y="132.7" font-size="12" text-anchor="middle" fill="#1f2933">+5.1</text>
+<rect x="156.5" y="234.5" width="52" height="85.5" fill="#2f5d8a"/>
+<text x="182.5" y="228.5" font-size="12" text-anchor="middle" fill="#1f2933">+2.4</text>
+<text x="152.5" y="340.0" font-size="12" text-anchor="middle" fill="#1f2933">True labels</text>
+<text x="152.5" y="356.0" font-size="12" text-anchor="middle" fill="#1f2933">agrees 100%</text>
+<text x="152.5" y="376.0" font-size="11.5" text-anchor="middle" fill="#1f2933">inflation +2.7</text>
+<rect x="261.5" y="131.7" width="52" height="188.3" fill="#c9a227"/>
+<text x="287.5" y="125.7" font-size="12" text-anchor="middle" fill="#1f2933">+5.3</text>
+<rect x="321.5" y="232.0" width="52" height="88.0" fill="#2f5d8a"/>
+<text x="347.5" y="226.0" font-size="12" text-anchor="middle" fill="#1f2933">+2.5</text>
+<text x="317.5" y="340.0" font-size="12" text-anchor="middle" fill="#1f2933">Judge with</text>
+<text x="317.5" y="356.0" font-size="12" text-anchor="middle" fill="#1f2933">reference (90%)</text>
+<text x="317.5" y="376.0" font-size="11.5" text-anchor="middle" fill="#1f2933">inflation +2.8</text>
+<rect x="426.5" y="114.4" width="52" height="205.6" fill="#c9a227"/>
+<text x="452.5" y="108.4" font-size="12" text-anchor="middle" fill="#1f2933">+5.8</text>
+<rect x="486.5" y="239.6" width="52" height="80.4" fill="#2f5d8a"/>
+<text x="512.5" y="233.6" font-size="12" text-anchor="middle" fill="#1f2933">+2.2</text>
+<text x="482.5" y="340.0" font-size="12" text-anchor="middle" fill="#1f2933">Recompute judge,</text>
+<text x="482.5" y="356.0" font-size="12" text-anchor="middle" fill="#1f2933">no reference (74%)</text>
+<text x="482.5" y="376.0" font-size="11.5" text-anchor="middle" fill="#1f2933">inflation +3.5</text>
+<rect x="591.5" y="182.4" width="52" height="137.6" fill="#c9a227"/>
+<text x="617.5" y="176.4" font-size="12" text-anchor="middle" fill="#1f2933">+3.9</text>
+<rect x="651.5" y="228.1" width="52" height="91.9" fill="#2f5d8a"/>
+<text x="677.5" y="222.1" font-size="12" text-anchor="middle" fill="#1f2933">+2.6</text>
+<text x="647.5" y="340.0" font-size="12" text-anchor="middle" fill="#1f2933">Verdict judge,</text>
+<text x="647.5" y="356.0" font-size="12" text-anchor="middle" fill="#1f2933">no reference (62%)</text>
+<text x="647.5" y="376.0" font-size="11.5" text-anchor="middle" fill="#1f2933">inflation +1.3</text>
+<rect x="70" y="397" width="14" height="14" fill="#c9a227"/>
+<text x="90" y="408" font-size="12" fill="#1f2933">reported (selection tasks, selector's score)</text>
+<rect x="360" y="397" width="14" height="14" fill="#2f5d8a"/>
+<text x="380" y="408" font-size="12" fill="#1f2933">real (fresh tasks, true labels)</text>
+</svg>
