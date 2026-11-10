@@ -19,6 +19,9 @@ here "run 7: register predictions"). Paths written as `rsi_pilot/...` in the doc
 to this repository's root. `harness/evaluator.py` is copied unchanged from Chiron.
 `third_party/spider_eval/` is vendored under Apache 2.0 with its LICENSE.
 
+**License.** MIT (see `LICENSE`), except `third_party/spider_eval/`, which keeps its Apache 2.0
+license. FinQA, Spider and BIRD data are not included and carry their own terms.
+
 The rest of this file is the write-up of runs 1 to 5 (text-to-SQL), as it stood in Chiron.
 
 ---
