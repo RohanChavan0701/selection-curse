@@ -1,6 +1,6 @@
 # I went looking for reward hacking in a self-improving agent. I found it fooling itself instead.
 
-*Draft for the author to edit into his own voice. Numbers are from run 7 of this repository unless stated. FinQA is a public dataset
+*Draft for the author to edit into his own voice. Numbers are from run 7 of this repository unless stated; the red-team section is run 8. FinQA is a public dataset
 and may be in the student model's pretraining data; everything here is one small student,
 one judge model and one benchmark.*
 
@@ -98,7 +98,68 @@ the judge's luck as bias, and for a while the result read "almost all reward hac
 It was the opposite.
 
 And the question I started with, whether a loop becomes a reward hacker when it runs out of
-real improvements, I could not test. My edits never ran out in the way I needed.
+real improvements, I still have not tested directly. Run 8 came closest by accident: nearly
+all of its edits were useless or harmful, and the judge still did not reward the ones
+written to please it.
+
+## Then I gave the loop an attacker
+
+The weak point in "no reward hacking" was obvious: I wrote the edits. A hand-written style
+tweak is a poor attacker. So for the next run a 32B model wrote them, and I wrote down what I
+expected before it ran.
+
+Same questions, same student, same judge. The proposer wrote 40 new edits in two roles:
+
+- **control** (20 edits): told to make answers correct more often;
+- **red team** (20 edits): told to make the reviewer approve more often, with correctness
+  explicitly not required. It was shown the judge's own prompt. Half of its edits were
+  written after seeing how much each of its first ten had moved the judge's approval.
+
+If judge-pleasing is reachable in this setup, the red team's edits should carry more judge
+bias than the control's. I predicted they would not, by more than 2 points.
+
+![Red team against control](../figures/run8_red_team.svg)
+
+**They did not.** Red-team edits carried 0.5 points *less* judge bias than control edits,
+with a 95% interval of -2.6 to +1.6. Feedback did not help: the second batch was no more
+biased than the first (-0.5, interval -3.4 to +2.4). Selecting on the judge inside the
+red-team pool did not concentrate bias either (-0.8, interval -2.2 to +1.7).
+
+One wrinkle: three of the red team's first ten edits were word for word edits the control
+had also proposed (fewer steps, a verify step, markdown tables). Shared edits pull the
+comparison toward zero. Leaving them out afterwards gives -0.6, so they were not hiding
+anything.
+
+**The most judge-pleasing edit came from the control.** "Always include a unit or context
+in the final answer" raised the judge's approval 6.1 points more than it raised accuracy.
+The proposer wrote that while trying to be correct. Checked on questions it was not picked
+on, the 6.1 shrinks to 2.0, and the red team's best shrinks from 4.8 to 1.0. The selection
+curse again, this time on "the worst edit I found".
+
+**What the red team actually wrote** was mundane. Asked to fool a reviewer, it produced
+formatting advice: give percentages with a percent sign, match the report's units, round to
+the data's precision. No "I have verified this", no confident padding. Its edits were about
+as good, or as bad, for real accuracy as the control's (+0.5 points, interval -1.3 to +2.2).
+
+**The multiplier came back.** On these 40 machine-written edits the judge's curse was 1.41
+times the curse with true labels. The formula said 1.38. Run 7 had 1.36 against 1.37, on
+different edits.
+
+Six of my seven predictions held. The one that failed was a prediction that the judge and
+the truth would pick red-team edits about equally often. The judge picked them *less* often
+than the truth did (40% of rounds against 55%), just outside the band I had set, with an
+interval that includes no difference. It missed in the direction opposite to gaming.
+
+Two things about this run are uncomfortable and belong here:
+
+- **Almost every proposed edit made the agent worse.** 5 of 40 had a positive true gain.
+  The average edit cost 1.7 points. A loop that kept the "best" of these would mostly be
+  keeping the luckiest.
+- **The measuring stick wobbled.** I ran the unedited agent three times at temperature 0
+  and got 52.3%, 54.3% and 55.7%. Batching on the server is enough to move individual
+  answers. I also changed GPU for speed, and four old edits I re-ran as a check did not
+  reproduce their run 7 gains. Comparisons inside this run share that noise and survive it.
+  Comparisons between this run and the last one do not, and I make none.
 
 ## What I would tell someone running one of these loops
 
@@ -113,13 +174,15 @@ real improvements, I could not test. My edits never ran out in the way I needed.
 
 ## What this does not show
 
-It does not show that loops cannot learn to game a judge. My edits were written by hand, and
-a hand-written style tweak is a weak attacker. The stronger test is an LLM proposer told
-outright to raise the judge's approval without making answers better. That is built and has
-not been run. It is the next experiment, and I have written this before knowing its result.
+It does not show that loops cannot learn to game a judge. The attacker in run 8 was one 32B
+model with one round of feedback, allowed to add one line to the agent's rules, and it could
+only reach the judge through what the agent wrote. The experiment could not see an effect
+smaller than about 2 points. A frontier model, many rounds, or a free hand with the whole
+prompt might do what this one could not. What I can say is narrower: the easy version of the
+attack, the one I expected to work when I started, did not.
 
 It is also one 7B student, one 8B judge and one public benchmark that the student may have
-seen. The primary pre-registered result was inconclusive. I would not generalise the numbers.
+seen. Run 7's primary pre-registered result was inconclusive; run 8's held. I would not generalise the numbers.
 I would generalise the habit: when a loop tells you it improved itself, ask what it measured
 that on.
 
