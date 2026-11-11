@@ -80,6 +80,16 @@ docstring lists the commands. Guardrail tests: `tests/test_cloud.py`.
   author's words, "increase the cap to 30 usd". Budget $30, cap 9.1 h from the original
   launch time. Recorded as a `cap_change` ledger line (`python -m cloud.lambda_api cap`), the
   exception's limit moved to $30, and the on-instance watchdog re-armed for the new time.
+
+### Author changes for run 9 (2026-11-11, in chat)
+
+- Run 9 only may launch **one 1x A100, 40 GB** (`gpu_1x_a100_sxm4`) instead of the A10, with a
+  budget of **$50** for the launch (cap = 5000 / live price, 25.1 h at $1.99). The author's
+  words: "use a100", and "$50" when asked for the cap.
+- Enforced in `lambda_api.TYPE_EXCEPTIONS`: the type is accepted only for a name starting
+  `chiron-run9` and a budget of at most $50. The run 8 exception is removed; it was used and
+  its instance is terminated. Every other guardrail above is unchanged, and later runs are
+  back on the A10 unless the author says otherwise.
 - Since the extraction of this repository, the tool and ledger are run from the repository
   root (`python -m cloud.lambda_api`, `cloud/ledger.jsonl`). The ledger carries over every
   line from `rsi_pilot/cloud/ledger.jsonl` in Chiron.

@@ -82,6 +82,17 @@ State of the code at registration: tests pass with scripted models. No real mode
 
 Any change after registration is logged here with its reason.
 
+1. Hardware (2026-11-11, before launch, no run 9 data yet): at the author's request the run
+   uses one A100 with 40 GB (`gpu_1x_a100_sxm4`, cap $50) instead of the A10 named in the
+   design, to finish sooner. The request slots stay at 8, as in run 7; run 8 changed the GPU
+   and the slot count together and its baseline repeats then spanned 3.3 points, so only one
+   of the two is changed here. Models, prompts, seeds, sampling settings, tasks and the
+   analysis are unchanged. Consequences: every registered quantity compares harnesses and
+   baselines run in this same session, so none depends on the hardware. The reason the design
+   gave for the A10, its low repeat noise, is now an open question for this GPU; the spread
+   of the three selection baselines is reported as the first result of the run. The cost and
+   time table in the design was for the A10; deadlines are set from measured speed.
+
 ## Outcome
 
 Not run.

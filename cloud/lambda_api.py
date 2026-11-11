@@ -4,7 +4,7 @@ CLOUD_RUN.md.
 Every launch, status check and termination appends a line to ledger.jsonl (committed). The
 guardrails are enforced here, not left to the caller:
 - at most MAX_OPEN instances: launch refuses while that many launches lack a terminate;
-- 1x A10 only (one author exception at a time, TYPE_EXCEPTIONS: an H100 for run 8), name prefix `chiron-`,
+- 1x A10 only (one author exception at a time, TYPE_EXCEPTIONS: an A100 for run 9), name prefix `chiron-`,
   author approval recorded on the launch line;
 - cap hours = min(48, budget_usd * 100 / live price_cents_per_hour), budget_usd <= $50, price
   read from the API at launch;
@@ -45,11 +45,11 @@ NAME_PREFIX = "chiron-"
 # Lambda's Cloudflare front blocks urllib's default User-Agent (error 1010, HTTP 403).
 USER_AGENT = "chiron-rsi-pilot/0.1"
 REASONS = ("job_done", "cap", "error", "author")
-# Author, 2026-11-10 chat: run 8 only may use one H100 instead of the A10, budget $20, raised
-# by the author to $30 while the run was going (CLOUD_RUN.md, "Author changes for run 8").
-# This replaces the run 7 exception ($30, never used). Keyed by instance type; a launch qualifies only if its name starts with the given
-# prefix and its budget is within the given dollars.
-TYPE_EXCEPTIONS = {"gpu_1x_h100_pcie": {"name_prefix": "chiron-run8", "max_budget_usd": 30.0}}
+# Author, 2026-11-11 chat: run 9 only may use one A100 (40 GB) instead of the A10, budget $50
+# (CLOUD_RUN.md, "Author changes for run 9"). This replaces the run 8 exception (one H100, $30,
+# used and closed). Keyed by instance type; a launch qualifies only if its name starts with
+# the given prefix and its budget is within the given dollars.
+TYPE_EXCEPTIONS = {"gpu_1x_a100_sxm4": {"name_prefix": "chiron-run9", "max_budget_usd": 50.0}}
 
 
 class LambdaError(RuntimeError):
