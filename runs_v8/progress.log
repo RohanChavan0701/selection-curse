@@ -1,0 +1,17 @@
+setup done 2026-11-11T05:27:45Z
+traces done 2026-11-11T05:28:46Z
+cdc483b488ac5b3acc3fffba5b4d671479e93a4f298c92cd04c0541d17536d38  runs_v8/proposals_weak_s2.json
+7fba90a1e04148454e1e175b1df94a139ede65fe366eef3b0ce0c49377e2b990  runs_v8/proposals_weak_s2_replies.json
+1cf1e71e951a997f719381f6c048383a4a88aa1ccd97aa5279813b56a51b20ef  runs_v8/proposals_weak_s4a.json
+073106bcd95c744fc86995392d6937af8a3337faa36d7b448a2c045d433a4058  runs_v8/proposals_weak_s4a_replies.json
+propose 1 done 2026-11-11T05:29:40Z
+build a done 2026-11-11T06:45:01Z
+cdc483b488ac5b3acc3fffba5b4d671479e93a4f298c92cd04c0541d17536d38  runs_v8/proposals_weak_s2.json
+7fba90a1e04148454e1e175b1df94a139ede65fe366eef3b0ce0c49377e2b990  runs_v8/proposals_weak_s2_replies.json
+1cf1e71e951a997f719381f6c048383a4a88aa1ccd97aa5279813b56a51b20ef  runs_v8/proposals_weak_s4a.json
+073106bcd95c744fc86995392d6937af8a3337faa36d7b448a2c045d433a4058  runs_v8/proposals_weak_s4a_replies.json
+c7676793adc2a577bf9b42362f1b95a2581ac0d611c9179bfbb4bc95ff2116d7  runs_v8/proposals_weak_s4b.json
+9f6f664adf124544b4f65f9072a34197c4e6873e582fd11620d433065276965d  runs_v8/proposals_weak_s4b_replies.json
+propose 2 done 2026-11-11T06:45:41Z
+build done 2026-11-11T08:46:14Z
+verdict done 2026-11-11T09:43:21Z

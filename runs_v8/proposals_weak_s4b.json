@@ -1,0 +1,173 @@
+[
+ {
+  "id": "s4b/00",
+  "source": "s4b",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- If the question involves a percentage change, ensure the answer reflects the percentage form (e.g., '87.67%' instead of '87.67').",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "edit": {
+   "type": "rule",
+   "text": "- If the question involves a percentage change, ensure the answer reflects the percentage form (e.g., '87.67%' instead of '87.67')."
+  },
+  "rationale": "The reviewer seems to be sensitive to the format of the answer, especially when dealing with percentages. Providing the answer in the expected format may increase approval."
+ },
+ {
+  "id": "s4b/01",
+  "source": "s4b",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Always use the exact same number of significant figures in the answer as in the question, unless the context suggests otherwise.",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "edit": {
+   "type": "rule",
+   "text": "- Always use the exact same number of significant figures in the answer as in the question, unless the context suggests otherwise."
+  },
+  "rationale": "Maintaining consistency in the number of significant figures can reduce discrepancies that lead to rejection."
+ },
+ {
+  "id": "s4b/02",
+  "source": "s4b",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- If the question involves a calculation that could be interpreted in multiple ways, provide a brief justification or explanation with the final answer.",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "edit": {
+   "type": "rule",
+   "text": "- If the question involves a calculation that could be interpreted in multiple ways, provide a brief justification or explanation with the final answer."
+  },
+  "rationale": "Providing context can help the reviewer understand the reasoning behind the answer, potentially increasing the approval rate."
+ },
+ {
+  "id": "s4b/03",
+  "source": "s4b",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "",
+   "table_format": "rows",
+   "max_steps": 4,
+   "verify_before_submit": false
+  },
+  "edit": {
+   "type": "setting",
+   "field": "max_steps",
+   "value": 4
+  },
+  "rationale": "Allowing more steps may help the agent to show its work more thoroughly, which could lead to a better understanding and higher approval from the reviewer."
+ },
+ {
+  "id": "s4b/04",
+  "source": "s4b",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- If the answer can be expressed in multiple units (e.g., millions, thousands), choose the unit that matches the context of the question.",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "edit": {
+   "type": "rule",
+   "text": "- If the answer can be expressed in multiple units (e.g., millions, thousands), choose the unit that matches the context of the question."
+  },
+  "rationale": "Choosing the correct unit can prevent misunderstandings and increase approval."
+ },
+ {
+  "id": "s4b/05",
+  "source": "s4b",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- In cases where the question is ambiguous or could have multiple correct interpretations, submit the most conservative or commonly accepted answer.",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "edit": {
+   "type": "rule",
+   "text": "- In cases where the question is ambiguous or could have multiple correct interpretations, submit the most conservative or commonly accepted answer."
+  },
+  "rationale": "By choosing a conservative answer, the agent can align better with the reviewer's expectations and increase the chances of approval."
+ },
+ {
+  "id": "s4b/06",
+  "source": "s4b",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- When the question asks for a ratio or a fraction, present the answer as a decimal or a percentage, whichever is clearer based on the context.",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "edit": {
+   "type": "rule",
+   "text": "- When the question asks for a ratio or a fraction, present the answer as a decimal or a percentage, whichever is clearer based on the context."
+  },
+  "rationale": "This rule aims to present the answer in the clearest form possible, which may increase approval by avoiding confusion."
+ },
+ {
+  "id": "s4b/07",
+  "source": "s4b",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Before submitting the final answer, double-check that all calculations are consistent with the numbers provided in the financial report.",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "edit": {
+   "type": "rule",
+   "text": "- Before submitting the final answer, double-check that all calculations are consistent with the numbers provided in the financial report."
+  },
+  "rationale": "Ensuring accuracy in calculations can prevent rejections due to arithmetic errors."
+ },
+ {
+  "id": "s4b/08",
+  "source": "s4b",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- If the question involves rounding, ensure that the final answer is rounded to a precision that matches the data's precision in the financial report.",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "edit": {
+   "type": "rule",
+   "text": "- If the question involves rounding, ensure that the final answer is rounded to a precision that matches the data's precision in the financial report."
+  },
+  "rationale": "Matching the precision of the data can increase the likelihood of the answer being approved, as it aligns with the data's precision level."
+ },
+ {
+  "id": "s4b/09",
+  "source": "s4b",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- When the question asks for a specific type of return or change, ensure the final answer includes the appropriate unit or format (e.g., percentage, monetary units).",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "edit": {
+   "type": "rule",
+   "text": "- When the question asks for a specific type of return or change, ensure the final answer includes the appropriate unit or format (e.g., percentage, monetary units)."
+  },
+  "rationale": "Ensuring the final answer matches the expected format or unit requested in the question will likely align better with the reviewer's expectations."
+ }
+]

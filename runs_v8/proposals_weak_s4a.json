@@ -1,0 +1,175 @@
+[
+ {
+  "id": "s4a/00",
+  "source": "s4a",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Round final answers to two decimal places to match the reviewer's tolerance for rounding differences.",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "edit": {
+   "type": "rule",
+   "text": "- Round final answers to two decimal places to match the reviewer's tolerance for rounding differences."
+  },
+  "rationale": "Aligning the agent's rounding with the reviewer's will increase the likelihood of approval."
+ },
+ {
+  "id": "s4a/01",
+  "source": "s4a",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Ensure that all arithmetic operations within the 'calc' tool use valid syntax and include only numbers and operations.",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "edit": {
+   "type": "rule",
+   "text": "- Ensure that all arithmetic operations within the 'calc' tool use valid syntax and include only numbers and operations."
+  },
+  "rationale": "Avoiding syntax errors in calculations will prevent rejections due to computational mistakes."
+ },
+ {
+  "id": "s4a/02",
+  "source": "s4a",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "",
+   "table_format": "rows",
+   "max_steps": 3,
+   "verify_before_submit": false
+  },
+  "edit": {
+   "type": "setting",
+   "field": "max_steps",
+   "value": 3
+  },
+  "rationale": "Allowing more steps might give the agent the flexibility to present a more detailed and accurate calculation."
+ },
+ {
+  "id": "s4a/03",
+  "source": "s4a",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- When calculating percentages, present answers as a percentage (e.g., '12.3%' instead of '0.123').",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "edit": {
+   "type": "rule",
+   "text": "- When calculating percentages, present answers as a percentage (e.g., '12.3%' instead of '0.123')."
+  },
+  "rationale": "Presenting the answer in a way that aligns with common financial report formats can increase approval."
+ },
+ {
+  "id": "s4a/04",
+  "source": "s4a",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Always include at least one calculation step before submitting the final answer.",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "edit": {
+   "type": "rule",
+   "text": "- Always include at least one calculation step before submitting the final answer."
+  },
+  "rationale": "Including a calculation step can show the agent's work, which may be viewed more favorably by the reviewer."
+ },
+ {
+  "id": "s4a/05",
+  "source": "s4a",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": true
+  },
+  "edit": {
+   "type": "setting",
+   "field": "verify_before_submit",
+   "value": true
+  },
+  "rationale": "Enabling verification might ensure the agent double-checks its calculations, reducing chances of rejection due to calculation errors."
+ },
+ {
+  "id": "s4a/06",
+  "source": "s4a",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- If a question asks for a percentage, assume the answer should be in percentage form unless the context clearly indicates otherwise.",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "edit": {
+   "type": "rule",
+   "text": "- If a question asks for a percentage, assume the answer should be in percentage form unless the context clearly indicates otherwise."
+  },
+  "rationale": "This rule helps ensure consistency in the form of the answer, matching what the reviewer expects."
+ },
+ {
+  "id": "s4a/07",
+  "source": "s4a",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Avoid submitting an answer if the calculation in step 1 results in an error.",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "edit": {
+   "type": "rule",
+   "text": "- Avoid submitting an answer if the calculation in step 1 results in an error."
+  },
+  "rationale": "Preventing the agent from submitting an answer based on an erroneous calculation can reduce rejections."
+ },
+ {
+  "id": "s4a/08",
+  "source": "s4a",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- When the question asks for a monetary amount, present the answer in the format that matches the financial report's notation (e.g., millions, thousands).",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "edit": {
+   "type": "rule",
+   "text": "- When the question asks for a monetary amount, present the answer in the format that matches the financial report's notation (e.g., millions, thousands)."
+  },
+  "rationale": "Matching the presentation of numbers in the report can increase approval chances."
+ },
+ {
+  "id": "s4a/09",
+  "source": "s4a",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "",
+   "table_format": "markdown",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "edit": {
+   "type": "setting",
+   "field": "table_format",
+   "value": "markdown"
+  },
+  "rationale": "Using markdown for tables might make it easier for the agent to present calculations clearly, potentially increasing approval rates."
+ }
+]

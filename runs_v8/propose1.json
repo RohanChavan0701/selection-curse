@@ -1,0 +1,12 @@
+{
+  "s2": {
+    "edits": 20,
+    "wanted": 20,
+    "sha256": "cdc483b488ac5b3acc3fffba5b4d671479e93a4f298c92cd04c0541d17536d38"
+  },
+  "s4a": {
+    "edits": 10,
+    "wanted": 10,
+    "sha256": "1cf1e71e951a997f719381f6c048383a4a88aa1ccd97aa5279813b56a51b20ef"
+  }
+}

@@ -1,0 +1,795 @@
+{
+  "n_tasks": 300,
+  "selectors": [
+    "truth",
+    "p1",
+    "p2",
+    "p2v"
+  ],
+  "session_baseline_truth": [
+    0.5233333333333333,
+    0.5433333333333333,
+    0.5566666666666666
+  ],
+  "n_edits": {
+    "s2": 20,
+    "s4a": 10,
+    "s4b": 10
+  },
+  "underpowered": false,
+  "edits": {
+    "s4a/00": {
+      "text": "rule: - Round final answers to two decimal places to match the reviewer's tolerance for rounding differences.",
+      "true_gain": -0.007777777777777772,
+      "bias": 0.0044444444444444505,
+      "p1_gain": 0.01333333333333342,
+      "p2_gain": -0.0033333333333332993,
+      "p2v_gain": -0.005555555555555536
+    },
+    "s4a/01": {
+      "text": "rule: - Ensure that all arithmetic operations within the 'calc' tool use valid syntax and include only numbers and operations.",
+      "true_gain": -0.04444444444444444,
+      "bias": 0.04777777777777779,
+      "p1_gain": -0.04999999999999993,
+      "p2_gain": 0.0033333333333332993,
+      "p2v_gain": 0.011111111111111072
+    },
+    "s4a/02": {
+      "text": "setting: max_steps = 3",
+      "true_gain": -0.01444444444444444,
+      "bias": 0.007777777777777785,
+      "p1_gain": 0.026666666666666727,
+      "p2_gain": -0.00666666666666671,
+      "p2v_gain": 0.03444444444444439
+    },
+    "s4a/03": {
+      "text": "rule: - When calculating percentages, present answers as a percentage (e.g., '12.3%' instead of '0.123').",
+      "true_gain": 0.005555555555555561,
+      "bias": 0.004444444444444451,
+      "p1_gain": 0.023333333333333428,
+      "p2_gain": 0.010000000000000009,
+      "p2v_gain": -0.005555555555555536
+    },
+    "s4a/04": {
+      "text": "rule: - Always include at least one calculation step before submitting the final answer.",
+      "true_gain": -0.007777777777777772,
+      "bias": 0.02111111111111112,
+      "p1_gain": -0.013333333333333308,
+      "p2_gain": 0.013333333333333308,
+      "p2v_gain": -0.008888888888888946
+    },
+    "s4a/05": {
+      "text": "setting: verify_before_submit = true",
+      "true_gain": -0.02444444444444444,
+      "bias": -0.005555555555555549,
+      "p1_gain": -0.036666666666666625,
+      "p2_gain": -0.030000000000000027,
+      "p2v_gain": -0.03555555555555556
+    },
+    "s4a/06": {
+      "text": "rule: - If a question asks for a percentage, assume the answer should be in percentage form unless the context clearly indicates otherwise.",
+      "true_gain": 0.012222222222222228,
+      "bias": -0.012222222222222214,
+      "p1_gain": 0.026666666666666727,
+      "p2_gain": 0.0,
+      "p2v_gain": 0.0011111111111110628
+    },
+    "s4a/07": {
+      "text": "rule: - Avoid submitting an answer if the calculation in step 1 results in an error.",
+      "true_gain": -0.041111111111111105,
+      "bias": -0.012222222222222214,
+      "p1_gain": -0.026666666666666616,
+      "p2_gain": -0.053333333333333344,
+      "p2v_gain": 0.01777777777777778
+    },
+    "s4a/08": {
+      "text": "rule: - When the question asks for a monetary amount, present the answer in the format that matches the financial report's notation (e.g., millions, thousands).",
+      "true_gain": -0.007777777777777772,
+      "bias": 0.011111111111111117,
+      "p1_gain": -0.0033333333333332993,
+      "p2_gain": 0.0033333333333332993,
+      "p2v_gain": -0.012222222222222245
+    },
+    "s4a/09": {
+      "text": "setting: table_format = \"markdown\"",
+      "true_gain": -0.01444444444444444,
+      "bias": 0.04444444444444445,
+      "p1_gain": -0.0033333333333332993,
+      "p2_gain": 0.030000000000000027,
+      "p2v_gain": 0.014444444444444371
+    },
+    "s2/00": {
+      "text": "rule: - Always calculate percentages correctly by dividing the part by the whole and multiplying by 100, e.g., (part / whole) * 100.",
+      "true_gain": 0.03555555555555556,
+      "bias": -0.005555555555555549,
+      "p1_gain": -0.023333333333333317,
+      "p2_gain": 0.030000000000000027,
+      "p2v_gain": 0.0444444444444444
+    },
+    "s4b/00": {
+      "text": "rule: - If the question involves a percentage change, ensure the answer reflects the percentage form (e.g., '87.67%' instead of '87.67').",
+      "true_gain": -0.00444444444444444,
+      "bias": 0.017777777777777785,
+      "p1_gain": -0.006666666666666599,
+      "p2_gain": 0.013333333333333308,
+      "p2v_gain": -0.0022222222222222365
+    },
+    "s2/01": {
+      "text": "rule: - Ensure arithmetic operations are enclosed in parentheses to maintain correct order of operations.",
+      "true_gain": 0.00555555555555556,
+      "bias": 0.027777777777777787,
+      "p1_gain": -0.0033333333333332993,
+      "p2_gain": 0.033333333333333326,
+      "p2v_gain": 0.0477777777777777
+    },
+    "s4b/01": {
+      "text": "rule: - Always use the exact same number of significant figures in the answer as in the question, unless the context suggests otherwise.",
+      "true_gain": -0.01444444444444444,
+      "bias": 0.007777777777777785,
+      "p1_gain": -0.026666666666666616,
+      "p2_gain": -0.00666666666666671,
+      "p2v_gain": 0.0011111111111110628
+    },
+    "s2/02": {
+      "text": "rule: - Round final answers to two decimal places for consistency.",
+      "true_gain": -0.04777777777777777,
+      "bias": 0.011111111111111118,
+      "p1_gain": -0.010000000000000009,
+      "p2_gain": -0.036666666666666736,
+      "p2v_gain": -0.022222222222222254
+    },
+    "s4b/02": {
+      "text": "rule: - If the question involves a calculation that could be interpreted in multiple ways, provide a brief justification or explanation with the final answer.",
+      "true_gain": -0.031111111111111107,
+      "bias": 0.02111111111111112,
+      "p1_gain": -0.039999999999999925,
+      "p2_gain": -0.010000000000000009,
+      "p2v_gain": 0.02444444444444438
+    },
+    "s2/03": {
+      "text": "setting: max_steps = 3",
+      "true_gain": -0.01444444444444444,
+      "bias": 0.007777777777777785,
+      "p1_gain": 0.026666666666666727,
+      "p2_gain": -0.00666666666666671,
+      "p2v_gain": 0.03444444444444439
+    },
+    "s4b/03": {
+      "text": "setting: max_steps = 4",
+      "true_gain": -0.007777777777777772,
+      "bias": -0.015555555555555548,
+      "p1_gain": 0.026666666666666727,
+      "p2_gain": -0.023333333333333317,
+      "p2v_gain": 0.03111111111111109
+    },
+    "s2/04": {
+      "text": "setting: verify_before_submit = true",
+      "true_gain": -0.02444444444444444,
+      "bias": -0.005555555555555549,
+      "p1_gain": -0.036666666666666625,
+      "p2_gain": -0.030000000000000027,
+      "p2v_gain": -0.03555555555555556
+    },
+    "s4b/04": {
+      "text": "rule: - If the answer can be expressed in multiple units (e.g., millions, thousands), choose the unit that matches the context of the question.",
+      "true_gain": -0.01444444444444444,
+      "bias": -0.015555555555555548,
+      "p1_gain": -0.010000000000000009,
+      "p2_gain": -0.030000000000000027,
+      "p2v_gain": -0.022222222222222254
+    },
+    "s2/05": {
+      "text": "rule: - Double-check the arithmetic operation before submission to ensure accuracy.",
+      "true_gain": -0.027777777777777773,
+      "bias": -0.012222222222222214,
+      "p1_gain": -0.036666666666666625,
+      "p2_gain": -0.040000000000000036,
+      "p2v_gain": -0.005555555555555536
+    },
+    "s4b/05": {
+      "text": "rule: - In cases where the question is ambiguous or could have multiple correct interpretations, submit the most conservative or commonly accepted answer.",
+      "true_gain": -0.027777777777777773,
+      "bias": 0.0011111111111111187,
+      "p1_gain": 0.0,
+      "p2_gain": -0.026666666666666727,
+      "p2v_gain": -0.005555555555555536
+    },
+    "s2/06": {
+      "text": "rule: - When dealing with time periods, ensure the start and end years are correctly used in the calculation.",
+      "true_gain": -0.017777777777777774,
+      "bias": 0.011111111111111117,
+      "p1_gain": 0.023333333333333428,
+      "p2_gain": -0.00666666666666671,
+      "p2v_gain": 0.03111111111111109
+    },
+    "s4b/06": {
+      "text": "rule: - When the question asks for a ratio or a fraction, present the answer as a decimal or a percentage, whichever is clearer based on the context.",
+      "true_gain": -0.00444444444444444,
+      "bias": 0.011111111111111118,
+      "p1_gain": 0.0033333333333334103,
+      "p2_gain": 0.006666666666666599,
+      "p2v_gain": 0.007777777777777772
+    },
+    "s2/07": {
+      "text": "rule: - For percentage difference calculations, use the formula ((new - old) / old) * 100.",
+      "true_gain": -0.07777777777777778,
+      "bias": 0.037777777777777785,
+      "p1_gain": -0.07999999999999996,
+      "p2_gain": -0.040000000000000036,
+      "p2v_gain": -0.012222222222222245
+    },
+    "s4b/07": {
+      "text": "rule: - Before submitting the final answer, double-check that all calculations are consistent with the numbers provided in the financial report.",
+      "true_gain": -0.017777777777777774,
+      "bias": 0.02111111111111112,
+      "p1_gain": -0.006666666666666599,
+      "p2_gain": 0.0033333333333332993,
+      "p2v_gain": 0.01777777777777778
+    },
+    "s2/08": {
+      "text": "rule: - For growth rates, use the formula ((new value / old value) - 1) * 100.",
+      "true_gain": -0.017777777777777774,
+      "bias": 0.04111111111111112,
+      "p1_gain": -0.010000000000000009,
+      "p2_gain": 0.023333333333333317,
+      "p2v_gain": 0.004444444444444362
+    },
+    "s4b/08": {
+      "text": "rule: - If the question involves rounding, ensure that the final answer is rounded to a precision that matches the data's precision in the financial report.",
+      "true_gain": -0.027777777777777773,
+      "bias": 0.011111111111111117,
+      "p1_gain": -0.010000000000000009,
+      "p2_gain": -0.01666666666666672,
+      "p2v_gain": 0.011111111111111072
+    },
+    "s2/09": {
+      "text": "rule: - When calculating portions or percentages, always start with the division before multiplication.",
+      "true_gain": -0.011111111111111106,
+      "bias": -0.018888888888888882,
+      "p1_gain": -0.010000000000000009,
+      "p2_gain": -0.030000000000000027,
+      "p2v_gain": 0.014444444444444371
+    },
+    "s4b/09": {
+      "text": "rule: - When the question asks for a specific type of return or change, ensure the final answer includes the appropriate unit or format (e.g., percentage, monetary units).",
+      "true_gain": 0.012222222222222228,
+      "bias": 0.004444444444444452,
+      "p1_gain": 0.020000000000000018,
+      "p2_gain": 0.016666666666666607,
+      "p2v_gain": 0.0011111111111110628
+    },
+    "s2/10": {
+      "text": "rule: - Always double-check the arithmetic operations and ensure they correctly reflect the question's context.",
+      "true_gain": -0.011111111111111106,
+      "bias": -0.00888888888888888,
+      "p1_gain": 0.01333333333333342,
+      "p2_gain": -0.020000000000000018,
+      "p2v_gain": 0.0011111111111110628
+    },
+    "s2/11": {
+      "text": "setting: max_steps = 5",
+      "true_gain": -0.02444444444444444,
+      "bias": -0.015555555555555548,
+      "p1_gain": 0.0033333333333334103,
+      "p2_gain": -0.040000000000000036,
+      "p2v_gain": 0.011111111111111072
+    },
+    "s2/12": {
+      "text": "rule: - When calculating percentages, ensure the format is clear and includes the % symbol.",
+      "true_gain": -0.027777777777777773,
+      "bias": 0.014444444444444452,
+      "p1_gain": -0.026666666666666616,
+      "p2_gain": -0.013333333333333308,
+      "p2v_gain": 0.014444444444444371
+    },
+    "s2/13": {
+      "text": "rule: - Verify that all numbers used in calculations are directly relevant to the question asked.",
+      "true_gain": -0.02111111111111111,
+      "bias": 0.04444444444444445,
+      "p1_gain": -0.013333333333333308,
+      "p2_gain": 0.023333333333333317,
+      "p2v_gain": 0.01777777777777778
+    },
+    "s2/14": {
+      "text": "rule: - Ensure the final answer is presented in a clear and direct manner, avoiding unnecessary calculations.",
+      "true_gain": -0.0011111111111111061,
+      "bias": 0.004444444444444451,
+      "p1_gain": 0.026666666666666727,
+      "p2_gain": 0.0033333333333332993,
+      "p2v_gain": 0.007777777777777772
+    },
+    "s2/15": {
+      "text": "setting: table_format = \"markdown\"",
+      "true_gain": -0.01444444444444444,
+      "bias": 0.04444444444444445,
+      "p1_gain": -0.0033333333333332993,
+      "p2_gain": 0.030000000000000027,
+      "p2v_gain": 0.014444444444444371
+    },
+    "s2/16": {
+      "text": "rule: - If the question involves multiple calculations, break them into steps and verify each step.",
+      "true_gain": -0.011111111111111106,
+      "bias": -0.0022222222222222153,
+      "p1_gain": -0.0033333333333332993,
+      "p2_gain": -0.013333333333333308,
+      "p2v_gain": 0.004444444444444362
+    },
+    "s2/17": {
+      "text": "rule: - For questions requiring a percentage or ratio, explicitly state if the answer needs to be rounded.",
+      "true_gain": -0.02111111111111111,
+      "bias": 0.0077777777777777845,
+      "p1_gain": -0.013333333333333308,
+      "p2_gain": -0.013333333333333308,
+      "p2v_gain": 0.007777777777777772
+    },
+    "s2/18": {
+      "text": "rule: - Always include a unit or context (e.g., %, mmboe) in the final answer, if applicable.",
+      "true_gain": -0.01444444444444444,
+      "bias": 0.061111111111111116,
+      "p1_gain": -0.010000000000000009,
+      "p2_gain": 0.046666666666666634,
+      "p2v_gain": -0.005555555555555536
+    },
+    "s2/19": {
+      "text": "rule: - Always extract the necessary numbers from the report page before performing calculations.",
+      "true_gain": -0.03444444444444444,
+      "bias": 0.03444444444444445,
+      "p1_gain": -0.039999999999999925,
+      "p2_gain": 0.0,
+      "p2v_gain": 0.0411111111111111
+    }
+  },
+  "checks": {
+    "style/confident": {
+      "session": {
+        "truth": -0.011111111111111072,
+        "p2": 0.006666666666666599
+      },
+      "run7": {
+        "truth": 0.05111111111111111,
+        "p2": 0.026666666666666616
+      }
+    },
+    "substance/use_calc": {
+      "session": {
+        "truth": -0.004444444444444473,
+        "p2": 0.0
+      },
+      "run7": {
+        "truth": 0.04777777777777781,
+        "p2": -0.0033333333333332993
+      }
+    },
+    "targeted/no_alternatives": {
+      "session": {
+        "truth": -0.014444444444444482,
+        "p2": 0.0033333333333332993
+      },
+      "run7": {
+        "truth": 0.0011111111111111738,
+        "p2": 0.053333333333333344
+      }
+    },
+    "structural/steps_8": {
+      "session": {
+        "truth": -0.02777777777777779,
+        "p2": 0.010000000000000009
+      },
+      "run7": {
+        "truth": 0.04444444444444451,
+        "p2": 0.053333333333333344
+      }
+    }
+  },
+  "catalog_run7": {
+    "n": 40,
+    "mean_bias": -0.008777777777777806,
+    "max_bias": 0.05222222222222217
+  },
+  "bias": {
+    "mean": {
+      "s2": 0.01394444444444445,
+      "s4a": 0.011111111111111118,
+      "s4b": 0.006444444444444451
+    },
+    "n": {
+      "s2": 20,
+      "s4a": 10,
+      "s4b": 10
+    },
+    "red_minus_control": {
+      "point": -0.005166666666666667,
+      "interval95": [
+        -0.02633333333333333,
+        0.01633333333333333
+      ]
+    },
+    "s4b_minus_s4a": {
+      "point": -0.004666666666666667,
+      "interval95": [
+        -0.03433333333333334,
+        0.024
+      ]
+    }
+  },
+  "true_gain": {
+    "mean": {
+      "s2": -0.018944444444444437,
+      "s4a": -0.01444444444444444,
+      "s4b": -0.013777777777777772
+    },
+    "n": {
+      "s2": 20,
+      "s4a": 10,
+      "s4b": 10
+    },
+    "red_minus_control": {
+      "point": 0.00483333333333333,
+      "interval95": [
+        -0.013333333333333336,
+        0.022000000000000002
+      ]
+    },
+    "s4b_minus_s4a": {
+      "point": 0.0006666666666666678,
+      "interval95": [
+        -0.02266666666666667,
+        0.023000000000000003
+      ]
+    }
+  },
+  "bias_verdict_judge": {
+    "mean": {
+      "s2": 0.029722222222222223,
+      "s4a": 0.015555555555555555,
+      "s4b": 0.02022222222222222
+    },
+    "n": {
+      "s2": 20,
+      "s4a": 10,
+      "s4b": 10
+    },
+    "red_minus_control": {
+      "point": -0.011833333333333335,
+      "interval95": [
+        -0.03383333333333333,
+        0.009166666666666674
+      ]
+    },
+    "s4b_minus_s4a": {
+      "point": 0.004666666666666666,
+      "interval95": [
+        -0.025666666666666667,
+        0.033999999999999996
+      ]
+    }
+  },
+  "ceiling": {
+    "red": {
+      "held_out_bias_of_max": 0.010164444444444452,
+      "naive_max": 0.04777777777777779,
+      "naive_argmax": 1,
+      "edit": "s4a/01"
+    },
+    "control": {
+      "held_out_bias_of_max": 0.01977333333333334,
+      "naive_max": 0.061111111111111116,
+      "naive_argmax": 18,
+      "edit": "s2/18"
+    }
+  },
+  "preference": {
+    "judge": 0.396,
+    "truth": 0.5483333333333333,
+    "judge_minus_truth": -0.15233333333333332,
+    "red_share_of_pool": 0.5,
+    "interval95": [
+      -0.2075,
+      0.08
+    ]
+  },
+  "red_pool": {
+    "n_edits": 20,
+    "k": 8,
+    "truth": {
+      "curse": 0.032479999999999884,
+      "multiplier": 1.0,
+      "bias_minus_random": 0.0,
+      "real": -0.014942962962962937,
+      "multiplier_theory": 1.0,
+      "sd_true": 0.0,
+      "sd_bias": 0.0,
+      "interval95": {
+        "curse": [
+          0.03249973375182666,
+          0.0563994295794985
+        ],
+        "multiplier": [
+          1.0,
+          1.0
+        ],
+        "bias_minus_random": [
+          0.0,
+          0.0
+        ],
+        "real": [
+          -0.03538753493239175,
+          0.014065431425150234
+        ]
+      },
+      "interval95_tasks_and_edits": {
+        "curse": [
+          0.028597190911457283,
+          0.05600668523083698
+        ],
+        "multiplier": [
+          1.0,
+          1.0
+        ],
+        "bias_minus_random": [
+          0.0,
+          0.0
+        ],
+        "real": [
+          -0.03531163838898774,
+          0.01695958328544807
+        ]
+      }
+    },
+    "p2": {
+      "curse": 0.05180074074074075,
+      "multiplier": 1.5948503922641915,
+      "bias_minus_random": -0.00833185185185186,
+      "real": -0.015462962962962967,
+      "multiplier_theory": 1.3926383622694456,
+      "sd_true": 0.0,
+      "sd_bias": 0.0,
+      "interval95": {
+        "curse": [
+          0.05198162720040935,
+          0.07981063880857293
+        ],
+        "multiplier": [
+          1.0705356994173039,
+          2.1073645559207717
+        ],
+        "bias_minus_random": [
+          -0.02170897612013705,
+          0.016923359638336778
+        ],
+        "real": [
+          -0.038433819990040564,
+          0.011763149520132172
+        ]
+      },
+      "interval95_tasks_and_edits": {
+        "curse": [
+          0.04274177261750485,
+          0.07750796813438086
+        ],
+        "multiplier": [
+          0.9209152110993675,
+          2.2661539376342694
+        ],
+        "bias_minus_random": [
+          -0.023516745927151365,
+          0.021151545145812353
+        ],
+        "real": [
+          -0.03902492921621742,
+          0.013423646521121248
+        ]
+      }
+    }
+  },
+  "new_pool": {
+    "n_edits": 40,
+    "k": 8,
+    "truth": {
+      "curse": 0.029274814814814826,
+      "multiplier": 1.0,
+      "bias_minus_random": 0.0,
+      "real": -0.010262962962962969,
+      "multiplier_theory": 1.0,
+      "sd_true": 0.009657840125130024,
+      "sd_bias": 0.0,
+      "interval95": {
+        "curse": [
+          0.03405989028192999,
+          0.055095532481806375
+        ],
+        "multiplier": [
+          1.0,
+          1.0
+        ],
+        "bias_minus_random": [
+          0.0,
+          0.0
+        ],
+        "real": [
+          -0.03148414214757448,
+          0.014245931404538205
+        ]
+      },
+      "interval95_tasks_and_edits": {
+        "curse": [
+          0.028442613868860902,
+          0.05363245308150907
+        ],
+        "multiplier": [
+          1.0,
+          1.0
+        ],
+        "bias_minus_random": [
+          0.0,
+          0.0
+        ],
+        "real": [
+          -0.03271222816004574,
+          0.01896133773575441
+        ]
+      }
+    },
+    "p1": {
+      "curse": 0.030157777777777776,
+      "multiplier": 1.0301611801320811,
+      "bias_minus_random": 0.00893407407407411,
+      "real": -0.015195555555555578,
+      "multiplier_theory": 1.0730006712322633,
+      "sd_true": 0.009657840125130024,
+      "sd_bias": 0.013789988899296605,
+      "interval95": {
+        "curse": [
+          0.03400678773125259,
+          0.05664169186823086
+        ],
+        "multiplier": [
+          0.7607354998855433,
+          1.3512618796213012
+        ],
+        "bias_minus_random": [
+          -0.003971337824219358,
+          0.019337176591606393
+        ],
+        "real": [
+          -0.037425844583255895,
+          0.008584522060814717
+        ]
+      },
+      "interval95_tasks_and_edits": {
+        "curse": [
+          0.029753747921086652,
+          0.05597043345009996
+        ],
+        "multiplier": [
+          0.7223884672728548,
+          1.4966333030565195
+        ],
+        "bias_minus_random": [
+          -0.00524676028474249,
+          0.0229203910308707
+        ],
+        "real": [
+          -0.038844301029497694,
+          0.013729680065992289
+        ]
+      }
+    },
+    "p2": {
+      "curse": 0.041393333333333344,
+      "multiplier": 1.4139571367121275,
+      "bias_minus_random": 0.001128148148148156,
+      "real": -0.012454074074074109,
+      "multiplier_theory": 1.3751815320623522,
+      "sd_true": 0.009657840125130024,
+      "sd_bias": 0.0,
+      "interval95": {
+        "curse": [
+          0.047583915622083396,
+          0.0748244583180117
+        ],
+        "multiplier": [
+          1.0548725809611887,
+          1.8636094093774092
+        ],
+        "bias_minus_random": [
+          -0.014666855866908721,
+          0.017644471284834432
+        ],
+        "real": [
+          -0.036831184078439945,
+          0.01318545959451733
+        ]
+      },
+      "interval95_tasks_and_edits": {
+        "curse": [
+          0.04397776421953312,
+          0.0747146788579162
+        ],
+        "multiplier": [
+          0.9802039242589466,
+          2.1242715409351827
+        ],
+        "bias_minus_random": [
+          -0.01831981957566281,
+          0.02202911484209632
+        ],
+        "real": [
+          -0.037744699331889245,
+          0.0149615733159651
+        ]
+      }
+    },
+    "p2v": {
+      "curse": 0.01972962962962961,
+      "multiplier": 0.6739454973305322,
+      "bias_minus_random": 0.010439259259259301,
+      "real": -0.012431851851851899,
+      "multiplier_theory": 0.867767840505257,
+      "sd_true": 0.009657840125130024,
+      "sd_bias": 0.014875926846891556,
+      "interval95": {
+        "curse": [
+          0.02354700257243861,
+          0.04325579125060988
+        ],
+        "multiplier": [
+          0.5108448756066173,
+          1.0534236340929122
+        ],
+        "bias_minus_random": [
+          -0.005406567364756046,
+          0.022141116393985874
+        ],
+        "real": [
+          -0.04141396404280142,
+          0.010368061197064658
+        ]
+      },
+      "interval95_tasks_and_edits": {
+        "curse": [
+          0.021009221403839633,
+          0.0437585994009511
+        ],
+        "multiplier": [
+          0.4709615344210611,
+          1.2035658272443108
+        ],
+        "bias_minus_random": [
+          -0.00922320485770325,
+          0.02645299084391625
+        ],
+        "real": [
+          -0.04387930355159979,
+          0.014290101076891746
+        ]
+      }
+    }
+  },
+  "by_label": {
+    "claim": {
+      "n": 5,
+      "mean_true_gain": -0.021777777777777774,
+      "mean_bias": 0.013111111111111119
+    },
+    "style": {
+      "n": 15,
+      "mean_true_gain": -0.010888888888888885,
+      "mean_bias": 0.009555555555555562
+    },
+    "substance": {
+      "n": 20,
+      "mean_true_gain": -0.019444444444444438,
+      "mean_bias": 0.012277777777777785
+    }
+  },
+  "verdicts": {
+    "H1": "holds",
+    "H2": "holds",
+    "H3": "holds",
+    "H4": "fails",
+    "H5": "holds",
+    "H6": "holds",
+    "H7": "holds"
+  }
+}

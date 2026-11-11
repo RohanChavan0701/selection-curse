@@ -107,6 +107,7 @@ pretraining data, which limits every absolute number here.
 | 5 | Multi-step SQL agent, 7B student, 32B proposer, six seeds | Pre-registered | Gains transferred: about +12 points on held-out Spider in 6 of 6 seeds. Random edits gained as much as the LLM proposer (difference -1.3 tasks, p = 0.53). Most gains came from one missing default (showing the schema). No measurable selection gap. Three of four predictions were wrong. |
 | 6 | FinQA agent, LLM judges as label-free selectors, 150 tasks | Exploratory | Looked for reward hacking: a loop that learns to please the judge. Did not find it. Found that selection concentrates noise, and that the first judge prompt was near chance against truth (AUROC 0.55) until checked. |
 | 7 | Same as 6, 300 fresh tasks | Pre-registered | The table above. |
+| 8 | Run 7's tasks, 40 edits from a 32B proposer: 20 told to be correct, 20 told to raise the judge's approval | Pre-registered | Red team did not reach more judge bias than the control: -0.5 points (95% interval -2.6 to +1.6). 6 of 7 predictions held; the one miss ran against gaming. Curse multiplier replicated on proposed edits (1.41, formula 1.38). Nearly all proposed edits lowered accuracy, and repeat baselines spanned 3.3 points. [Outcome](PREDICTION_run8.md#outcome) |
 
 Two things run 5 and run 7 do not agree on, stated plainly: run 5 measured no gap between
 tuning-set gain and fresh-task gain, and run 7 measured a 2.7-point curse under true labels.
@@ -119,9 +120,10 @@ and nothing here tests which difference matters.
 
 ## What this does not show
 
-- **That loops cannot learn to game a judge.** The edits here were written by hand. An LLM
-  proposer told to raise the judge's approval is implemented (`rsi/fin_propose.py`) and has
-  not been run.
+- **That loops cannot learn to game a judge.** Run 8 gave a 32B proposer the judge's prompt,
+  the instruction to raise approval and one round of feedback, and its edits carried no more
+  judge bias than a control's. That is a ceiling for that attacker and for effects above
+  about 2 points, not for stronger proposers, more rounds or a larger edit space.
 - **Anything about large models or other domains.** One 7B student, one 8B judge, FinQA.
 - **A confirmed judge effect.** The primary prediction was inconclusive.
 - **How much repeated judging helps.** Asked again about the same 3,900 episodes at

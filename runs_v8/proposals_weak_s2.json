@@ -1,0 +1,346 @@
+[
+ {
+  "id": "s2/00",
+  "source": "s2",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Always calculate percentages correctly by dividing the part by the whole and multiplying by 100, e.g., (part / whole) * 100.",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "edit": {
+   "type": "rule",
+   "text": "- Always calculate percentages correctly by dividing the part by the whole and multiplying by 100, e.g., (part / whole) * 100."
+  },
+  "rationale": "Improves accuracy of percentage calculations."
+ },
+ {
+  "id": "s2/01",
+  "source": "s2",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Ensure arithmetic operations are enclosed in parentheses to maintain correct order of operations.",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "edit": {
+   "type": "rule",
+   "text": "- Ensure arithmetic operations are enclosed in parentheses to maintain correct order of operations."
+  },
+  "rationale": "Prevents calculation errors due to incorrect order of operations."
+ },
+ {
+  "id": "s2/02",
+  "source": "s2",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Round final answers to two decimal places for consistency.",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "edit": {
+   "type": "rule",
+   "text": "- Round final answers to two decimal places for consistency."
+  },
+  "rationale": "Ensures consistency in the format of the answers."
+ },
+ {
+  "id": "s2/03",
+  "source": "s2",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "",
+   "table_format": "rows",
+   "max_steps": 3,
+   "verify_before_submit": false
+  },
+  "edit": {
+   "type": "setting",
+   "field": "max_steps",
+   "value": 3
+  },
+  "rationale": "Increases steps for more complex arithmetic operations."
+ },
+ {
+  "id": "s2/04",
+  "source": "s2",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": true
+  },
+  "edit": {
+   "type": "setting",
+   "field": "verify_before_submit",
+   "value": true
+  },
+  "rationale": "Allows verification of calculations before submitting answers."
+ },
+ {
+  "id": "s2/05",
+  "source": "s2",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Double-check the arithmetic operation before submission to ensure accuracy.",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "edit": {
+   "type": "rule",
+   "text": "- Double-check the arithmetic operation before submission to ensure accuracy."
+  },
+  "rationale": "Reduces errors due to incorrect arithmetic operations."
+ },
+ {
+  "id": "s2/06",
+  "source": "s2",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- When dealing with time periods, ensure the start and end years are correctly used in the calculation.",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "edit": {
+   "type": "rule",
+   "text": "- When dealing with time periods, ensure the start and end years are correctly used in the calculation."
+  },
+  "rationale": "Prevents errors in calculations involving time periods."
+ },
+ {
+  "id": "s2/07",
+  "source": "s2",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- For percentage difference calculations, use the formula ((new - old) / old) * 100.",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "edit": {
+   "type": "rule",
+   "text": "- For percentage difference calculations, use the formula ((new - old) / old) * 100."
+  },
+  "rationale": "Correctly calculates percentage differences."
+ },
+ {
+  "id": "s2/08",
+  "source": "s2",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- For growth rates, use the formula ((new value / old value) - 1) * 100.",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "edit": {
+   "type": "rule",
+   "text": "- For growth rates, use the formula ((new value / old value) - 1) * 100."
+  },
+  "rationale": "Ensures correct calculation of growth rates."
+ },
+ {
+  "id": "s2/09",
+  "source": "s2",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- When calculating portions or percentages, always start with the division before multiplication.",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "edit": {
+   "type": "rule",
+   "text": "- When calculating portions or percentages, always start with the division before multiplication."
+  },
+  "rationale": "Ensures correct order of operations in percentage calculations."
+ },
+ {
+  "id": "s2/10",
+  "source": "s2",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Always double-check the arithmetic operations and ensure they correctly reflect the question's context.",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "edit": {
+   "type": "rule",
+   "text": "- Always double-check the arithmetic operations and ensure they correctly reflect the question's context."
+  },
+  "rationale": "Improves accuracy by ensuring correct application of arithmetic operations."
+ },
+ {
+  "id": "s2/11",
+  "source": "s2",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "",
+   "table_format": "rows",
+   "max_steps": 5,
+   "verify_before_submit": false
+  },
+  "edit": {
+   "type": "setting",
+   "field": "max_steps",
+   "value": 5
+  },
+  "rationale": "Allows for more detailed and accurate calculations."
+ },
+ {
+  "id": "s2/12",
+  "source": "s2",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- When calculating percentages, ensure the format is clear and includes the % symbol.",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "edit": {
+   "type": "rule",
+   "text": "- When calculating percentages, ensure the format is clear and includes the % symbol."
+  },
+  "rationale": "Clarifies the answer format and reduces confusion."
+ },
+ {
+  "id": "s2/13",
+  "source": "s2",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Verify that all numbers used in calculations are directly relevant to the question asked.",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "edit": {
+   "type": "rule",
+   "text": "- Verify that all numbers used in calculations are directly relevant to the question asked."
+  },
+  "rationale": "Prevents misuse of numbers that do not pertain to the question."
+ },
+ {
+  "id": "s2/14",
+  "source": "s2",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Ensure the final answer is presented in a clear and direct manner, avoiding unnecessary calculations.",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "edit": {
+   "type": "rule",
+   "text": "- Ensure the final answer is presented in a clear and direct manner, avoiding unnecessary calculations."
+  },
+  "rationale": "Improves clarity and accuracy of the final answer."
+ },
+ {
+  "id": "s2/15",
+  "source": "s2",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "",
+   "table_format": "markdown",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "edit": {
+   "type": "setting",
+   "field": "table_format",
+   "value": "markdown"
+  },
+  "rationale": "Improves readability of tabular data, which can aid in correct data extraction for calculations."
+ },
+ {
+  "id": "s2/16",
+  "source": "s2",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- If the question involves multiple calculations, break them into steps and verify each step.",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "edit": {
+   "type": "rule",
+   "text": "- If the question involves multiple calculations, break them into steps and verify each step."
+  },
+  "rationale": "Increases accuracy by ensuring each part of a complex calculation is correct."
+ },
+ {
+  "id": "s2/17",
+  "source": "s2",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- For questions requiring a percentage or ratio, explicitly state if the answer needs to be rounded.",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "edit": {
+   "type": "rule",
+   "text": "- For questions requiring a percentage or ratio, explicitly state if the answer needs to be rounded."
+  },
+  "rationale": "Ensures consistent rounding practices for more accurate answers."
+ },
+ {
+  "id": "s2/18",
+  "source": "s2",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Always include a unit or context (e.g., %, mmboe) in the final answer, if applicable.",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "edit": {
+   "type": "rule",
+   "text": "- Always include a unit or context (e.g., %, mmboe) in the final answer, if applicable."
+  },
+  "rationale": "Clarifies the answer's context and reduces ambiguity."
+ },
+ {
+  "id": "s2/19",
+  "source": "s2",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Always extract the necessary numbers from the report page before performing calculations.",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "edit": {
+   "type": "rule",
+   "text": "- Always extract the necessary numbers from the report page before performing calculations."
+  },
+  "rationale": "Improves accuracy by ensuring calculations are based on correct data."
+ }
+]

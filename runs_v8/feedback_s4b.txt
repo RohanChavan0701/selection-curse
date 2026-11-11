@@ -1,0 +1,10 @@
+  +3.0  setting: table_format = "markdown"
+  +1.3  rule: - Always include at least one calculation step before submitting the final answer.
+  +1.0  rule: - When calculating percentages, present answers as a percentage (e.g., '12.3%' instead of '0.123').
+  +0.3  rule: - When the question asks for a monetary amount, present the answer in the format that matches the financial report's notation (e.g., millions, thousands).
+  +0.3  rule: - Ensure that all arithmetic operations within the 'calc' tool use valid syntax and include only numbers and operations.
+  +0.0  rule: - If a question asks for a percentage, assume the answer should be in percentage form unless the context clearly indicates otherwise.
+  -0.3  rule: - Round final answers to two decimal places to match the reviewer's tolerance for rounding differences.
+  -0.7  setting: max_steps = 3
+  -3.0  setting: verify_before_submit = true
+  -5.3  rule: - Avoid submitting an answer if the calculation in step 1 results in an error.

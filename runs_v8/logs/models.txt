@@ -1,0 +1,4 @@
+NAME                    ID              SIZE      MODIFIED               
+qwen2.5:32b-instruct    9f13ba1299af    19 GB     Less than a second ago    
+qwen2.5:7b-instruct     845dbda0ea48    4.7 GB    52 seconds ago            
+llama3.1:8b             46e0c10c039e    4.9 GB    57 seconds ago            

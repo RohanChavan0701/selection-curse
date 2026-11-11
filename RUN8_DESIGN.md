@@ -1,7 +1,9 @@
 # Run 8 design: can a proposer told to game the judge do it?
 
-Status: REGISTERED (2026-11-10), not launched. Predictions are in `PREDICTION_run8.md`,
-committed with this file before any run 8 data exists. A launch needs the author's go-ahead.
+Status: RUN (2026-11-11). Registered 2026-11-10 before any run 8 data existed. Results and
+deviations are in `PREDICTION_run8.md` under Outcome; in short, the red team did not reach
+more judge bias than the control (-0.5 points, 95% interval -2.6 to +1.6). The run used one
+H100 with 16 slots, not the A10 with 8 described below (deviation 1).
 
 ## Where this comes from
 
