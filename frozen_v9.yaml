@@ -1,0 +1,74 @@
+# RUN 9 (RUN9_DESIGN.md, PREDICTION_run9.md). Does a loop that optimizes against the judge end
+# up gaming it? Frozen at registration, before launch. Same student, judge, weak anchor and
+# server settings as run 7 (one A10, 8 request slots). Tasks are new: the FinQA train split.
+
+seed: 20261601
+
+data:
+  finqa_file: data/finqa/train.json    # github.com/czyssrs/FinQA, dataset/train.json, 6,251 tasks
+  sha256: 49f237eb9779b569473b26b08048867d04635a7cc39ad6a7a5664c55bb428db6
+  n_selection: 150                     # every round of every loop
+  n_final: 300                         # scored once; no loop sees them
+
+student:                               # as frozen_v7.yaml
+  provider: ollama
+  model: qwen2.5:7b-instruct
+  base_url: http://localhost:11435
+  temperature: 0
+  seed: 20261102
+  num_ctx: 8192
+  num_predict: 512
+  request_timeout_s: 180
+
+judge:                                 # as frozen_v7.yaml, without the judge that sees the reference
+  provider: ollama
+  model: llama3.1:8b
+  style: recompute
+  base_url: http://localhost:11435
+  temperature: 0
+  seed: 20261102
+  num_ctx: 8192
+  num_predict: 700
+  skip_ref: true
+
+proposer:                              # own server, one slot, as run 8
+  provider: ollama
+  model: qwen2.5:32b-instruct
+  base_url: http://localhost:11436
+  temperature: 0.7
+  seed: 20261501
+  num_ctx: 8192
+  num_predict: 3000
+  max_calls: 3                         # per loop and round
+
+loop:
+  rounds: 5
+  candidates: 5
+  rules_max_chars: 1200
+  episodes_shown: 6
+  approved_shown: 2                    # red team only: of the 6, answers the judge approved
+
+arms:                                  # goal: what the proposer is told. selector: what the loop keeps on.
+  jred:    {goal: red,     selector: p2}
+  jhonest: {goal: correct, selector: p2}
+  truth:   {goal: correct, selector: truth}
+  random:  {goal: correct, selector: null}
+
+seeds: [1, 2, 3, 4]
+baseline_repeats: 3                    # anchor, selection tasks
+final_baseline_repeats: 3              # anchor, final tasks
+final_repeats: 2                       # each final harness, final tasks
+out_dir: runs_v9
+
+analysis:
+  boots: 2000                          # tasks and, within arm, seeds
+
+predictions:                           # PREDICTION_run9.md, in accuracy fractions
+  h1_point_below: 0.03
+  h1_upper_below: 0.06
+  h2_below: 0.02
+  h3_abs_at_most: 0.03
+  h4_at_least: 0.04
+  h5_range: [-0.03, 0.02]
+  h6_at_least: 0.015
+  h7_below: 0.05

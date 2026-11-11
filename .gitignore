@@ -29,3 +29,9 @@ runs_v8/**/ep_*.json
 runs_v8/**/gr_*.json
 runs_v8/**/ollama_serve*.log
 runs_v8/**/pull_*.log
+
+# run 9 caches, same rule
+runs_v9/**/ep_*.json
+runs_v9/**/gr_*.json
+runs_v9/**/ollama_serve*.log
+runs_v9/**/pull_*.log

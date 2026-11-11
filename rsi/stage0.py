@@ -101,7 +101,9 @@ def evaluate(cfg: dict, h: dict, tasks: list[finqa.FinTask], student, judge, rep
 
     def grade(pair):
         task, rec = pair
-        return {**rec, "p1": proxies.p1_judge_ref(task, rec, judge),
+        # `judge.skip_ref` (run 9): the judge with the reference is not asked; no claim uses it
+        p1 = {"correct": None, "score": None} if cfg["judge"].get("skip_ref") else proxies.p1_judge_ref(task, rec, judge)
+        return {**rec, "p1": p1,
                 "p2": proxies.p2_judge_free(task, rec, judge, h["table_format"],
                                             cfg["judge"].get("style", "verdict")),
                 "p3": proxies.p3_validity(rec)}
