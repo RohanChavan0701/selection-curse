@@ -176,6 +176,27 @@ def test_status_flags_past_cap(api, monkeypatch):
         L.status("i-other", ledger=ledger)
 
 
+def test_cap_change_moves_the_cap_and_keeps_the_limits(api, monkeypatch):
+    calls, ledger = api
+    monkeypatch.setitem(TYPES, "gpu_1x_h100_pcie", _type("H100 (80 GB PCIe)", 1, 329, ["us-west-3"]))
+    lau = L.launch("chiron-run8", "us-west-3", "key", "author", budget_usd=20, ledger=ledger,
+                   instance_type="gpu_1x_h100_pcie")
+    n = len(calls)
+    for bad in (20, 15, 31):                                   # not a raise; above the exception
+        with pytest.raises(L.GuardrailError):
+            L.raise_cap(lau["id"], bad, "author", ledger)
+    with pytest.raises(L.GuardrailError):
+        L.raise_cap("i-other", 30, "author", ledger)
+    with pytest.raises(L.GuardrailError):
+        L.raise_cap(lau["id"], 30, " ", ledger)
+    e = L.raise_cap(lau["id"], 30, "author", ledger)
+    assert len(calls) == n                                     # ledger only, no API call
+    assert e["cap_hours"] == pytest.approx(3000 / 329, abs=1e-3) and e["previous_terminate_by"] == lau["terminate_by"]
+    now = L.launches(L.read_ledger(ledger))[lau["id"]]
+    assert now["terminate_by"] == e["terminate_by"] > lau["terminate_by"] and now["budget_usd"] == 30
+    assert now["launched_at"] == lau["launched_at"] and L.open_instances(L.read_ledger(ledger)) == [lau["id"]]
+
+
 def test_type_exception_is_scoped_to_run8_and_its_budget(api, monkeypatch):
     calls, ledger = api
     h100 = _type("H100 (80 GB PCIe)", 1, 329, ["us-west-3"])
@@ -185,7 +206,7 @@ def test_type_exception_is_scoped_to_run8_and_its_budget(api, monkeypatch):
     assert calls[-1][2]["instance_type_name"] == "gpu_1x_h100_pcie"
     assert ok["type"] == "gpu_1x_h100_pcie" and ok["cap_hours"] == pytest.approx(2000 / 329, abs=1e-3)
     n = len(calls)
-    for name, budget, itype in (("chiron-run7", 20, "gpu_1x_h100_pcie"), ("chiron-run8-b", 21, "gpu_1x_h100_pcie"),
+    for name, budget, itype in (("chiron-run7", 20, "gpu_1x_h100_pcie"), ("chiron-run8-b", 31, "gpu_1x_h100_pcie"),
                                 ("chiron-run8-b", 20, "gpu_1x_a100")):
         with pytest.raises(L.GuardrailError):
             L.launch(name, "us-west-3", "key", "author", budget_usd=budget, ledger=ledger, instance_type=itype)

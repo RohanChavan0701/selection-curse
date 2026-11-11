@@ -18,6 +18,7 @@ Usage (from rsi_pilot/):
   python -m cloud.lambda_api types | keys | filesystems | instances
   python -m cloud.lambda_api launch --name chiron-run4-a --region us-east-1 --ssh-key NAME \
       --approved-by "author, 2026-11-04 chat" [--filesystem FS] [--user-data FILE]
+  python -m cloud.lambda_api cap ID --budget-usd N --approved-by "..."   author raised the budget
   python -m cloud.lambda_api status ID [--job-state running]
   python -m cloud.lambda_api terminate ID --reason job_done|cap|error|author
 """
@@ -44,11 +45,11 @@ NAME_PREFIX = "chiron-"
 # Lambda's Cloudflare front blocks urllib's default User-Agent (error 1010, HTTP 403).
 USER_AGENT = "chiron-rsi-pilot/0.1"
 REASONS = ("job_done", "cap", "error", "author")
-# Author, 2026-11-10 chat: run 8 only may use one H100 instead of the A10, budget $20
-# (CLOUD_RUN.md, "Author changes for run 8"). This replaces the run 7 exception ($30, never
-# used). Keyed by instance type; a launch qualifies only if its name starts with the given
+# Author, 2026-11-10 chat: run 8 only may use one H100 instead of the A10, budget $20, raised
+# by the author to $30 while the run was going (CLOUD_RUN.md, "Author changes for run 8").
+# This replaces the run 7 exception ($30, never used). Keyed by instance type; a launch qualifies only if its name starts with the given
 # prefix and its budget is within the given dollars.
-TYPE_EXCEPTIONS = {"gpu_1x_h100_pcie": {"name_prefix": "chiron-run8", "max_budget_usd": 20.0}}
+TYPE_EXCEPTIONS = {"gpu_1x_h100_pcie": {"name_prefix": "chiron-run8", "max_budget_usd": 30.0}}
 
 
 class LambdaError(RuntimeError):
@@ -158,7 +159,12 @@ def cap_hours(price_cents_per_hour: int, budget_usd: float = MAX_USD) -> float:
 
 
 def launches(rows: list[dict]) -> dict[str, dict]:
-    return {r["id"]: r for r in rows if r["event"] == "launch"}
+    """Launch lines by id, with any later `cap_change` line applied to the budget and cap."""
+    out = {r["id"]: dict(r) for r in rows if r["event"] == "launch"}
+    for r in rows:
+        if r["event"] == "cap_change" and r["id"] in out:
+            out[r["id"]].update({k: r[k] for k in ("budget_usd", "cap_hours", "terminate_by")})
+    return out
 
 
 def open_instances(rows: list[dict]) -> list[str]:
@@ -212,6 +218,31 @@ def launch(name: str, region: str, ssh_key: str, approved_by: str,
     return entry
 
 
+def raise_cap(instance_id: str, budget_usd: float, approved_by: str, ledger: Path = LEDGER) -> dict:
+    """Record a budget the author raised for a running instance. Same limits as a launch: at
+    most MAX_USD and MAX_HOURS, and for an excepted type at most that exception's budget. The
+    cap is counted from the original launch time at the launch price. No API call: the
+    on-instance watchdog must be re-armed separately with the new terminate_by."""
+    if not approved_by.strip():
+        raise GuardrailError("a cap change needs the author's go-ahead (--approved-by)")
+    rows = read_ledger(ledger)
+    lau = launches(rows).get(instance_id)
+    if lau is None or instance_id not in open_instances(rows):
+        raise GuardrailError(f"{instance_id} is not an open instance in the ledger")
+    if budget_usd <= lau["budget_usd"]:
+        raise GuardrailError(f"new budget must be above the current ${lau['budget_usd']:.2f}")
+    rule = TYPE_EXCEPTIONS.get(lau["type"])
+    if rule and budget_usd > rule["max_budget_usd"]:
+        raise GuardrailError(f"the {lau['type']} exception allows at most ${rule['max_budget_usd']:.0f}")
+    hours = cap_hours(lau["price_cents_per_hour"], budget_usd)
+    entry = {"event": "cap_change", "id": instance_id, "time": _iso(now_utc()), "budget_usd": round(budget_usd, 2),
+             "cap_hours": round(hours, 3), "previous_terminate_by": lau["terminate_by"],
+             "terminate_by": _iso(datetime.fromisoformat(lau["launched_at"]) + timedelta(hours=hours)),
+             "approved_by_author": approved_by}
+    append_ledger(entry, ledger)
+    return entry
+
+
 def status(instance_id: str, job_state: str = "", ledger: Path = LEDGER) -> dict:
     lau = launches(read_ledger(ledger)).get(instance_id)
     if lau is None:
@@ -261,6 +292,10 @@ def main(argv: list[str] | None = None) -> int:
     pl.add_argument("--user-data", type=Path, help="cloud-init user-data file")
     pl.add_argument("--budget-usd", type=float, default=MAX_USD)
     pl.add_argument("--instance-type", help="only a type with an author exception (TYPE_EXCEPTIONS)")
+    pc = sub.add_parser("cap")
+    pc.add_argument("id")
+    pc.add_argument("--budget-usd", type=float, required=True)
+    pc.add_argument("--approved-by", required=True)
     ps = sub.add_parser("status")
     ps.add_argument("id")
     ps.add_argument("--job-state", default="")
@@ -286,8 +321,12 @@ def main(argv: list[str] | None = None) -> int:
                      instance_type=a.instance_type)
     elif a.cmd == "status":
         out = status(a.id, a.job_state)
-    else:
+    elif a.cmd == "cap":
+        out = raise_cap(a.id, a.budget_usd, a.approved_by)
+    elif a.cmd == "terminate":
         out = terminate(a.id, a.reason)
+    else:
+        raise GuardrailError(f"unknown command {a.cmd}")
     print(json.dumps(out, indent=2))
     return 0
 

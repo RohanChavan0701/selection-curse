@@ -106,6 +106,11 @@ Any change after registration is logged here with its reason.
    and baselines run in this same session and are not affected. The session check against
    run 7's numbers now mixes a hardware change with ordinary repeat noise, so it is weaker
    evidence about either. The cost and time table in the design was for the A10.
+2. Budget (2026-11-11 05:38 UTC, 22 minutes after launch, after proposal round 1 and before
+   any edit was graded): the author raised the cap from $20 to $30. The job's own deadlines
+   were set at launch for the $20 cap and were left alone so the running job was not
+   restarted. If they cut the bank or the verdict regrade short, the same script is run again
+   with later deadlines inside the $30 cap; it resumes from the cache.
 
 ## Outcome
 

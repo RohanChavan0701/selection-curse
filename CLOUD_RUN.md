@@ -76,6 +76,10 @@ docstring lists the commands. Guardrail tests: `tests/test_cloud.py`.
   `chiron-run8` and a budget of at most $20. The run 7 exception is removed; it was never
   used. Every other guardrail above is unchanged, and later runs are back on the A10 unless
   the author says otherwise.
+- Raised while the run was going (2026-11-11 05:38 UTC, 22 minutes after launch): the
+  author's words, "increase the cap to 30 usd". Budget $30, cap 9.1 h from the original
+  launch time. Recorded as a `cap_change` ledger line (`python -m cloud.lambda_api cap`), the
+  exception's limit moved to $30, and the on-instance watchdog re-armed for the new time.
 - Since the extraction of this repository, the tool and ledger are run from the repository
   root (`python -m cloud.lambda_api`, `cloud/ledger.jsonl`). The ledger carries over every
   line from `rsi_pilot/cloud/ledger.jsonl` in Chiron.
