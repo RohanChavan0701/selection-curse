@@ -67,6 +67,19 @@ docstring lists the commands. Guardrail tests: `tests/test_cloud.py`.
   `chiron-run7` and a budget of at most $30. Every other guardrail above is unchanged, and
   later runs are back on the A10 unless the author says otherwise.
 
+### Author changes for run 8 (2026-11-10, in chat)
+
+- Run 8 only may launch **one 1x H100** (`gpu_1x_h100_pcie`) instead of the A10, with a budget
+  of **$20** for the launch (cap = 2000 / live price, 6.1 h at $3.29). The author's words:
+  "use h100 fast", and "$20" when asked for the cap.
+- Enforced in `lambda_api.TYPE_EXCEPTIONS`: the type is accepted only for a name starting
+  `chiron-run8` and a budget of at most $20. The run 7 exception is removed; it was never
+  used. Every other guardrail above is unchanged, and later runs are back on the A10 unless
+  the author says otherwise.
+- Since the extraction of this repository, the tool and ledger are run from the repository
+  root (`python -m cloud.lambda_api`, `cloud/ledger.jsonl`). The ledger carries over every
+  line from `rsi_pilot/cloud/ledger.jsonl` in Chiron.
+
 ## Ledger (`rsi_pilot/cloud/ledger.jsonl`, committed)
 
 Append one JSON line per event and commit it:

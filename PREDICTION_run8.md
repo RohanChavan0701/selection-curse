@@ -97,6 +97,16 @@ stops there if a source returns no valid edit.
 
 Any change after registration is logged here with its reason.
 
+1. Hardware and server settings (2026-11-10, before launch, no run 8 data yet): at the
+   author's request the run uses one H100 (`gpu_1x_h100_pcie`, cap $20) instead of the A10
+   named in the design, to finish sooner, and 16 parallel request slots instead of run 7's 8.
+   Models, prompts, seeds, sampling settings, tasks and the analysis are unchanged. Hardware
+   and slot count change how requests are batched, and batching moves individual answers
+   slightly (run 6). Consequences: the primary and every within-run contrast compare edits
+   and baselines run in this same session and are not affected. The session check against
+   run 7's numbers now mixes a hardware change with ordinary repeat noise, so it is weaker
+   evidence about either. The cost and time table in the design was for the A10.
+
 ## Outcome
 
 Not run.

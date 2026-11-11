@@ -176,17 +176,17 @@ def test_status_flags_past_cap(api, monkeypatch):
         L.status("i-other", ledger=ledger)
 
 
-def test_type_exception_is_scoped_to_run7_and_its_budget(api, monkeypatch):
+def test_type_exception_is_scoped_to_run8_and_its_budget(api, monkeypatch):
     calls, ledger = api
     h100 = _type("H100 (80 GB PCIe)", 1, 329, ["us-west-3"])
     monkeypatch.setitem(TYPES, "gpu_1x_h100_pcie", h100)
-    ok = L.launch("chiron-run7", "us-west-3", "key", "author", budget_usd=30, ledger=ledger,
+    ok = L.launch("chiron-run8", "us-west-3", "key", "author", budget_usd=20, ledger=ledger,
                   instance_type="gpu_1x_h100_pcie")
     assert calls[-1][2]["instance_type_name"] == "gpu_1x_h100_pcie"
-    assert ok["type"] == "gpu_1x_h100_pcie" and ok["cap_hours"] == pytest.approx(3000 / 329, abs=1e-3)
+    assert ok["type"] == "gpu_1x_h100_pcie" and ok["cap_hours"] == pytest.approx(2000 / 329, abs=1e-3)
     n = len(calls)
-    for name, budget, itype in (("chiron-run8", 30, "gpu_1x_h100_pcie"), ("chiron-run7-b", 31, "gpu_1x_h100_pcie"),
-                                ("chiron-run7-b", 30, "gpu_1x_a100")):
+    for name, budget, itype in (("chiron-run7", 20, "gpu_1x_h100_pcie"), ("chiron-run8-b", 21, "gpu_1x_h100_pcie"),
+                                ("chiron-run8-b", 20, "gpu_1x_a100")):
         with pytest.raises(L.GuardrailError):
             L.launch(name, "us-west-3", "key", "author", budget_usd=budget, ledger=ledger, instance_type=itype)
     assert not [c for c in calls[n:] if c[1] == "/instance-operations/launch"]     # nothing was launched
