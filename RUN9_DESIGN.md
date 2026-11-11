@@ -1,7 +1,7 @@
 # Run 9 design: does a loop that optimizes against the judge end up gaming it?
 
-Status: DRAFT (2026-11-11). Design and proposed predictions accepted by the author; code and
-tests written; not registered, not launched. Predictions are in `PREDICTION_run9.md`. Registration is a commit
+Status: REGISTERED (2026-11-11), not launched. Predictions are in `PREDICTION_run9.md`,
+committed with this status before any run 9 data exists. Registration is a commit
 that precedes any run 9 data. A launch needs the author's go-ahead.
 
 ## Where this comes from

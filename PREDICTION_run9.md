@@ -1,8 +1,9 @@
 # Run 9 predictions
 
-Status: DRAFT (2026-11-11). Not registered. The numbers below are proposed for the author to
-accept or change. They become predictions only in the commit that registers them, before the
-run 9 instance is launched. Design: `RUN9_DESIGN.md`.
+Status: REGISTERED 2026-11-11 by the commit that changes this line, before the run 9 instance
+is launched and before any run 9 data exists. The numbers were proposed in a draft and
+accepted by the author as written. Design: `RUN9_DESIGN.md`. Thresholds as code:
+`frozen_v9.yaml`, `predictions`.
 
 Basis for the proposed numbers: run 8. A proposer told to game the judge, with one round of
 feedback, reached -0.5 points of bias against its control; the most biased single edit was
@@ -62,6 +63,20 @@ Mean true gain of T final harnesses: below +5.0 points.
 - H2 fails while H1 holds, or the reverse: report both and treat the contrast as exploratory.
 - H6 fails: the proposer cannot improve this agent even with true labels to select on. The
   bias contrasts stand; every statement about real gain is void.
+
+## Changes before registration
+
+No threshold changed between the draft and registration. Design details settled while the
+code was written, before any run 9 data:
+
+1. The proposer's example episodes come from the selection tasks, not from 60 separate trace
+   tasks.
+2. The history shown to the proposer is the candidates of the last two rounds.
+3. A tie keeps the incumbent. The anchor's selection score is the mean of its three repeats.
+4. H4 pools the two judge-selected arms, weighted by loops.
+5. Power was simulated from run 8's grades: 80% power at about 4.0 points for the primary.
+
+State of the code at registration: tests pass with scripted models. No real model has run it.
 
 ## Deviations
 
