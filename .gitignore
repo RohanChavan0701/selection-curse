@@ -23,3 +23,9 @@ runs_v7/**/ep_*.json
 runs_v7/**/gr_*.json
 runs_v7/**/ollama_serve*.log
 runs_v7/**/pull_*.log
+
+# run 8 caches, same rule
+runs_v8/**/ep_*.json
+runs_v8/**/gr_*.json
+runs_v8/**/ollama_serve*.log
+runs_v8/**/pull_*.log

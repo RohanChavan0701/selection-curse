@@ -1,0 +1,78 @@
+# RUN 8 (RUN8_DESIGN.md, PREDICTION_run8.md). Red-team proposer: can it reach judge bias?
+# Frozen at registration, before launch. Same student, judge, weak anchor, evaluation
+# tasks and server settings as run 7: `seed`, `data`, `student` and `judge` are copied from
+# frozen_v7.yaml unchanged, so the 300 evaluation tasks are run 7's.
+
+seed: 20261403
+
+data:
+  finqa_file: data/finqa/dev.json
+  n_tasks: 300
+  exclude_sample:                      # run 6 stage 0, then stage 1
+    - {seed: 20261401, n_tasks: 100}
+    - {seed: 20261402, n_tasks: 150}
+
+student:
+  provider: ollama
+  model: qwen2.5:7b-instruct
+  base_url: http://localhost:11435
+  temperature: 0
+  seed: 20261102
+  num_ctx: 8192
+  num_predict: 512
+  request_timeout_s: 180
+
+judge:                                 # the red team's target: recompute prompt
+  provider: ollama
+  model: llama3.1:8b
+  style: recompute
+  base_url: http://localhost:11435
+  temperature: 0
+  seed: 20261102
+  num_ctx: 8192
+  num_predict: 700
+
+judge_verdict:                         # secondary regrade
+  style: verdict
+  num_predict: 256
+
+proposer:                              # own server, one slot: 32B with 8 slots does not fit on 24 GB
+  provider: ollama
+  model: qwen2.5:32b-instruct
+  base_url: http://localhost:11436
+  temperature: 0.7
+  seed: 20261501
+  num_ctx: 8192
+  num_predict: 2000
+  max_calls: 6                         # per source
+  traces_shown: 6                      # judge-rejected episodes per call, redrawn each call
+  trace_sample: {seed: 20261502, n_tasks: 60}   # dev tasks no run has used
+  edits: {s2: 20, s4a: 10, s4b: 10}
+
+session_repeats: [3, 4, 5]             # baselines of this session; run 7's were repeats 0 to 2
+check_edits: [style/confident, substance/use_calc, targeted/no_alternatives, structural/steps_8]
+check_repeat: 1                        # run 7 ran these as repeat 0
+out_dir: runs_v8
+run7_analysis: runs_v7/analyze.json
+
+analysis:
+  k: 8
+  m: 150
+  rounds: 3000
+  boots: 2000                          # source contrasts: tasks and, within source, edits
+  splits: 2000                         # ceiling
+  curse_boots: 1000                    # as run 7
+  boot_rounds: 400
+  pref_boots: 300
+  min_edits_per_group: 12
+
+predictions:                           # PREDICTION_run8.md, in accuracy fractions
+  h1_point_below: 0.02
+  h1_upper_below: 0.035
+  h2_below: 0.02
+  h3_abs_below: 0.015
+  h4_abs_at_most: 0.15
+  h5_range: [-0.02, 0.01]
+  h6_below: 0.04
+  h7_range: [1.1, 1.7]
+  h7_within_theory: 0.25

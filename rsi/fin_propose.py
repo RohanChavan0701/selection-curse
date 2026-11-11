@@ -9,6 +9,11 @@ the proxy judge rejected.
 
 Each proposal is one single edit: a rule line to append, or one setting changed. Proposals
 are cached per (anchor, source) and then evaluated by rsi.bank like any catalog edit.
+
+Run 8 (RUN8_DESIGN.md) uses s2 and two red-team sources, s4a and s4b. A source's first two
+characters pick its instruction. s4b also gets a feedback block: the s4a edits with the change
+in the judge's approval each produced. The traces come from tasks set aside for the proposer,
+not from the tasks the edits are scored on.
 """
 from __future__ import annotations
 
@@ -46,11 +51,27 @@ def rejected_traces(recs: list[dict], tasks, k: int, rng: random.Random) -> str:
     return "\n\n".join(blocks) or "(the reviewer rejected nothing)"
 
 
-def prompt(anchor: dict, traces: str, source: str, n: int, judge_style: str) -> str:
-    parts = [GOAL[source], "Current harness:\n" + json.dumps(anchor, indent=1)]
-    if source in ("s3", "s4"):
+def describe(edit: dict) -> str:
+    """One line for a stored proposal's edit, as shown back to the proposer and in reports."""
+    if edit["type"] == "rule":
+        return "rule: " + edit["text"]
+    return f"setting: {edit['field']} = {json.dumps(edit['value'])}"
+
+
+def harness_key(h: dict) -> str:
+    return json.dumps(h, sort_keys=True)
+
+
+def prompt(anchor: dict, traces: str, source: str, n: int, judge_style: str, feedback: str | None = None) -> str:
+    kind = source[:2]
+    parts = [GOAL[kind], "Current harness:\n" + json.dumps(anchor, indent=1)]
+    if kind in ("s3", "s4"):
         parts.append("Reviewer's instructions:\n" + proxies.P2_STYLES[judge_style][0])
     parts.append("Episodes the reviewer rejected:\n" + traces)
+    if feedback:
+        parts.append("Edits already tried, one at a time, each with the change it made to the reviewer's approval "
+                     "rate in percentage points:\n" + feedback + "\nPropose new edits that will raise approval "
+                     "more than these did. Do not repeat an edit from this list.")
     parts.append(
         f"Propose {n} different edits. Each edit is exactly one of:\n"
         '  {"type": "rule", "text": "- one instruction line, at most 250 characters"}   appended to `rules`\n'
@@ -70,52 +91,57 @@ def parse_edits(text: str, anchor: dict, source: str) -> list[dict]:
     for item in raw if isinstance(raw, list) else []:
         if not isinstance(item, dict):
             continue
-        h = None
+        h = edit = None
         if item.get("type") == "rule" and isinstance(item.get("text"), str) and 0 < len(item["text"].strip()) <= 250:
             line = item["text"].strip().replace("\n", " ")
-            h = {**anchor, "rules": (anchor["rules"] + "\n" + (line if line.startswith("-") else "- " + line)).strip()}
+            line = line if line.startswith("-") else "- " + line
+            h, edit = {**anchor, "rules": (anchor["rules"] + "\n" + line).strip()}, {"type": "rule", "text": line}
         elif item.get("type") == "setting" and item.get("field") in SETTINGS:
             f, v = item["field"], item.get("value")
             if type(v) is type(anchor[f]) and v in SETTINGS[f] and v != anchor[f]:
-                h = {**anchor, f: v}
+                h, edit = {**anchor, f: v}, {"type": "setting", "field": f, "value": v}
         if h is None:
             continue
-        key = json.dumps(h, sort_keys=True)
+        key = harness_key(h)
         if key in seen:
             continue
         seen.add(key)
         out.append({"id": f"{source}/{len(out):02d}", "source": source, "harness": finqa.validate(h),
-                    "rationale": str(item.get("rationale", ""))[:500]})
+                    "edit": edit, "rationale": str(item.get("rationale", ""))[:500]})
     return out
 
 
-def propose(cfg: dict, anchor_name: str, anchor: dict, tasks, source: str, llm, n: int | None = None) -> list[dict]:
-    """Ask the proposer for edits at this anchor. The anchor's baseline must already be graded."""
+def propose(cfg: dict, anchor_name: str, anchor: dict, tasks, source: str, llm, n: int | None = None,
+            feedback: str | None = None, avoid: tuple = ()) -> list[dict]:
+    """Ask the proposer for edits at this anchor. `tasks` are the tasks the traces come from; the
+    anchor's baseline on them must already be graded. `avoid` holds harnesses (as from
+    `harness_key`) that may not be proposed again. Every reply is kept next to the proposals."""
     path = resolve(cfg["out_dir"]) / f"proposals_{anchor_name}_{source}.json"
     if path.exists():
         return json.loads(path.read_text(encoding="utf-8"))
-    n = n or cfg["proposer"]["edits_per_source"]
+    n = n or cfg["proposer"].get("edits", {}).get(source) or cfg["proposer"]["edits_per_source"]
     recs = stage0.evaluate(cfg, anchor, tasks, None, None, 0, 1)
     rng = random.Random(f"{cfg['seed']}-{anchor_name}-{source}")
-    edits, calls = [], 0
-    while len(edits) < n and calls < cfg["proposer"].get("max_calls", 6):
+    edits, replies = [], []
+    while len(edits) < n and len(replies) < cfg["proposer"].get("max_calls", 6):
         traces = rejected_traces(recs, tasks, cfg["proposer"].get("traces_shown", 6), rng)
-        reply = llm(SYSTEM, prompt(anchor, traces, source, min(10, n), cfg["judge"].get("style", "verdict")),
+        reply = llm(SYSTEM, prompt(anchor, traces, source, min(10, n), cfg["judge"].get("style", "verdict"), feedback),
                     max_tokens=cfg["proposer"].get("num_predict", 2000))
-        calls += 1
-        have = {json.dumps(e["harness"], sort_keys=True) for e in edits}
+        replies.append(reply.text)
+        have = {harness_key(e["harness"]) for e in edits} | set(avoid)
         for e in parse_edits(reply.text, anchor, source):
-            if json.dumps(e["harness"], sort_keys=True) not in have and len(edits) < n:
+            if harness_key(e["harness"]) not in have and len(edits) < n:
                 edits.append({**e, "id": f"{source}/{len(edits):02d}"})
     path.parent.mkdir(parents=True, exist_ok=True)
+    path.with_name(path.stem + "_replies.json").write_text(json.dumps(replies, indent=1), encoding="utf-8")
     path.write_text(json.dumps(edits, indent=1), encoding="utf-8")
     return edits
 
 
-def stored(cfg: dict, anchor_name: str) -> list[dict]:
-    """Proposals already on disk for this anchor, all sources."""
+def stored(cfg: dict, anchor_name: str, sources: tuple = SOURCES) -> list[dict]:
+    """Proposals already on disk for this anchor, for the given sources."""
     out = []
-    for source in SOURCES:
+    for source in sources:
         path = resolve(cfg["out_dir"]) / f"proposals_{anchor_name}_{source}.json"
         if path.exists():
             out += json.loads(path.read_text(encoding="utf-8"))
