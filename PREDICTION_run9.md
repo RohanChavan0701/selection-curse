@@ -210,3 +210,6 @@ the 150 selection tasks in each arm's own selector.
 - Consequence for the next design: re-score the incumbent on a fresh repeat (or average two)
   before it becomes the bar, so a lucky round 1 cannot freeze the loop. Without that, a
   noisy selector caps how far any proposer can climb, attacker or not.
+- Checked afterwards (`REPLAY9.md`): an offline replay on task splits did not reproduce the
+  freeze, and confirming on fresh tasks did not help. The remedy above (a re-run of the
+  incumbent on the same tasks) is untested.

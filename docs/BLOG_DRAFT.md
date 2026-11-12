@@ -207,7 +207,16 @@ rewrites of the winner, scored on average exactly where the starting agent had: 
 approval against 54.7%. They were not worse than the winner. The winner was never as good as
 its score. The truth-picked loops had a steadier ruler, so their bar was closer to honest and
 they kept clearing it. Same winner's curse as before, this time freezing the loop instead of
-inflating the report. The fix is cheap: measure the winner again before you make it the bar.
+inflating the report. The obvious fix is to measure the winner again before it becomes the
+bar.
+
+I tried the version of that fix I could test for free, replaying the loops offline with a
+rule that confirms each replacement on questions neither side was picked on. It did not help:
+the loops replaced less often, ended slightly worse, and still over-reported. The replay also
+failed to reproduce the freeze, which suggests the culprit is the judge's run-to-run noise
+rather than which questions were sampled. Re-running the winner on the same questions would
+test that, and needs a GPU. So: a plausible mechanism, an untested fix, and one cheap fix that
+does not work.
 
 **Being told to please the judge changed what the loop wrote.** I sorted the sixteen final
 agents by reading their rules with the labels hidden. All four red-team agents ended on
@@ -242,8 +251,9 @@ was worth 0.8. Having true labels did not protect against that.
 3. **Check your judge against truth on a small sample first.** A judge can be near chance and
    still produce a tidy, stable-looking loop.
 4. **Do not read stability as quality.** The calmest judge in this experiment was the worst.
-5. **In a multi-round loop, measure the incumbent again before it becomes the bar.** A lucky
-   first winner sets a score its own descendants cannot reach, and the loop freezes.
+5. **In a multi-round loop, watch for a frozen incumbent.** If nothing beats round one's
+   winner for several rounds, suspect a lucky first score before a weak proposer. Splitting
+   off held-out questions to confirm replacements did not fix it here.
 
 ## What this does not show
 
