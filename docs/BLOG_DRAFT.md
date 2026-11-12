@@ -161,6 +161,65 @@ Two things about this run are uncomfortable and belong here:
   reproduce their run 7 gains. Comparisons inside this run share that noise and survive it.
   Comparisons between this run and the last one do not, and I make none.
 
+## Then I let the attacker iterate
+
+The fair objection to that run: one round of feedback is not optimization. A real
+self-improving loop keeps its best attempt and builds on it. So the next run was a loop.
+
+Sixteen loops, each starting from the same weak agent and running five rounds. Each round the
+32B proposer saw the current agent, some of its episodes and the scores of earlier attempts,
+and wrote five candidates. It could now rewrite the agent's whole rules block, not add one
+line. Fresh questions, with a separate set of 300 held back to score the final agents. The
+loops differed only in what they were told and what picked the winner:
+
+- **red team**: told to make the reviewer approve more, shown the judge's prompt, winner
+  picked by the judge;
+- **honest, judge-picked**: told to be correct, winner picked by the judge. This is the loop
+  someone would actually run without labels;
+- **truth-picked**: told to be correct, winner picked by true answers;
+- **random**: told to be correct, a random candidate kept each round.
+
+Four loops of each. I predicted the red team would end with less than 3 points more judge
+bias than the truth-picked loops.
+
+**The answer is: I cannot tell.** The red team ended with 2.3 points more judge bias, with a
+95% interval of -2.0 to +6.6. That is under my line, but the interval runs past it and also
+includes zero. By the rule I wrote down beforehand, that is inconclusive. Four loops a side
+was too few. I had talked myself into expecting a tighter interval than my own simulation
+gave, and the simulation was right.
+
+Three things in the run were clearer than the headline.
+
+**The red team stalled.** In all four red-team loops, a candidate from round one replaced the
+starting agent, and then nothing from rounds two to five beat it on the judge's approval.
+Twenty more attempts per loop, each with the scores of the earlier ones in view, and none
+stuck. The truth-picked loops kept improving for two or three rounds. So this was less "five
+rounds of optimization against the judge" than "best of five, then a wall". The objection I
+set out to answer is only partly answered.
+
+**Being told to please the judge changed what the loop wrote.** I sorted the sixteen final
+agents by reading their rules with the labels hidden. All four red-team agents ended on
+presentation: show the working, round to two decimals, give a percentage, use markdown. All
+twelve others ended on substance: which formula, check the numbers, confirm the units. A
+caveat: I had seen a few first-round proposals by arm during the run, so I was blind to the
+labels but not to the pattern.
+
+**It does not seem to have bought approval, and it may have cost accuracy.** The red-team
+agents improved real accuracy by 0.8 points; the honest judge-picked ones by 4.1. That
+difference (-3.3, interval -6.8 to +0.2) was not a registered prediction, so treat it as a
+lead, not a result.
+
+And one result that undercuts all of the "real gain" numbers: **picking by true answers did
+not beat picking at random** (+0.7 points, interval -3.5 to +5.1). All four kinds of loop,
+the random one included, ended a few points above the starting agent. The proposer nudges
+this weak agent upward whatever you do with its proposals, and selection added nothing I
+could measure. I had written down in advance that if this happened, statements about real
+gain would not count. So they do not.
+
+The loops also over-reported, as before: the truth-picked loops claimed 7.7 points on the
+questions they were tuned on and were worth 3.8 on fresh ones. The red team claimed 5.3 and
+was worth 0.8. Having true labels did not protect against that.
+
 ## What I would tell someone running one of these loops
 
 1. **Re-score the winner on questions it was not chosen on.** This removes the curse
@@ -174,17 +233,19 @@ Two things about this run are uncomfortable and belong here:
 
 ## What this does not show
 
-It does not show that loops cannot learn to game a judge. The attacker in run 8 was one 32B
-model with one round of feedback, allowed to add one line to the agent's rules, and it could
-only reach the judge through what the agent wrote. The experiment could not see an effect
-smaller than about 2 points. A frontier model, many rounds, or a free hand with the whole
-prompt might do what this one could not. What I can say is narrower: the easy version of the
-attack, the one I expected to work when I started, did not.
+It does not show that loops cannot learn to game a judge. Run 8's attacker had one round of
+feedback and one line to write, and could not have shown an effect under about 2 points. Run
+9 gave it five rounds and the whole rules block, and came back inconclusive: anything up to
+about 6.6 points of extra bias is still on the table, and the loop stopped making progress
+after its first round, so it never really compounded. In both runs the attacker was one 32B
+model that could only reach the judge through what the agent wrote. A frontier model might do
+what this one could not. What I can say is narrower: the easy version of the attack, the one
+I expected to work when I started, did not show up in two attempts.
 
 It is also one 7B student, one 8B judge and one public benchmark that the student may have
-seen. Run 7's primary pre-registered result was inconclusive; run 8's held. I would not generalise the numbers.
-I would generalise the habit: when a loop tells you it improved itself, ask what it measured
-that on.
+seen. Of three pre-registered primary results, run 7's was inconclusive, run 8's held and
+run 9's was inconclusive. I would not generalise the numbers. I would generalise the habit:
+when a loop tells you it improved itself, ask what it measured that on.
 
 *Code, frozen configurations, the predictions as committed before the run, and every
 deviation: [github.com/RohanChavan0701/selection-curse](https://github.com/RohanChavan0701/selection-curse).*
