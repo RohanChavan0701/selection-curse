@@ -85,104 +85,63 @@ def zone(x, y, w, h, label, color) -> dict:
 
 
 def build() -> dict:
-    # title
-    text(40, 24, "selection-curse  /  architecture", 40)
-    text(42, 78, "How much of a self-improvement loop's reported gain is real, and can it learn to game its judge?",
-         19, "#495057")
+    ink, soft = "#1e1e1e", "#495057"
+    text(40, 24, "selection-curse: how it works", 40)
+    text(42, 80, "Does a self-improving AI loop really get better, or does it fool itself?", 21, soft)
 
-    # 1. inputs
-    zone(40, 160, 1180, 130, "1  frozen before every run", "#1971c2")
+    # 1. lock the plan
     blue, bluef = "#1971c2", "#e7f5ff"
-    data = box(820, 180, 380, 92, "FinQA tasks", "dev 883  /  train 6,251, SHA-256 pinned\nselection and final sets disjoint",
-               blue, bluef)
-    cfg = box(440, 180, 360, 92, "frozen_v*.yaml", "models, seeds, sampling, task counts,\nthe thresholds verdicts are computed from",
-              blue, bluef)
-    pred = box(60, 180, 360, 92, "PREDICTION_run*.md", "hypotheses committed before any data;\ndeviations logged after",
-               blue, bluef)
-
-    # findings sticky
-    st = _base("rectangle", 1280, 150, 580, 180, strokeColor="#f08c00", backgroundColor="#ffec99",
-               fillStyle="solid", roundness={"type": 3}, angle=0.015)
-    text(1300, 166, "what it found", 22, "#e67700")
-    text(1300, 202, "- the loop reports ~2x its real gain, even with true labels\n"
-                    "- judge noise multiplies the curse: 1.36x, formula said 1.37x\n"
-                    "- red team vs judge: run 8  -0.5 pts,  run 9  +2.3 (inconclusive)\n"
-                    "- a noisy judge can freeze a loop on a lucky first winner\n"
-                    "- 3 pre-registered primaries: inconclusive, held, inconclusive",
-         16, "#5c3d00")
+    plan = box(40, 230, 250, 150, "1  Lock the plan", "Write down what we\nexpect before any run.\nReport it either way.",
+               blue, bluef, title_size=22, body_size=17)
 
     # 2. the loop
-    zone(40, 360, 1180, 470, "", "#6741d9")
-    text(660, 330, "2  the loop (one round)", 22, "#6741d9")
-    edits = box(60, 390, 320, 200, "edit sources",
-                "hand catalog: 40 edits\n  (fin_edits.py, runs 6 to 7)\n\n32B proposer, qwen2.5:32b\n  (fin_propose.py, run9.py)\n  arms: red team / honest /\n        truth-picked / random",
-                "#f08c00", "#fff4e6")
-    harness = box(440, 390, 320, 200, "harness",
-                  "system prompt + tool guide\nrules block (<= 1,200 chars)\ntable format: rows | markdown\nmax_steps, verify_before_submit\n\none edit = new rules + <= 1 setting",
-                  "#6741d9", "#f3f0ff")
-    student = box(820, 390, 380, 150, "student agent",
-                  "qwen2.5:7b-instruct via Ollama\ntools: calc(arithmetic) -> submit(answer)\n(domains/finqa.py, student.py)",
-                  "#2f9e44", "#ebfbee")
-    graders = box(820, 570, 380, 240, "graders",
-                  "truth: programmatic answer match\n\nLLM judges, llama3.1:8b (proxies.py)\n  p1  sees the reference answer\n  p2  no reference, recomputes   <- selector\n  p3  verdict only (approves 88%)",
-                  "#e03131", "#fff5f5")
-    cache = box(440, 640, 320, 170, "episode + grade cache",
-                "ep_*.json, gr_*.json\nkeyed by hash of harness, tasks,\nrepeat, student, judge\n(bank.py, stage0.py)",
-                "#495057", "#f8f9fa")
-    select = box(60, 640, 320, 170, "selector",
-                 "best of k on selection tasks\nscored by truth OR judge\ntie keeps the incumbent\n(replay.py offline, run9.py live)",
-                 "#e67700", "#fff9db")
-    arrow(386, 490, 434, 490, start=edits, end=harness)
-    arrow(766, 465, 814, 465, start=harness, end=student)
-    arrow(1010, 546, 1010, 564, start=student, end=graders)
-    arrow(814, 725, 766, 725, start=graders, end=cache)
-    arrow(434, 725, 386, 725, start=cache, end=select)
-    arrow(220, 634, 220, 596, "incumbent + history (run 9)", "#e67700", start=select, end=edits,
-          label_dx=12, label_dy=-10)
+    zone(340, 170, 900, 440, "2  The self-improvement loop", "#6741d9")
+    propose = box(370, 200, 380, 160, "Propose a change",
+                  "An AI rewrites the agent's\ninstructions. Some are told\nto be correct, some to\nimpress the grader.",
+                  "#f08c00", "#fff4e6", title_size=22, body_size=17)
+    agent = box(830, 200, 380, 160, "Agent does the task",
+                "A small AI model answers\nquestions about company\nfinancial reports.",
+                "#2f9e44", "#ebfbee", title_size=22, body_size=17)
+    grade = box(830, 420, 380, 160, "Grade the answers",
+                "Either the true answer key,\nor another AI acting as\njudge (no answer key).",
+                "#e03131", "#fff5f5", title_size=22, body_size=17)
+    keep = box(370, 420, 380, 160, "Keep the best change",
+               "Highest score wins.\nThen go round again,\nbuilding on the winner.",
+               "#e67700", "#fff9db", title_size=22, body_size=17)
+    arrow(756, 280, 824, 280, start=propose, end=agent)
+    arrow(1020, 366, 1020, 414, start=agent, end=grade)
+    arrow(824, 500, 756, 500, start=grade, end=keep)
+    arrow(560, 414, 560, 366, start=keep, end=propose)
+    arrow(296, 305, 364, 290, start=plan, end=propose)
 
-    # inputs into the loop
-    arrow(1010, 278, 1010, 384, "", blue, start=data, end=student)
-    arrow(620, 278, 620, 384, "", blue, start=cfg, end=harness)
-
-    # 3. measurement
+    # 3 to 5. the check
     teal, tealf = "#0c8599", "#e6fcf5"
-    zone(1260, 420, 620, 410, "3  measurement", teal)
-    m1 = box(1280, 440, 580, 70, "re-score the winner on tasks it was not picked on",
-             "", teal, tealf, title_size=18)
-    m2 = box(1280, 524, 580, 84, "Goodhart split (goodhart.py)",
-             "reported = real gain + winner's curse + judge bias", teal, tealf, title_size=18)
-    m3 = box(1280, 622, 580, 84, "curse multiplier  ~  sqrt( r_pp / r_tt )",
-             "judge's residual variance over truth's: predicts 1.37, saw 1.36", teal, tealf, title_size=18)
-    m4 = box(1280, 720, 580, 92, "bootstrap CIs -> verdicts vs frozen thresholds",
-             "run7.py, run8.py, run9.py; then post hoc and offline replays\n(run9_posthoc.py, replay9.py), always labelled",
-             teal, tealf, title_size=18)
-    arrow(1206, 690, 1274, 480, "", teal, start=graders, end=m1)
-    for a_, b_ in ((m1, m2), (m2, m3), (m3, m4)):
-        arrow(1570, a_["y"] + a_["height"] + 2, 1570, b_["y"] - 2, start=a_, end=b_)
+    check = box(1310, 200, 340, 120, "3  Test the winner again",
+                "on new questions it\nnever saw before", teal, tealf, title_size=22, body_size=17)
+    compare = box(1310, 360, 340, 120, "4  Compare",
+                  "what the loop claimed\nvs what is actually real", teal, tealf, title_size=22, body_size=17)
+    publish = box(1310, 520, 340, 120, "5  Publish everything",
+                  "including the results\nthat did not work out", blue, bluef, title_size=22, body_size=17)
+    arrow(1216, 470, 1304, 280, "", teal, start=grade, end=check)
+    arrow(1480, 326, 1480, 354, start=check, end=compare)
+    arrow(1480, 486, 1480, 514, start=compare, end=publish)
 
-    # 4. compute
-    gray, grayf = "#343a40", "#f1f3f5"
-    zone(40, 900, 1180, 260, "4  compute (one GPU at a time, author-approved, capped)", gray)
-    laptop = box(60, 930, 400, 210, "laptop",
-                 "cloud/lambda_api.py\n  launch, cap, status, terminate\n  refuses ids it did not launch\ncloud/ledger.jsonl  (every launch,\n  check, terminate, committed)\ncloud/wait_job.sh  (SSH retry)",
-                 gray, grayf)
-    gpu = box(560, 930, 640, 210, "GPU instance  (A10 / H100 / A100, tmux)",
-              "Ollama :11435  student + judge, 8 request slots\nOllama :11436  32B proposer, loaded once per round\ncloud/run9_remote.sh: baseline -> (propose -> build) x5 -> final\ncloud/watchdog.sh: self-terminate at the $ cap, even if the\n  laptop sleeps.  API key only in env / mode-600 header",
-              gray, grayf)
-    arrow(466, 990, 554, 990, "launch", gray, start=laptop, end=gpu, label_dx=-26, label_dy=-26)
-    arrow(554, 1080, 466, 1080, "scp runs_v*/", gray, start=gpu, end=laptop, label_dx=-40, label_dy=18)
-    arrow(880, 924, 880, 836, "runs the loop", gray, dashed=True, start=gpu, label_dx=12, label_dy=-10)
+    # findings
+    _base("rectangle", 40, 680, 1200, 195, strokeColor="#f08c00", backgroundColor="#ffec99",
+          fillStyle="solid", roundness={"type": 3}, angle=-0.008)
+    text(66, 700, "What we found", 26, "#e67700")
+    text(66, 746, "- The loop over-claims. Even with a perfect answer key, its reported\n"
+                  "  improvement is about double the real one. Pure luck of picking the best.\n"
+                  "- An AI judge makes that a little worse, by a predictable amount.\n"
+                  "- An AI told to fool the judge did not manage it in our tests.\n"
+                  "- A noisy judge can get the loop stuck on a lucky early winner.",
+         19, "#5c3d00")
 
-    # 5. outputs
-    zone(1260, 900, 620, 260, "5  outputs (public repo)", blue)
-    out = box(1280, 930, 580, 210, "what gets committed",
-              "runs_v*/  summaries, proposals, logs\n  (per-task caches stay local)\nREADME tables + figures/*.svg\nPREDICTION_run*.md  Outcome sections\ndocs/BLOG_DRAFT.md",
-              blue, bluef)
-    arrow(1570, 818, 1570, 924, "", teal, start=m4, end=out)
-
-    # footer
-    text(40, 1186, "7B student, 8B judge, 32B proposer, FinQA (public; may be in pretraining).  "
-                   "Runs 1 to 5: text-to-SQL loop on Spider/BIRD (harness/, scripts/).", 15, "#868e96")
+    # compute, small
+    gray, grayf = "#495057", "#f1f3f5"
+    box(1310, 680, 340, 195, "Where it runs",
+        "One rented GPU at a time.\nShuts itself down at a\nfixed budget, even if\nthe laptop sleeps.",
+        gray, grayf, title_size=22, body_size=17)
 
     return {"type": "excalidraw", "version": 2, "source": "https://excalidraw.com", "elements": ELS,
             "appState": {"viewBackgroundColor": "#ffffff", "gridSize": None}, "files": {}}
