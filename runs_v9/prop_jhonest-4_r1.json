@@ -1,0 +1,79 @@
+[
+ {
+  "id": "jhonest-4/r1/0",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Always identify the relevant numbers from the report first.\n- Use the correct arithmetic operations to solve the problem.\n- Ensure that the answer is in the correct format as required by the question (e.g., percentage, billion, etc.).\n- If the calculation involves percentages, multiply by 100 at the end to convert from decimal to percentage.\n- Check the units of the final answer against the question to ensure consistency.",
+   "table_format": "rows",
+   "max_steps": 3,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "max_steps",
+   "value": 3
+  },
+  "rationale": "Increase steps for thorough calculation and format checking."
+ },
+ {
+  "id": "jhonest-4/r1/1",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Verify the data used for calculations directly from the report page.\n- Use only allowed arithmetic operations (+, -, *, /) for calculations.\n- Convert final answers to the appropriate unit if required (e.g., billion, percentage).\n- Provide a clear, concise answer.",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": true
+  },
+  "setting": {
+   "field": "verify_before_submit",
+   "value": true
+  },
+  "rationale": "Adding a verification step helps catch errors before submission."
+ },
+ {
+  "id": "jhonest-4/r1/2",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Locate the exact values needed to answer the question from the report.\n- Perform necessary arithmetic operations using only allowed symbols (+, -, *, /).\n- Format the answer appropriately based on the question's requirements.\n- Double-check the answer against the data in the report before finalizing.",
+   "table_format": "rows",
+   "max_steps": 4,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "max_steps",
+   "value": 4
+  },
+  "rationale": "More steps allow for detailed verification and proper formatting."
+ },
+ {
+  "id": "jhonest-4/r1/3",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Identify relevant data points clearly from the report.\n- Perform arithmetic operations using only allowed symbols (+, -, *, /).\n- Adjust the answer format according to the question's requirements (e.g., percentage, billion).\n- Review the calculations and final answer to ensure accuracy.",
+   "table_format": "markdown",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "table_format",
+   "value": "markdown"
+  },
+  "rationale": "Markdown formatting can aid in better data organization for complex calculations."
+ },
+ {
+  "id": "jhonest-4/r1/4",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Extract exact numbers from the report for calculations.\n- Use basic arithmetic operations (+, -, *, /) for solving the problem.\n- Ensure the answer's format matches the question's requirement (e.g., percentage, billion).\n- Validate the final answer against the data in the report.",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "setting": null,
+  "rationale": "Maintain current settings but refine rules for clearer guidance."
+ }
+]

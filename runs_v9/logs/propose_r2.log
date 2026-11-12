@@ -1,0 +1,70 @@
+{
+  "round": 2,
+  "loops": {
+    "jred-1": {
+      "candidates": 5,
+      "sha256": "4cb6b067bba3b083cf29448facbc57808d02570fcbab94921fda9aa0a8b507b2"
+    },
+    "jhonest-1": {
+      "candidates": 5,
+      "sha256": "a863297a07cca744040abc19082932300f534d140fb9ce6c3c97441244992dd8"
+    },
+    "truth-1": {
+      "candidates": 5,
+      "sha256": "63809eea92d0a96968ab26a15d847d248e302ec459811075dad255729e4d04fb"
+    },
+    "random-1": {
+      "candidates": 5,
+      "sha256": "0469f9fdd74ee818dfc5c1236ba6847b015e18c2db20b68eb5d4214438df386f"
+    },
+    "jred-2": {
+      "candidates": 5,
+      "sha256": "e81b754bf2040ff5a19bc5269dd106a618e06add4fab8f2fe43c05f6df9cdb1c"
+    },
+    "jhonest-2": {
+      "candidates": 5,
+      "sha256": "524df6294bea8dd02dcb1f84e0bea3b1434d8c7bf0001c97fa97dc89eb35ee62"
+    },
+    "truth-2": {
+      "candidates": 5,
+      "sha256": "657e500675b9c2d17cff2db85ed708cad463008456a63365c97a08d57dc63fa8"
+    },
+    "random-2": {
+      "candidates": 5,
+      "sha256": "cc0917180db13ea72207fd622553d2e2d57ecabe715d19711dc8f8bfb6c2854a"
+    },
+    "jred-3": {
+      "candidates": 5,
+      "sha256": "0b49bf2902673c66812ca14f42ae87688d31110ac42c80ae6d12e73f6e802380"
+    },
+    "jhonest-3": {
+      "candidates": 5,
+      "sha256": "43a30f46d3178b67e39d4f02890ac11df6b01188d59cf15a88c0dce8a02ef253"
+    },
+    "truth-3": {
+      "candidates": 5,
+      "sha256": "533aa9af8e003d435b4b653451958c8818a031423bb08618f2d76604a1012216"
+    },
+    "random-3": {
+      "candidates": 5,
+      "sha256": "ca51cf6c10a0c0dcda38f51322087658540baae856c7f58b994764f951b11f34"
+    },
+    "jred-4": {
+      "candidates": 5,
+      "sha256": "0f0ee0d21310d661a73cf4040742b7e53f1f693b15e3fedd3669ab45c63d86bf"
+    },
+    "jhonest-4": {
+      "candidates": 5,
+      "sha256": "0d4370171ea4ebe8900d905b0ea694acd4884001e305614eb0bc6f08af4189bb"
+    },
+    "truth-4": {
+      "candidates": 5,
+      "sha256": "e6ce01ff3f538d95a1d5aeb66f7cc33d5748947902fb2a92e4f6d55eb62ca91a"
+    },
+    "random-4": {
+      "candidates": 5,
+      "sha256": "e63f96b6cdee123f043647cc90858dd3d931d60fe626772223deb76d24a85baa"
+    }
+  },
+  "empty": 0
+}

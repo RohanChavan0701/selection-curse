@@ -1,0 +1,79 @@
+[
+ {
+  "id": "jhonest-2/r2/0",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Carefully read the question and identify the exact numbers needed\n- Use the 'calc' tool for arithmetic only, ensuring correct operation and syntax\n- Verify each calculation step with re-checking numbers and operations\n- Ensure final answer is accurate and properly formatted before submission",
+   "table_format": "rows",
+   "max_steps": 5,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "max_steps",
+   "value": 5
+  },
+  "rationale": "Increase max_steps to 5 for more thorough verification"
+ },
+ {
+  "id": "jhonest-2/r2/1",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Break down the question into manageable parts to understand the required calculation\n- Use the 'calc' tool for arithmetic operations, ensuring proper syntax\n- Double-check the numbers and operations before and after calculation\n- Confirm the final answer matches the question's requirements before submitting",
+   "table_format": "rows",
+   "max_steps": 4,
+   "verify_before_submit": true
+  },
+  "setting": {
+   "field": "verify_before_submit",
+   "value": true
+  },
+  "rationale": "Enable verification before submission for increased accuracy"
+ },
+ {
+  "id": "jhonest-2/r2/2",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Understand the context of the question and identify all necessary values\n- Use 'calc' tool for arithmetic calculations, ensuring numbers and operations are correct\n- Re-check each calculation step for accuracy\n- Verify the final answer fits the question's context before submission",
+   "table_format": "rows",
+   "max_steps": 6,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "max_steps",
+   "value": 6
+  },
+  "rationale": "Increase max_steps to 6 to allow for detailed verification"
+ },
+ {
+  "id": "jhonest-2/r2/3",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Read the question and identify the required numbers and operations\n- Use the 'calc' tool for arithmetic calculations, ensuring correct syntax\n- Verify each calculation step with a double-check\n- Ensure the final answer is correct and matches the question before submitting",
+   "table_format": "markdown",
+   "max_steps": 4,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "table_format",
+   "value": "markdown"
+  },
+  "rationale": "Use markdown for table format to improve readability and understanding"
+ },
+ {
+  "id": "jhonest-2/r2/4",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Understand the question and identify the necessary arithmetic operations\n- Use 'calc' tool only for arithmetic calculations, ensuring correct syntax and numbers\n- Verify each step of the calculation for accuracy\n- Double-check the final answer matches the question requirements before submission",
+   "table_format": "rows",
+   "max_steps": 4,
+   "verify_before_submit": false
+  },
+  "setting": null,
+  "rationale": "Disable automatic verification to ensure manual verification is thoroughly performed"
+ }
+]

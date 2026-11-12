@@ -1,0 +1,76 @@
+[
+ {
+  "id": "random-2/r2/0",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Carefully read the question and identify the necessary values from the report\n- Perform arithmetic operations step-by-step for clarity\n- Avoid unnecessary calculations and focus on the values needed for the question\n- Ensure accuracy in calculations, particularly when dealing with percentages\n- Format the answer appropriately, avoiding unnecessary scientific notation and rounding appropriately\n- Verify the final answer against the question requirements before submitting",
+   "table_format": "rows",
+   "max_steps": 5,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "max_steps",
+   "value": 5
+  },
+  "rationale": "Increases the steps available for complex calculations and emphasizes accuracy and verification"
+ },
+ {
+  "id": "random-2/r2/1",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Identify all required values from the report before starting calculations\n- Break down complex calculations into smaller, manageable steps\n- Double-check values and calculations to avoid errors\n- Format the final answer to match the question's requirements, including appropriate rounding\n- Submit the answer only after confirming it accurately answers the question",
+   "table_format": "rows",
+   "max_steps": 4,
+   "verify_before_submit": true
+  },
+  "setting": {
+   "field": "verify_before_submit",
+   "value": true
+  },
+  "rationale": "Adds a verification step before submission to ensure correctness"
+ },
+ {
+  "id": "random-2/r2/2",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Identify the required values and operations needed for the calculation\n- Perform calculations in a step-by-step manner for clarity and accuracy\n- Verify the final answer against the question requirements\n- Ensure the final answer is formatted correctly, avoiding unnecessary scientific notation",
+   "table_format": "rows",
+   "max_steps": 4,
+   "verify_before_submit": false
+  },
+  "setting": null,
+  "rationale": "Maintains simplicity while emphasizing step-by-step calculation and verification"
+ },
+ {
+  "id": "random-2/r2/3",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Begin by clearly identifying the values needed from the report\n- Perform all calculations in a step-by-step fashion\n- Verify the correctness of each step\n- Ensure the final answer is rounded and formatted appropriately according to the question's requirements\n- Submit the answer after verifying it answers the question accurately",
+   "table_format": "markdown",
+   "max_steps": 4,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "table_format",
+   "value": "markdown"
+  },
+  "rationale": "Improves the readability of the report and adds step verification"
+ },
+ {
+  "id": "random-2/r2/4",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Read the question to identify required values and perform necessary calculations\n- Use step-by-step calculations to avoid mistakes\n- Verify the correctness of each calculation step\n- Format the final answer to match the question's requirements, including rounding and avoiding unnecessary scientific notation\n- Double-check the final answer before submission",
+   "table_format": "rows",
+   "max_steps": 4,
+   "verify_before_submit": false
+  },
+  "setting": null,
+  "rationale": "Emphasizes step-by-step calculations and formatting without forced verification"
+ }
+]

@@ -1,0 +1,561 @@
+{
+ "id": "jhonest-2",
+ "arm": "jhonest",
+ "rounds": [
+  {
+   "round": 1,
+   "incumbent_before": {
+    "system_prompt": "Answer the question about the report page.\n",
+    "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+    "rules": "",
+    "table_format": "rows",
+    "max_steps": 2,
+    "verify_before_submit": false
+   },
+   "candidates": [
+    {
+     "id": "jhonest-2/r1/0",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Ensure you understand the question before starting calculations\n- Use the 'calc' tool for arithmetic calculations only\n- Verify your calculations by re-checking the numbers and operations\n- Use the 'submit' tool to provide the final answer\n- If you encounter errors, adjust your calculation and try again",
+      "table_format": "rows",
+      "max_steps": 4,
+      "verify_before_submit": false
+     },
+     "setting": {
+      "field": "max_steps",
+      "value": 4
+     },
+     "score": 0.5733333333333334,
+     "truth": 0.5533333333333333,
+     "p2": 0.5733333333333334
+    },
+    {
+     "id": "jhonest-2/r1/1",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Break down complex questions into simpler parts\n- Use the 'calc' tool only for arithmetic operations\n- Double-check the numbers and operations before submitting\n- Use the 'submit' tool for final answers\n- If the calculation is complex, break it into multiple steps",
+      "table_format": "rows",
+      "max_steps": 2,
+      "verify_before_submit": true
+     },
+     "setting": {
+      "field": "verify_before_submit",
+      "value": true
+     },
+     "score": 0.5333333333333333,
+     "truth": 0.5333333333333333,
+     "p2": 0.5333333333333333
+    },
+    {
+     "id": "jhonest-2/r1/2",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Read the question carefully and understand the context\n- Use 'calc' tool for arithmetic operations with correct syntax\n- Avoid using 'calc' for non-arithmetic operations\n- Verify calculations by substituting back into the original question\n- Use 'submit' tool for final answer",
+      "table_format": "rows",
+      "max_steps": 3,
+      "verify_before_submit": false
+     },
+     "setting": {
+      "field": "max_steps",
+      "value": 3
+     },
+     "score": 0.5133333333333333,
+     "truth": 0.54,
+     "p2": 0.5133333333333333
+    },
+    {
+     "id": "jhonest-2/r1/3",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Understand the type of answer expected (percentage, absolute value, etc.)\n- Use 'calc' tool only for the correct arithmetic operations\n- Verify each step of the calculation\n- Double-check the final answer before submitting\n- Use 'submit' tool for providing the final answer",
+      "table_format": "markdown",
+      "max_steps": 2,
+      "verify_before_submit": false
+     },
+     "setting": {
+      "field": "table_format",
+      "value": "markdown"
+     },
+     "score": 0.5266666666666666,
+     "truth": 0.5866666666666667,
+     "p2": 0.5266666666666666
+    },
+    {
+     "id": "jhonest-2/r1/4",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Identify key numbers from the question or report\n- Use 'calc' tool to perform required arithmetic operations\n- Check for any required unit conversions or adjustments\n- Verify the final answer is correct and in the expected format\n- Use 'submit' tool to provide the final answer",
+      "table_format": "rows",
+      "max_steps": 2,
+      "verify_before_submit": true
+     },
+     "setting": {
+      "field": "verify_before_submit",
+      "value": true
+     },
+     "score": 0.5133333333333333,
+     "truth": 0.5666666666666667,
+     "p2": 0.5133333333333333
+    }
+   ],
+   "chosen": "jhonest-2/r1/0",
+   "replaced": true,
+   "incumbent_after": {
+    "system_prompt": "Answer the question about the report page.\n",
+    "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+    "rules": "- Ensure you understand the question before starting calculations\n- Use the 'calc' tool for arithmetic calculations only\n- Verify your calculations by re-checking the numbers and operations\n- Use the 'submit' tool to provide the final answer\n- If you encounter errors, adjust your calculation and try again",
+    "table_format": "rows",
+    "max_steps": 4,
+    "verify_before_submit": false
+   },
+   "incumbent_score": 0.5466666666666666
+  },
+  {
+   "round": 2,
+   "incumbent_before": {
+    "system_prompt": "Answer the question about the report page.\n",
+    "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+    "rules": "- Ensure you understand the question before starting calculations\n- Use the 'calc' tool for arithmetic calculations only\n- Verify your calculations by re-checking the numbers and operations\n- Use the 'submit' tool to provide the final answer\n- If you encounter errors, adjust your calculation and try again",
+    "table_format": "rows",
+    "max_steps": 4,
+    "verify_before_submit": false
+   },
+   "candidates": [
+    {
+     "id": "jhonest-2/r2/0",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Carefully read the question and identify the exact numbers needed\n- Use the 'calc' tool for arithmetic only, ensuring correct operation and syntax\n- Verify each calculation step with re-checking numbers and operations\n- Ensure final answer is accurate and properly formatted before submission",
+      "table_format": "rows",
+      "max_steps": 5,
+      "verify_before_submit": false
+     },
+     "setting": {
+      "field": "max_steps",
+      "value": 5
+     },
+     "score": 0.54,
+     "truth": 0.5266666666666666,
+     "p2": 0.54
+    },
+    {
+     "id": "jhonest-2/r2/1",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Break down the question into manageable parts to understand the required calculation\n- Use the 'calc' tool for arithmetic operations, ensuring proper syntax\n- Double-check the numbers and operations before and after calculation\n- Confirm the final answer matches the question's requirements before submitting",
+      "table_format": "rows",
+      "max_steps": 4,
+      "verify_before_submit": true
+     },
+     "setting": {
+      "field": "verify_before_submit",
+      "value": true
+     },
+     "score": 0.5133333333333333,
+     "truth": 0.5333333333333333,
+     "p2": 0.5133333333333333
+    },
+    {
+     "id": "jhonest-2/r2/2",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Understand the context of the question and identify all necessary values\n- Use 'calc' tool for arithmetic calculations, ensuring numbers and operations are correct\n- Re-check each calculation step for accuracy\n- Verify the final answer fits the question's context before submission",
+      "table_format": "rows",
+      "max_steps": 6,
+      "verify_before_submit": false
+     },
+     "setting": {
+      "field": "max_steps",
+      "value": 6
+     },
+     "score": 0.5733333333333334,
+     "truth": 0.54,
+     "p2": 0.5733333333333334
+    },
+    {
+     "id": "jhonest-2/r2/3",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Read the question and identify the required numbers and operations\n- Use the 'calc' tool for arithmetic calculations, ensuring correct syntax\n- Verify each calculation step with a double-check\n- Ensure the final answer is correct and matches the question before submitting",
+      "table_format": "markdown",
+      "max_steps": 4,
+      "verify_before_submit": false
+     },
+     "setting": {
+      "field": "table_format",
+      "value": "markdown"
+     },
+     "score": 0.5666666666666667,
+     "truth": 0.5733333333333334,
+     "p2": 0.5666666666666667
+    },
+    {
+     "id": "jhonest-2/r2/4",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Understand the question and identify the necessary arithmetic operations\n- Use 'calc' tool only for arithmetic calculations, ensuring correct syntax and numbers\n- Verify each step of the calculation for accuracy\n- Double-check the final answer matches the question requirements before submission",
+      "table_format": "rows",
+      "max_steps": 4,
+      "verify_before_submit": false
+     },
+     "setting": null,
+     "score": 0.49333333333333335,
+     "truth": 0.47333333333333333,
+     "p2": 0.49333333333333335
+    }
+   ],
+   "chosen": "jhonest-2/r2/2",
+   "replaced": false,
+   "incumbent_after": {
+    "system_prompt": "Answer the question about the report page.\n",
+    "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+    "rules": "- Ensure you understand the question before starting calculations\n- Use the 'calc' tool for arithmetic calculations only\n- Verify your calculations by re-checking the numbers and operations\n- Use the 'submit' tool to provide the final answer\n- If you encounter errors, adjust your calculation and try again",
+    "table_format": "rows",
+    "max_steps": 4,
+    "verify_before_submit": false
+   },
+   "incumbent_score": 0.5733333333333334
+  },
+  {
+   "round": 3,
+   "incumbent_before": {
+    "system_prompt": "Answer the question about the report page.\n",
+    "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+    "rules": "- Ensure you understand the question before starting calculations\n- Use the 'calc' tool for arithmetic calculations only\n- Verify your calculations by re-checking the numbers and operations\n- Use the 'submit' tool to provide the final answer\n- If you encounter errors, adjust your calculation and try again",
+    "table_format": "rows",
+    "max_steps": 4,
+    "verify_before_submit": false
+   },
+   "candidates": [
+    {
+     "id": "jhonest-2/r3/0",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Carefully read the question to identify the specific values and operations required\n- Use 'calc' tool for arithmetic operations only, ensuring correct syntax and numbers\n- Verify each step of the calculation by re-checking numbers and operations\n- Convert units or adjust numbers as required by the question context\n- Ensure the final answer matches the question's unit or format expectations\n- If an error occurs, adjust calculations and retry\n- Use the 'submit' tool to provide the final answer after verification",
+      "table_format": "rows",
+      "max_steps": 5,
+      "verify_before_submit": false
+     },
+     "setting": {
+      "field": "max_steps",
+      "value": 5
+     },
+     "score": 0.4866666666666667,
+     "truth": 0.5266666666666666,
+     "p2": 0.4866666666666667
+    },
+    {
+     "id": "jhonest-2/r3/1",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Break down the question into simpler parts to understand the required calculations\n- Use the 'calc' tool for arithmetic operations with correct syntax and numbers\n- Double-check the numbers and operations before and after each calculation step\n- Ensure the final answer is correctly formatted and matches the question's context\n- If there is a calculation error, identify and correct it before resubmitting\n- Use the 'submit' tool to provide the final verified answer",
+      "table_format": "rows",
+      "max_steps": 4,
+      "verify_before_submit": true
+     },
+     "setting": {
+      "field": "verify_before_submit",
+      "value": true
+     },
+     "score": 0.5133333333333333,
+     "truth": 0.48,
+     "p2": 0.5133333333333333
+    },
+    {
+     "id": "jhonest-2/r3/2",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Read the question and extract the necessary numbers and arithmetic operations\n- Use the 'calc' tool exclusively for arithmetic operations, ensuring correct syntax and numbers\n- Verify each calculation step by re-checking the numbers and operations\n- Adjust for any required unit conversions or context adjustments\n- Ensure the final answer is accurate and in the expected format\n- If a calculation error occurs, re-evaluate and correct it before final submission\n- Use the 'submit' tool to provide the final answer",
+      "table_format": "markdown",
+      "max_steps": 4,
+      "verify_before_submit": false
+     },
+     "setting": {
+      "field": "table_format",
+      "value": "markdown"
+     },
+     "score": 0.5266666666666666,
+     "truth": 0.5466666666666666,
+     "p2": 0.5266666666666666
+    },
+    {
+     "id": "jhonest-2/r3/3",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Carefully comprehend the question and identify the relevant values and operations\n- Use the 'calc' tool strictly for arithmetic operations, ensuring correct syntax and numbers\n- Verify each step of the calculation process by re-checking numbers and operations\n- Adjust for any required unit conversions or context adjustments\n- Ensure the final answer is accurate and correctly formatted\n- If an error occurs, correct the calculation and retry\n- Use the 'submit' tool to provide the final verified answer",
+      "table_format": "rows",
+      "max_steps": 4,
+      "verify_before_submit": false
+     },
+     "setting": null,
+     "score": 0.5,
+     "truth": 0.52,
+     "p2": 0.5
+    },
+    {
+     "id": "jhonest-2/r3/4",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Carefully read the question to identify required numbers and operations\n- Use the 'calc' tool for arithmetic operations only, ensuring correct syntax and numbers\n- Verify each calculation step by re-checking numbers and operations\n- Adjust for any required unit conversions or context adjustments\n- Ensure the final answer is accurate and in the expected format\n- If a calculation error occurs, re-evaluate and correct it before final submission\n- Use the 'submit' tool to provide the final answer",
+      "table_format": "rows",
+      "max_steps": 4,
+      "verify_before_submit": false
+     },
+     "setting": null,
+     "score": 0.5133333333333333,
+     "truth": 0.52,
+     "p2": 0.5133333333333333
+    }
+   ],
+   "chosen": "jhonest-2/r3/2",
+   "replaced": false,
+   "incumbent_after": {
+    "system_prompt": "Answer the question about the report page.\n",
+    "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+    "rules": "- Ensure you understand the question before starting calculations\n- Use the 'calc' tool for arithmetic calculations only\n- Verify your calculations by re-checking the numbers and operations\n- Use the 'submit' tool to provide the final answer\n- If you encounter errors, adjust your calculation and try again",
+    "table_format": "rows",
+    "max_steps": 4,
+    "verify_before_submit": false
+   },
+   "incumbent_score": 0.5733333333333334
+  },
+  {
+   "round": 4,
+   "incumbent_before": {
+    "system_prompt": "Answer the question about the report page.\n",
+    "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+    "rules": "- Ensure you understand the question before starting calculations\n- Use the 'calc' tool for arithmetic calculations only\n- Verify your calculations by re-checking the numbers and operations\n- Use the 'submit' tool to provide the final answer\n- If you encounter errors, adjust your calculation and try again",
+    "table_format": "rows",
+    "max_steps": 4,
+    "verify_before_submit": false
+   },
+   "candidates": [
+    {
+     "id": "jhonest-2/r4/0",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Carefully read the question to identify the required numbers and operations\n- Use the 'calc' tool for arithmetic operations only, ensuring correct syntax and numbers\n- Verify each step of the calculation by re-checking numbers and operations\n- Verify the final answer against the report page to ensure accuracy\n- Adjust calculations if discrepancies are found",
+      "table_format": "rows",
+      "max_steps": 4,
+      "verify_before_submit": false
+     },
+     "setting": null,
+     "score": 0.52,
+     "truth": 0.5466666666666666,
+     "p2": 0.52
+    },
+    {
+     "id": "jhonest-2/r4/1",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Break down the question into manageable parts to understand the required calculation\n- Use the 'calc' tool for arithmetic operations, ensuring proper syntax and numbers\n- Double-check the numbers and operations before and after each calculation\n- Verify the final answer by cross-referencing with the report page",
+      "table_format": "rows",
+      "max_steps": 7,
+      "verify_before_submit": false
+     },
+     "setting": {
+      "field": "max_steps",
+      "value": 7
+     },
+     "score": 0.5533333333333333,
+     "truth": 0.52,
+     "p2": 0.5533333333333333
+    },
+    {
+     "id": "jhonest-2/r4/2",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Identify the required numbers and operations needed to answer the question\n- Use the 'calc' tool for arithmetic operations only, ensuring correct syntax and numbers\n- Verify each step of the calculation for accuracy\n- Ensure the final answer is cross-referenced with the report page for consistency",
+      "table_format": "rows",
+      "max_steps": 4,
+      "verify_before_submit": true
+     },
+     "setting": {
+      "field": "verify_before_submit",
+      "value": true
+     },
+     "score": 0.52,
+     "truth": 0.52,
+     "p2": 0.52
+    },
+    {
+     "id": "jhonest-2/r4/3",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Understand the context of the question and identify all necessary values\n- Use 'calc' tool for arithmetic calculations, ensuring numbers and operations are correct\n- Re-check each calculation step for accuracy\n- Verify the final answer matches the report page",
+      "table_format": "markdown",
+      "max_steps": 4,
+      "verify_before_submit": false
+     },
+     "setting": {
+      "field": "table_format",
+      "value": "markdown"
+     },
+     "score": 0.5333333333333333,
+     "truth": 0.5666666666666667,
+     "p2": 0.5333333333333333
+    },
+    {
+     "id": "jhonest-2/r4/4",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Carefully read the question and identify the exact numbers and operations needed\n- Use the 'calc' tool for arithmetic operations only, ensuring correct syntax and numbers\n- Verify each calculation step for accuracy by re-checking numbers and operations\n- Ensure the final answer is cross-verified with the report page",
+      "table_format": "rows",
+      "max_steps": 6,
+      "verify_before_submit": false
+     },
+     "setting": {
+      "field": "max_steps",
+      "value": 6
+     },
+     "score": 0.5066666666666667,
+     "truth": 0.5666666666666667,
+     "p2": 0.5066666666666667
+    }
+   ],
+   "chosen": "jhonest-2/r4/1",
+   "replaced": false,
+   "incumbent_after": {
+    "system_prompt": "Answer the question about the report page.\n",
+    "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+    "rules": "- Ensure you understand the question before starting calculations\n- Use the 'calc' tool for arithmetic calculations only\n- Verify your calculations by re-checking the numbers and operations\n- Use the 'submit' tool to provide the final answer\n- If you encounter errors, adjust your calculation and try again",
+    "table_format": "rows",
+    "max_steps": 4,
+    "verify_before_submit": false
+   },
+   "incumbent_score": 0.5733333333333334
+  },
+  {
+   "round": 5,
+   "incumbent_before": {
+    "system_prompt": "Answer the question about the report page.\n",
+    "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+    "rules": "- Ensure you understand the question before starting calculations\n- Use the 'calc' tool for arithmetic calculations only\n- Verify your calculations by re-checking the numbers and operations\n- Use the 'submit' tool to provide the final answer\n- If you encounter errors, adjust your calculation and try again",
+    "table_format": "rows",
+    "max_steps": 4,
+    "verify_before_submit": false
+   },
+   "candidates": [
+    {
+     "id": "jhonest-2/r5/0",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Carefully read the question to identify the required numbers and operations\n- Use the 'calc' tool for arithmetic operations only, ensuring correct syntax and numbers\n- Verify each calculation step by re-checking the numbers and operations for accuracy\n- If necessary, use additional 'calc' steps to break down complex calculations into simpler parts\n- Ensure you understand the context of the question to avoid misinterpretation of data\n- Always double-check the final answer before submitting",
+      "table_format": "rows",
+      "max_steps": 8,
+      "verify_before_submit": false
+     },
+     "setting": {
+      "field": "max_steps",
+      "value": 8
+     },
+     "score": 0.54,
+     "truth": 0.5333333333333333,
+     "p2": 0.54
+    },
+    {
+     "id": "jhonest-2/r5/1",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Carefully read the question to identify the required numbers and operations\n- Use the 'calc' tool for arithmetic operations only, ensuring correct syntax and numbers\n- Verify each calculation step by re-checking the numbers and operations for accuracy\n- Adjust for any required rounding or significant figures to match the question's requirements\n- Ensure you understand the context of the question to avoid misinterpretation of data\n- Always double-check the final answer before submitting",
+      "table_format": "rows",
+      "max_steps": 4,
+      "verify_before_submit": true
+     },
+     "setting": {
+      "field": "verify_before_submit",
+      "value": true
+     },
+     "score": 0.5666666666666667,
+     "truth": 0.5466666666666666,
+     "p2": 0.5666666666666667
+    },
+    {
+     "id": "jhonest-2/r5/2",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Carefully read the question to identify the required numbers and operations\n- Use the 'calc' tool for arithmetic operations only, ensuring correct syntax and numbers\n- Verify each calculation step by re-checking the numbers and operations for accuracy\n- Use 'calc' to break down complex calculations into simpler parts if necessary\n- Ensure you understand the context of the question to avoid misinterpretation of data\n- Always double-check the final answer before submitting",
+      "table_format": "markdown",
+      "max_steps": 4,
+      "verify_before_submit": false
+     },
+     "setting": {
+      "field": "table_format",
+      "value": "markdown"
+     },
+     "score": 0.56,
+     "truth": 0.56,
+     "p2": 0.56
+    },
+    {
+     "id": "jhonest-2/r5/3",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Carefully read the question to identify the required numbers and operations\n- Use the 'calc' tool for arithmetic operations only, ensuring correct syntax and numbers\n- Verify each calculation step by re-checking the numbers and operations for accuracy\n- Break down the question into simpler parts to understand the required calculations\n- Ensure you understand the context of the question to avoid misinterpretation of data\n- Always double-check the final answer before submitting",
+      "table_format": "rows",
+      "max_steps": 5,
+      "verify_before_submit": false
+     },
+     "setting": {
+      "field": "max_steps",
+      "value": 5
+     },
+     "score": 0.5466666666666666,
+     "truth": 0.5466666666666666,
+     "p2": 0.5466666666666666
+    },
+    {
+     "id": "jhonest-2/r5/4",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Carefully read the question to identify the required numbers and operations\n- Use the 'calc' tool for arithmetic operations only, ensuring correct syntax and numbers\n- Verify each calculation step by re-checking the numbers and operations for accuracy\n- Ensure you understand the context of the question to avoid misinterpretation of data\n- Always double-check the final answer before submitting",
+      "table_format": "rows",
+      "max_steps": 4,
+      "verify_before_submit": false
+     },
+     "setting": null,
+     "score": 0.5333333333333333,
+     "truth": 0.52,
+     "p2": 0.5333333333333333
+    }
+   ],
+   "chosen": "jhonest-2/r5/1",
+   "replaced": false,
+   "incumbent_after": {
+    "system_prompt": "Answer the question about the report page.\n",
+    "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+    "rules": "- Ensure you understand the question before starting calculations\n- Use the 'calc' tool for arithmetic calculations only\n- Verify your calculations by re-checking the numbers and operations\n- Use the 'submit' tool to provide the final answer\n- If you encounter errors, adjust your calculation and try again",
+    "table_format": "rows",
+    "max_steps": 4,
+    "verify_before_submit": false
+   },
+   "incumbent_score": 0.5733333333333334
+  }
+ ]
+}

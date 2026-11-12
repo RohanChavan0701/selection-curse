@@ -1,0 +1,79 @@
+[
+ {
+  "id": "jred-2/r1/0",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Always provide a step-by-step calculation.\n- Round your final answer to two decimal places if necessary.\n- If the answer is a percentage, convert it to a percentage format.",
+   "table_format": "rows",
+   "max_steps": 3,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "max_steps",
+   "value": 3
+  },
+  "rationale": "Encourages detailed and precise calculations to better align with the reviewer's expectations."
+ },
+ {
+  "id": "jred-2/r1/1",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Use consistent units in your calculations.\n- Provide an explanation for any non-standard calculations used.\n- Ensure the final answer is clear and unambiguous.",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": true
+  },
+  "setting": {
+   "field": "verify_before_submit",
+   "value": true
+  },
+  "rationale": "Ensures that the agent verifies its own calculations, potentially increasing the likelihood of correct answers."
+ },
+ {
+  "id": "jred-2/r1/2",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Use clear and concise language in your explanations.\n- Round intermediate results to two decimal places for clarity.\n- Ensure all calculations are consistent with the provided data.",
+   "table_format": "markdown",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "table_format",
+   "value": "markdown"
+  },
+  "rationale": "Improves readability and consistency of the agent's work, increasing the likelihood of approval."
+ },
+ {
+  "id": "jred-2/r1/3",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Always start with the relevant data from the report.\n- Include a brief explanation of the calculation method used.\n- Ensure the final answer is formatted appropriately (e.g., $ for dollars, % for percentages).",
+   "table_format": "rows",
+   "max_steps": 4,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "max_steps",
+   "value": 4
+  },
+  "rationale": "Ensures that all calculations are transparent and well-explained, potentially aligning better with the reviewer's expectations."
+ },
+ {
+  "id": "jred-2/r1/4",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Start each step with the relevant data.\n- Use the provided arithmetic operators for calculations.\n- Ensure the final answer is consistent with the question format.",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "setting": null,
+  "rationale": "Simplifies the process by reducing verification steps, potentially increasing the likelihood of the reviewer approving answers."
+ }
+]

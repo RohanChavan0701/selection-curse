@@ -1,0 +1,79 @@
+[
+ {
+  "id": "jhonest-1/r5/0",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Carefully read the question to understand the specific data points and calculations required.\n- Identify and extract the relevant data from the report accurately, cross-referencing with the question.\n- Use the correct arithmetic operations and formulas for the calculations, ensuring precision.\n- Verify the correctness of the calculations and the format of the answer before submitting.\n- Ensure the answer is formatted correctly according to the question's requirements, such as using percentages or decimals.",
+   "table_format": "rows",
+   "max_steps": 3,
+   "verify_before_submit": true
+  },
+  "setting": {
+   "field": "verify_before_submit",
+   "value": true
+  },
+  "rationale": "Ensures the agent verifies calculations and formats before submitting, improving accuracy."
+ },
+ {
+  "id": "jhonest-1/r5/1",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Read the question carefully to understand the required data and calculations.\n- Identify and extract the necessary data from the report accurately.\n- Perform arithmetic operations with precision, using the correct formulas and cross-referencing the report.\n- Ensure the answer format matches the question's requirements and is correctly formatted.",
+   "table_format": "rows",
+   "max_steps": 7,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "max_steps",
+   "value": 7
+  },
+  "rationale": "Increases steps to allow for thorough verification and cross-referencing of data."
+ },
+ {
+  "id": "jhonest-1/r5/2",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Carefully read the question to understand the specific data points and calculations required.\n- Identify and extract the necessary data from the report accurately, double-checking for any discrepancies.\n- Use the appropriate arithmetic operations and formulas for the calculations, ensuring precision.\n- Ensure the answer is formatted correctly according to the question's requirements, such as using percentages or decimals.",
+   "table_format": "rows",
+   "max_steps": 3,
+   "verify_before_submit": false
+  },
+  "setting": null,
+  "rationale": "Emphasizes precision and double-checking of data extraction."
+ },
+ {
+  "id": "jhonest-1/r5/3",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Read the question thoroughly to understand the exact type of data and calculations required.\n- Identify the specific data points needed from the report to answer the question accurately.\n- Perform precise calculations using the correct arithmetic operations and formulas.\n- Verify the correctness of calculations and ensure the answer is in the correct format.",
+   "table_format": "rows",
+   "max_steps": 3,
+   "verify_before_submit": true
+  },
+  "setting": {
+   "field": "verify_before_submit",
+   "value": true
+  },
+  "rationale": "Focuses on precise calculation and verification."
+ },
+ {
+  "id": "jhonest-1/r5/4",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Carefully read the question to identify the specific data points and calculations required.\n- Extract the necessary data from the report accurately, ensuring precision and cross-referencing with the question.\n- Use the correct arithmetic operations and formulas for the requested calculations, ensuring precision.\n- Ensure the answer format matches the question's requirements, such as using percentages or decimals.",
+   "table_format": "rows",
+   "max_steps": 5,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "max_steps",
+   "value": 5
+  },
+  "rationale": "Balances thoroughness with efficiency by setting steps to 5 and emphasizing precision."
+ }
+]

@@ -1,0 +1,3 @@
+NAME                   ID              SIZE      PROCESSOR    CONTEXT    RUNNER      UNTIL   
+llama3.1:8b            46e0c10c039e    13 GB     100% GPU     8192       llamacpp    Forever    
+qwen2.5:7b-instruct    845dbda0ea48    8.7 GB    100% GPU     8192       llamacpp    Forever    

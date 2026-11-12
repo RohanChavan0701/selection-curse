@@ -1,0 +1,70 @@
+[
+ {
+  "id": "random-2/r5/0",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Identify all required values from the report before starting calculations\n- Break down complex calculations into smaller, manageable steps\n- Double-check values and calculations to avoid errors\n- Format the final answer to match the question's requirements, including appropriate rounding and units\n- Use correct percentage calculation formulas (value/total*100)\n- Verify the correctness of the calculation with a step-by-step approach\n- Ensure arithmetic expressions are valid by avoiding undefined operations\n- Provide intermediate results when breaking down calculations to increase transparency and accuracy\n- Avoid using undefined or non-numeric values in arithmetic operations",
+   "table_format": "rows",
+   "max_steps": 7,
+   "verify_before_submit": true
+  },
+  "setting": null,
+  "rationale": "Ensuring arithmetic operations are valid and avoiding undefined operations"
+ },
+ {
+  "id": "random-2/r5/1",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Identify all required values from the report before starting calculations\n- Break down complex calculations into smaller, manageable steps\n- Double-check values and calculations to avoid errors\n- Format the final answer to match the question's requirements, including appropriate rounding and units\n- Use correct percentage calculation formulas (value/total*100)\n- Verify the correctness of the calculation with a step-by-step approach\n- Ensure all required values are present before performing calculations\n- Provide intermediate results when breaking down calculations to increase transparency and accuracy",
+   "table_format": "rows",
+   "max_steps": 7,
+   "verify_before_submit": true
+  },
+  "setting": null,
+  "rationale": "Ensuring all required values are present before performing calculations"
+ },
+ {
+  "id": "random-2/r5/2",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Identify all required values from the report before starting calculations\n- Break down complex calculations into smaller, manageable steps\n- Double-check values and calculations to avoid errors\n- Format the final answer to match the question's requirements, including appropriate rounding and units\n- Use correct percentage calculation formulas (value/total*100)\n- Verify the correctness of the calculation with a step-by-step approach\n- Avoid rounding intermediate results until the final answer to maintain precision\n- Provide intermediate results when breaking down calculations to increase transparency and accuracy",
+   "table_format": "rows",
+   "max_steps": 7,
+   "verify_before_submit": true
+  },
+  "setting": null,
+  "rationale": "Avoiding intermediate rounding to maintain precision"
+ },
+ {
+  "id": "random-2/r5/3",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Identify all required values from the report before starting calculations\n- Break down complex calculations into smaller, manageable steps\n- Double-check values and calculations to avoid errors\n- Format the final answer to match the question's requirements, including appropriate rounding and units\n- Use correct percentage calculation formulas (value/total*100)\n- Verify the correctness of the calculation with a step-by-step approach\n- Ensure all calculations are performed in the same units or currency\n- Provide intermediate results when breaking down calculations to increase transparency and accuracy",
+   "table_format": "rows",
+   "max_steps": 7,
+   "verify_before_submit": true
+  },
+  "setting": null,
+  "rationale": "Ensuring all calculations are in the same units or currency"
+ },
+ {
+  "id": "random-2/r5/4",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Identify all required values from the report before starting calculations\n- Break down complex calculations into smaller, manageable steps\n- Double-check values and calculations to avoid errors\n- Format the final answer to match the question's requirements, including appropriate rounding and units\n- Use correct percentage calculation formulas (value/total*100)\n- Verify the correctness of the calculation with a step-by-step approach\n- Use appropriate financial functions for common calculations (e.g., average, growth rate)\n- Provide intermediate results when breaking down calculations to increase transparency and accuracy",
+   "table_format": "rows",
+   "max_steps": 10,
+   "verify_before_submit": true
+  },
+  "setting": {
+   "field": "max_steps",
+   "value": 10
+  },
+  "rationale": "Increasing max steps to allow more detailed breakdown of calculations"
+ }
+]

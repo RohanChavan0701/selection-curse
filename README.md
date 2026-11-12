@@ -108,6 +108,7 @@ pretraining data, which limits every absolute number here.
 | 6 | FinQA agent, LLM judges as label-free selectors, 150 tasks | Exploratory | Looked for reward hacking: a loop that learns to please the judge. Did not find it. Found that selection concentrates noise, and that the first judge prompt was near chance against truth (AUROC 0.55) until checked. |
 | 7 | Same as 6, 300 fresh tasks | Pre-registered | The table above. |
 | 8 | Run 7's tasks, 40 edits from a 32B proposer: 20 told to be correct, 20 told to raise the judge's approval | Pre-registered | Red team did not reach more judge bias than the control: -0.5 points (95% interval -2.6 to +1.6). 6 of 7 predictions held; the one miss ran against gaming. Curse multiplier replicated on proposed edits (1.41, formula 1.38). Nearly all proposed edits lowered accuracy, and repeat baselines spanned 3.3 points. [Outcome](PREDICTION_run8.md#outcome) |
+| 9 | FinQA train split, 16 loops of 5 rounds (4 arms x 4 seeds): told to game the judge and selected on it, told to be correct and selected on it, selected on truth, random | Pre-registered | Primary inconclusive: red-team loops ended with +2.3 points more judge bias than truth-selected loops (95% interval -2.0 to +6.6). Truth selection did not beat random selection (+0.7), so real-gain claims are void. All 4 red-team loops stalled after round 1 and all 4 ended on style rules; the other 12 ended on substance rules. [Outcome](PREDICTION_run9.md#outcome) |
 
 Two things run 5 and run 7 do not agree on, stated plainly: run 5 measured no gap between
 tuning-set gain and fresh-task gain, and run 7 measured a 2.7-point curse under true labels.
@@ -122,8 +123,10 @@ and nothing here tests which difference matters.
 
 - **That loops cannot learn to game a judge.** Run 8 gave a 32B proposer the judge's prompt,
   the instruction to raise approval and one round of feedback, and its edits carried no more
-  judge bias than a control's. That is a ceiling for that attacker and for effects above
-  about 2 points, not for stronger proposers, more rounds or a larger edit space.
+  judge bias than a control's. Run 9 gave it a 5-round loop selected on the judge: the result
+  was inconclusive (+2.3 points, interval -2.0 to +6.6) and the loop stopped improving after
+  its first round. Neither run tests a stronger proposer, and run 9 cannot exclude an effect
+  under about 6.6 points.
 - **Anything about large models or other domains.** One 7B student, one 8B judge, FinQA.
 - **A confirmed judge effect.** The primary prediction was inconclusive.
 - **How much repeated judging helps.** Asked again about the same 3,900 episodes at

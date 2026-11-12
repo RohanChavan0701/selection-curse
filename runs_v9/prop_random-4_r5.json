@@ -1,0 +1,73 @@
+[
+ {
+  "id": "random-4/r5/0",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Always verify the values and numbers from the report before any calculation\n- Use 'calc' tool for arithmetic operations, ensuring correct operations are used\n- Avoid undefined functions and ensure all calculations are double-checked for accuracy\n- Only use 'submit' for the final answer, after thorough verification\n- Ensure all percentage calculations are accurate and use the formula (new-old)/old * 100\n- Use parentheses to clarify the order of operations when needed\n- Always round off the final answer to two decimal places for consistency\n- Ensure all arithmetic operations are performed before submitting the answer\n- For percentage change calculations, ensure the result is expressed as a percentage",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": true
+  },
+  "setting": null,
+  "rationale": "Clarified percentage calculation formula and emphasized expressing percentage change as a percentage."
+ },
+ {
+  "id": "random-4/r5/1",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Always verify the values and numbers from the report before calculation\n- Use 'calc' tool for arithmetic operations, ensuring correct operations are used\n- Avoid undefined functions and ensure all calculations are double-checked for accuracy\n- Only use 'submit' for the final answer, after thorough verification\n- Ensure all percentage calculations are accurate and use the appropriate formula\n- Use parentheses to clarify the order of operations when needed\n- Always round off the final answer to two decimal places for consistency\n- Ensure all arithmetic operations are performed before submitting the answer\n- Increase steps to 4 for thorough verification and calculation",
+   "table_format": "rows",
+   "max_steps": 4,
+   "verify_before_submit": true
+  },
+  "setting": {
+   "field": "max_steps",
+   "value": 4
+  },
+  "rationale": "Increased max_steps to allow more detailed and verified calculations."
+ },
+ {
+  "id": "random-4/r5/2",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Always verify the values and numbers from the report before calculation\n- Use 'calc' tool for arithmetic operations, ensuring correct operations are used\n- Avoid undefined functions and ensure all calculations are double-checked for accuracy\n- Only use 'submit' for the final answer, after thorough verification\n- Ensure all percentage calculations are accurate and use the appropriate formula\n- Use parentheses to clarify the order of operations when needed\n- Always round off the final answer to two decimal places for consistency\n- Ensure all arithmetic operations are performed before submitting the answer\n- Always multiply by 100 for percentage calculations to express as a percentage",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": true
+  },
+  "setting": null,
+  "rationale": "Emphasized multiplication by 100 for percentage calculations."
+ },
+ {
+  "id": "random-4/r5/3",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Always verify the values and numbers from the report before calculation\n- Use 'calc' tool for arithmetic operations, ensuring correct operations are used\n- Avoid undefined functions and ensure all calculations are double-checked for accuracy\n- Only use 'submit' for the final answer, after thorough verification\n- Ensure all percentage calculations are accurate and use the formula (new-old)/old * 100\n- Use parentheses to clarify the order of operations when needed\n- Always round off the final answer to two decimal places for consistency\n- Ensure all arithmetic operations are performed before submitting the answer\n- Decrease steps to 3 for streamlined but still thorough calculation",
+   "table_format": "rows",
+   "max_steps": 3,
+   "verify_before_submit": true
+  },
+  "setting": {
+   "field": "max_steps",
+   "value": 3
+  },
+  "rationale": "Decreased steps but kept instructions thorough for efficiency."
+ },
+ {
+  "id": "random-4/r5/4",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Always verify the values and numbers from the report before calculation\n- Use 'calc' tool for arithmetic operations, ensuring correct operations are used\n- Avoid undefined functions and ensure all calculations are double-checked for accuracy\n- Only use 'submit' for the final answer, after thorough verification\n- Ensure all percentage calculations are accurate and use the appropriate formula\n- Use parentheses to clarify the order of operations when needed\n- Always round off the final answer to two decimal places for consistency\n- Ensure all arithmetic operations are performed before submitting the answer\n- For ratio calculations, ensure the final answer is expressed in decimal form",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": true
+  },
+  "setting": null,
+  "rationale": "Clarified that ratio calculations should be expressed in decimal form."
+ }
+]

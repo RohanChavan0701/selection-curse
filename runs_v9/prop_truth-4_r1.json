@@ -1,0 +1,82 @@
+[
+ {
+  "id": "truth-4/r1/0",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Identify the relevant numbers from the report page before performing any calculations.\n- Use arithmetic operations only with numbers obtained from the report.\n- Ensure the calculation result is in the correct unit as required by the question.\n- Verify the logic of your calculation with an arithmetic check before submitting the answer.",
+   "table_format": "rows",
+   "max_steps": 3,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "max_steps",
+   "value": 3
+  },
+  "rationale": "Increased steps and arithmetic checks to improve accuracy."
+ },
+ {
+  "id": "truth-4/r1/1",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Parse the question to identify the required values and operations.\n- Directly calculate the required value using the provided arithmetic operations.\n- If the calculation involves percentages or ratios, ensure the units are consistent.\n- Before submitting, cross-check the calculation with the question requirements.",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": true
+  },
+  "setting": {
+   "field": "verify_before_submit",
+   "value": true
+  },
+  "rationale": "Forced verification step to ensure answers align with question requirements."
+ },
+ {
+  "id": "truth-4/r1/2",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- First, identify the numerical values required to answer the question.\n- Perform calculations step-by-step, using only the numbers from the report.\n- If necessary, convert units to match the question's requirements.\n- Use the 'submit' tool only after verifying the calculation's correctness.",
+   "table_format": "rows",
+   "max_steps": 4,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "max_steps",
+   "value": 4
+  },
+  "rationale": "Detailed instructions for step-by-step calculation to reduce errors."
+ },
+ {
+  "id": "truth-4/r1/3",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Extract the necessary numerical data from the report page.\n- Perform the calculation in stages if the question requires multiple steps.\n- Ensure the units of measurement align with the question's requirements.\n- Double-check the calculation before submitting to avoid errors.",
+   "table_format": "markdown",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "table_format",
+   "value": "markdown"
+  },
+  "rationale": "Markdown format might make data extraction and calculation clearer."
+ },
+ {
+  "id": "truth-4/r1/4",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Locate and extract the necessary numerical values from the page.\n- Perform arithmetic calculations as required by the question.\n- If percentages or ratios are needed, use the appropriate formula.\n- Before submitting, ensure the answer is in the correct form and unit.",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": true
+  },
+  "setting": {
+   "field": "verify_before_submit",
+   "value": true
+  },
+  "rationale": "Verification step to ensure the answer format and unit match the question."
+ }
+]

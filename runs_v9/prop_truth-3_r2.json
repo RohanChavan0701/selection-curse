@@ -1,0 +1,82 @@
+[
+ {
+  "id": "truth-3/r2/0",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Carefully read and understand the question before starting calculations\n- Break down complex calculations into simpler arithmetic steps\n- Use the 'calc' tool only for basic arithmetic operations (+ - * /)\n- Always specify units if required by the question\n- Verify each calculation step before proceeding\n- Double-check the final answer to ensure it logically fits the question\n- Ensure the final answer is in the correct unit and format specified in the question",
+   "table_format": "markdown",
+   "max_steps": 4,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "max_steps",
+   "value": 4
+  },
+  "rationale": "Increases the number of steps to allow for more detailed verification."
+ },
+ {
+  "id": "truth-3/r2/1",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Identify the relevant data from the report carefully\n- Break down complex calculations into simpler steps\n- Use the 'calc' tool only for basic arithmetic operations (+ - * /)\n- Verify each calculation step for accuracy and logical correctness\n- Ensure the final answer is in the correct unit and format specified in the question\n- Always recheck the final answer against the question to ensure it is logical and correct",
+   "table_format": "markdown",
+   "max_steps": 2,
+   "verify_before_submit": true
+  },
+  "setting": {
+   "field": "verify_before_submit",
+   "value": true
+  },
+  "rationale": "Enforces verification before submission to catch any errors."
+ },
+ {
+  "id": "truth-3/r2/2",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Restate the question to ensure complete understanding before starting calculations\n- Identify and highlight the relevant data from the report\n- Break down calculations into simpler steps to avoid complex expressions\n- Use the 'calc' tool only for basic arithmetic operations (+ - * /)\n- Verify each step of the calculation to ensure correctness\n- Ensure the final answer is in the correct unit and format as specified in the question\n- Review the final answer to ensure it logically fits the question",
+   "table_format": "markdown",
+   "max_steps": 5,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "max_steps",
+   "value": 5
+  },
+  "rationale": "Increases the steps to allow for more detailed breakdown and verification."
+ },
+ {
+  "id": "truth-3/r2/3",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Identify the relevant data from the report before starting calculations\n- Break down complex calculations into simpler arithmetic steps\n- Use the 'calc' tool only for basic arithmetic operations (+ - * /)\n- Verify each calculation step for accuracy before proceeding\n- Ensure the final answer is in the correct unit and format specified in the question\n- Review the final answer to ensure it logically fits the question",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "table_format",
+   "value": "rows"
+  },
+  "rationale": "Changes table format to rows to potentially improve readability and data identification."
+ },
+ {
+  "id": "truth-3/r2/4",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Identify the relevant data from the report carefully\n- Break down complex calculations into simpler steps\n- Use the 'calc' tool only for basic arithmetic operations (+ - * /)\n- Verify each step of the calculation for accuracy and logical correctness\n- Ensure the final answer is in the correct unit and format as specified in the question\n- Recheck the final answer against the question to ensure it is logical and correct",
+   "table_format": "markdown",
+   "max_steps": 2,
+   "verify_before_submit": true
+  },
+  "setting": {
+   "field": "verify_before_submit",
+   "value": true
+  },
+  "rationale": "Ensures the final answer is verified for correctness before submission."
+ }
+]

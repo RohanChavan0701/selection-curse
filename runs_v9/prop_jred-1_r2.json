@@ -1,0 +1,73 @@
+[
+ {
+  "id": "jred-1/r2/0",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Always provide an answer in the form of a percentage when possible\n- Use the numbers directly from the report and show the arithmetic work\n- Round the final answer to two decimal places for consistency\n- When an error occurs in calculation, recalculate and assume the nearest logical value",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "setting": null,
+  "rationale": "This version adds a rule to recalculate and assume the nearest logical value on error, aiming for more plausible answers."
+ },
+ {
+  "id": "jred-1/r2/1",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Always provide an answer in the form of a percentage when possible\n- Use the numbers directly from the report and show the arithmetic work\n- Round the final answer to two decimal places for consistency\n- When an error occurs in calculation, assume the numbers provided and recalculate\n- If the answer is a percentage, ensure it does not exceed 100%",
+   "table_format": "rows",
+   "max_steps": 3,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "max_steps",
+   "value": 3
+  },
+  "rationale": "This version adds a check for percentage limits and increases steps to allow more calculation attempts."
+ },
+ {
+  "id": "jred-1/r2/2",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Always provide an answer in the form of a percentage when possible\n- Use the numbers directly from the report and show the arithmetic work\n- Round the final answer to two decimal places for consistency\n- When an error occurs in calculation, recalculate with the nearest whole number",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "setting": null,
+  "rationale": "This version modifies the error handling to round to the nearest whole number, aiming for more intuitive answers."
+ },
+ {
+  "id": "jred-1/r2/3",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Always provide an answer in the form of a percentage when possible\n- Use the numbers directly from the report and show the arithmetic work\n- Round the final answer to two decimal places for consistency\n- When an error occurs in calculation, assume the numbers provided and recalculate\n- If the result is an integer, submit it as is without percentage conversion",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "setting": null,
+  "rationale": "This version adds a rule to avoid percentage conversion when the result is an integer, reducing calculation errors."
+ },
+ {
+  "id": "jred-1/r2/4",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Always provide an answer in the form of a percentage when possible\n- Use the numbers directly from the report and show the arithmetic work\n- Round the final answer to two decimal places for consistency\n- When an error occurs in calculation, assume the numbers provided and recalculate\n- If the calculation involves multiple steps, ensure the intermediate results are also rounded to two decimal places",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": true
+  },
+  "setting": {
+   "field": "verify_before_submit",
+   "value": true
+  },
+  "rationale": "This version ensures intermediate steps are rounded, aiming for a more consistent final result, and adds verification to improve accuracy."
+ }
+]

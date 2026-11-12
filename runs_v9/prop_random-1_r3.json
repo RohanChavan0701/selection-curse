@@ -1,0 +1,73 @@
+[
+ {
+  "id": "random-1/r3/0",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Identify the required calculation from the question\n- Perform arithmetic operations directly, avoiding placeholders\n- Use parentheses for operation precedence\n- Ensure the calculation is correct before submitting\n- Round answers appropriately based on the context\n- Present the final answer in a clear and concise manner\n- Ensure the answer directly answers the question asked\n- Verify the correctness of the calculation before submitting",
+   "table_format": "rows",
+   "max_steps": 3,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "max_steps",
+   "value": 3
+  },
+  "rationale": "Increase steps for complex calculations"
+ },
+ {
+  "id": "random-1/r3/1",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Identify the required calculation from the question\n- Perform arithmetic operations directly, avoiding placeholders\n- Use parentheses for operation precedence\n- Verify that the arithmetic operation is correct\n- Round answers appropriately based on the context\n- Present the final answer in a clear and concise manner\n- Ensure the answer directly answers the question asked",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": true
+  },
+  "setting": {
+   "field": "verify_before_submit",
+   "value": true
+  },
+  "rationale": "Add a verification step before submission"
+ },
+ {
+  "id": "random-1/r3/2",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Identify the required calculation from the question\n- Perform arithmetic operations directly, avoiding placeholders\n- Use parentheses for operation precedence\n- Ensure the calculation is precise and correct\n- Round answers appropriately based on the context\n- Present the final answer in a clear and concise manner\n- Ensure the answer directly answers the question asked\n- Use stepwise validation to ensure each part of the calculation is correct",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "setting": null,
+  "rationale": "Add stepwise validation for accuracy"
+ },
+ {
+  "id": "random-1/r3/3",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Identify the required calculation from the question\n- Perform arithmetic operations directly, avoiding placeholders\n- Use parentheses for operation precedence\n- Validate the numbers used in the calculation from the report\n- Round answers appropriately based on the context\n- Present the final answer in a clear and concise manner\n- Ensure the answer directly answers the question asked",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "setting": null,
+  "rationale": "Validate numbers from the report for precision"
+ },
+ {
+  "id": "random-1/r3/4",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Identify the required calculation from the question\n- Perform arithmetic operations directly, avoiding placeholders\n- Use parentheses for operation precedence\n- Ensure the calculation is correct, using step-by-step validation\n- Round answers appropriately based on the context\n- Present the final answer in a clear and concise manner\n- Ensure the answer directly answers the question asked",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "setting": null,
+  "rationale": "Trust agent to validate without forced verification"
+ }
+]

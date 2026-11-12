@@ -1,0 +1,70 @@
+[
+ {
+  "id": "random-3/r5/0",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Always ensure the calculation is correct before submitting the answer\n- Use the correct arithmetic operation for percentage calculations, ensuring the formula is applied correctly\n- Verify the correctness of the arithmetic operation before submitting by cross-referencing with the given data\n- Explicitly state the arithmetic formula used in the calculation step\n- Use only allowed operators (+, -, *, /, **) in your calculations\n- Round all final answers to two decimal places\n- Ensure all calculations are based on the data provided in the financial report page\n- Do not submit an answer if the provided data is insufficient to perform the calculation",
+   "table_format": "rows",
+   "max_steps": 6,
+   "verify_before_submit": false
+  },
+  "setting": null,
+  "rationale": "Addition of a rule to check data sufficiency before calculation."
+ },
+ {
+  "id": "random-3/r5/1",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Always ensure the calculation is correct before submitting the answer\n- Use the correct arithmetic operation for percentage calculations, ensuring the formula is applied correctly\n- Verify the correctness of the arithmetic operation before submitting by cross-referencing with the given data\n- Explicitly state the arithmetic formula used in the calculation step\n- Use only allowed operators (+, -, *, /, **) in your calculations\n- Round all final answers to two decimal places\n- Double-check all arithmetic operations for accuracy and logical consistency",
+   "table_format": "rows",
+   "max_steps": 6,
+   "verify_before_submit": false
+  },
+  "setting": null,
+  "rationale": "Emphasize double-checking arithmetic operations for accuracy."
+ },
+ {
+  "id": "random-3/r5/2",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Always ensure the calculation is correct before submitting the answer\n- Use the correct arithmetic operation for percentage calculations, ensuring the formula is applied correctly\n- Verify the correctness of the arithmetic operation before submitting by cross-referencing with the given data\n- Explicitly state the arithmetic formula used in the calculation step\n- Use only allowed operators (+, -, *, /, **) in your calculations\n- Round all final answers to two decimal places\n- If the question asks for a percentage, ensure the result is multiplied by 100",
+   "table_format": "rows",
+   "max_steps": 6,
+   "verify_before_submit": false
+  },
+  "setting": null,
+  "rationale": "Add a rule to handle percentage calculation explicitly."
+ },
+ {
+  "id": "random-3/r5/3",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Always ensure the calculation is correct before submitting the answer\n- Use the correct arithmetic operation for percentage calculations, ensuring the formula is applied correctly\n- Verify the correctness of the arithmetic operation before submitting by cross-referencing with the given data\n- Explicitly state the arithmetic formula used in the calculation step\n- Use only allowed operators (+, -, *, /, **) in your calculations\n- Round all final answers to two decimal places\n- When asked for a total, ensure all relevant amounts are included and summed correctly",
+   "table_format": "rows",
+   "max_steps": 6,
+   "verify_before_submit": false
+  },
+  "setting": null,
+  "rationale": "Ensure all relevant amounts are included in totals."
+ },
+ {
+  "id": "random-3/r5/4",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Always ensure the calculation is correct before submitting the answer\n- Use the correct arithmetic operation for percentage calculations, ensuring the formula is applied correctly\n- Verify the correctness of the arithmetic operation before submitting by cross-referencing with the given data\n- Explicitly state the arithmetic formula used in the calculation step\n- Use only allowed operators (+, -, *, /, **) in your calculations\n- Round all final answers to two decimal places",
+   "table_format": "rows",
+   "max_steps": 6,
+   "verify_before_submit": true
+  },
+  "setting": {
+   "field": "verify_before_submit",
+   "value": true
+  },
+  "rationale": "Enable verification before submission to improve answer accuracy."
+ }
+]

@@ -45,3 +45,4 @@
 {"event": "check", "id": "b3416fd69ce341b6b77f39202b08cf9f", "time": "2026-11-11T19:14:41+00:00", "status": "booting", "ip": "129.146.48.171", "hours_elapsed": 0.078, "est_spend_usd": 0.16, "job_state": "booting", "past_cap": false}
 {"event": "check", "id": "b3416fd69ce341b6b77f39202b08cf9f", "time": "2026-11-11T19:15:02+00:00", "status": "active", "ip": "129.146.48.171", "hours_elapsed": 0.084, "est_spend_usd": 0.17, "job_state": "booting", "past_cap": false}
 {"event": "check", "id": "b3416fd69ce341b6b77f39202b08cf9f", "time": "2026-11-11T19:15:02+00:00", "status": "active", "ip": "129.146.48.171", "hours_elapsed": 0.084, "est_spend_usd": 0.17, "job_state": "booting", "past_cap": false}
+{"event": "terminate", "id": "b3416fd69ce341b6b77f39202b08cf9f", "time": "2026-11-12T18:22:25+00:00", "reason": "job_done", "hours_elapsed": 23.207, "est_spend_usd": 46.18}

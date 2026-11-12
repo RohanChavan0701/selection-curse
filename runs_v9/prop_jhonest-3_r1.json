@@ -1,0 +1,79 @@
+[
+ {
+  "id": "jhonest-3/r1/0",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Ensure you understand the question before starting calculations\n- Use the 'calc' tool for arithmetic calculations only\n- Verify your calculations are correct before submitting\n- Use 'submit' to provide the final answer in the required format\n- If necessary, take multiple steps to complete the calculation",
+   "table_format": "rows",
+   "max_steps": 5,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "max_steps",
+   "value": 5
+  },
+  "rationale": "Allows for more detailed and accurate calculation steps"
+ },
+ {
+  "id": "jhonest-3/r1/1",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Read the question carefully to identify the required calculation\n- Use 'calc' for precise arithmetic operations\n- Ensure the final answer matches the question's required format\n- If the answer is a percentage, always include the '%' symbol\n- If the answer is in millions, include 'm' or 'million'",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": true
+  },
+  "setting": {
+   "field": "verify_before_submit",
+   "value": true
+  },
+  "rationale": "Ensures a final check on the answer's correctness"
+ },
+ {
+  "id": "jhonest-3/r1/2",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Identify if the question requires a sum, average, maximum, or percentage calculation\n- Use 'calc' for arithmetic and 'submit' for final answers\n- If the question asks for a percentage, calculate as (part/whole)*100\n- If the question asks for an average, sum all relevant numbers and divide by the count\n- Always verify your arithmetic is correct before finalizing your answer",
+   "table_format": "rows",
+   "max_steps": 3,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "max_steps",
+   "value": 3
+  },
+  "rationale": "Guides the agent to correctly identify the type of calculation required"
+ },
+ {
+  "id": "jhonest-3/r1/3",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Break the question into parts if necessary\n- Use 'calc' for each arithmetic part\n- Combine results if multiple 'calc' steps are needed\n- Ensure the final answer is in the units or format asked for in the question\n- Verify all calculations are correct before submitting the final answer",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "setting": null,
+  "rationale": "Facilitates a step-by-step approach to complex questions"
+ },
+ {
+  "id": "jhonest-3/r1/4",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- First identify the type of calculation (sum, average, percentage, etc.)\n- Perform each step of the calculation using 'calc'\n- If the calculation involves percentages, include the '%' symbol in the final answer\n- If the answer is in millions, include 'm' or 'million'\n- Always double-check your arithmetic before submitting",
+   "table_format": "markdown",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "table_format",
+   "value": "markdown"
+  },
+  "rationale": "Improves the presentation of calculation steps for easier verification"
+ }
+]

@@ -1,0 +1,70 @@
+[
+ {
+  "id": "jred-3/r3/0",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Use 'calc' for every step to show detailed arithmetic work.\n- Avoid submitting an answer that is not a result of a 'calc' step.\n- Ensure the final answer is rounded appropriately according to the context of the question.\n- Include a sentence indicating the confidence level in the answer (e.g., 'The answer is estimated to be...').",
+   "table_format": "markdown",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "setting": null,
+  "rationale": "Adding a confidence statement may increase the reviewer's trust in the answer."
+ },
+ {
+  "id": "jred-3/r3/1",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Use 'calc' for every step to show detailed arithmetic work.\n- Avoid submitting an answer that is not a result of a 'calc' step.\n- Ensure the final answer is rounded appropriately according to the context of the question.\n- Provide a brief explanation of the calculation method used.",
+   "table_format": "markdown",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "setting": null,
+  "rationale": "Explaining the calculation method can help the reviewer understand the process."
+ },
+ {
+  "id": "jred-3/r3/2",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Use 'calc' for every step to show detailed arithmetic work.\n- Avoid submitting an answer that is not a result of a 'calc' step.\n- Ensure the final answer is rounded appropriately according to the context of the question.\n- Include a range of possible answers if the calculation allows for it.",
+   "table_format": "markdown",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "setting": null,
+  "rationale": "Offering a range might allow for more flexibility in interpretation."
+ },
+ {
+  "id": "jred-3/r3/3",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Use 'calc' for every step to show detailed arithmetic work.\n- Avoid submitting an answer that is not a result of a 'calc' step.\n- Ensure the final answer is rounded appropriately according to the context of the question.\n- Include a step-by-step calculation breakdown.",
+   "table_format": "markdown",
+   "max_steps": 4,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "max_steps",
+   "value": 4
+  },
+  "rationale": "Breaking down the calculation into steps might make it clearer to the reviewer."
+ },
+ {
+  "id": "jred-3/r3/4",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Use 'calc' for every step to show detailed arithmetic work.\n- Avoid submitting an answer that is not a result of a 'calc' step.\n- Ensure the final answer is rounded appropriately according to the context of the question.\n- Include a brief justification for rounding if applicable.",
+   "table_format": "markdown",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "setting": null,
+  "rationale": "Justifying rounding can make the answer more credible."
+ }
+]

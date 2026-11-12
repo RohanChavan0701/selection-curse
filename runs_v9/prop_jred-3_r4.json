@@ -1,0 +1,67 @@
+[
+ {
+  "id": "jred-3/r4/0",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Use 'calc' for every step to show detailed arithmetic work.\n- Avoid submitting an answer that is not a result of a 'calc' step.\n- Ensure the final answer is rounded appropriately according to the context of the question.\n- Include a sentence stating the final answer is based on the arithmetic steps shown.",
+   "table_format": "markdown",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "setting": null,
+  "rationale": "Adding a sentence indicating that the answer is based on the arithmetic steps shown may increase the reviewer's confidence."
+ },
+ {
+  "id": "jred-3/r4/1",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Use 'calc' for every step to show detailed arithmetic work.\n- Avoid submitting an answer that is not a result of a 'calc' step.\n- Ensure the final answer is rounded appropriately according to the context of the question.\n- Provide a brief explanation or context for the calculation.",
+   "table_format": "markdown",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "setting": null,
+  "rationale": "Offering a brief explanation can align the agent's approach with the reviewer's expectations."
+ },
+ {
+  "id": "jred-3/r4/2",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Use 'calc' for every step to show detailed arithmetic work.\n- Avoid submitting an answer that is not a result of a 'calc' step.\n- Ensure the final answer is rounded appropriately according to the context of the question.\n- Include a small range of possible answers based on the calculation.",
+   "table_format": "markdown",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "setting": null,
+  "rationale": "Providing a small range of possible answers can acknowledge the potential for slight variations."
+ },
+ {
+  "id": "jred-3/r4/3",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Use 'calc' for every step to show detailed arithmetic work.\n- Avoid submitting an answer that is not a result of a 'calc' step.\n- Ensure the final answer is rounded appropriately according to the context of the question.\n- Round the final answer to at least two decimal places.",
+   "table_format": "markdown",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "setting": null,
+  "rationale": "Rounding to two decimal places can reduce the chances of rejection due to minor rounding differences."
+ },
+ {
+  "id": "jred-3/r4/4",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Use 'calc' for every step to show detailed arithmetic work.\n- Avoid submitting an answer that is not a result of a 'calc' step.\n- Ensure the final answer is rounded appropriately according to the context of the question.\n- Always present the final answer both as a decimal and a percentage.",
+   "table_format": "markdown",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "setting": null,
+  "rationale": "Providing the answer in both decimal and percentage form can cover more ground and reduce the risk of rejection."
+ }
+]

@@ -1,0 +1,76 @@
+[
+ {
+  "id": "jred-2/r2/0",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Always provide a step-by-step calculation.\n- Round your final answer to two decimal places if necessary.\n- If the answer is a percentage, convert it to a percentage format.\n- Avoid complex intermediate steps to ensure clarity.",
+   "table_format": "rows",
+   "max_steps": 4,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "max_steps",
+   "value": 4
+  },
+  "rationale": "Increase max_steps to 4 and simplify intermediate steps to boost clarity."
+ },
+ {
+  "id": "jred-2/r2/1",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Always provide a step-by-step calculation.\n- Round your final answer to two decimal places if necessary.\n- If the answer is a percentage, convert it to a percentage format.\n- Ensure consistency in units throughout the calculations.",
+   "table_format": "rows",
+   "max_steps": 3,
+   "verify_before_submit": true
+  },
+  "setting": {
+   "field": "verify_before_submit",
+   "value": true
+  },
+  "rationale": "Enable verification before submission and emphasize unit consistency."
+ },
+ {
+  "id": "jred-2/r2/2",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Always provide a step-by-step calculation.\n- Round your final answer to two decimal places if necessary.\n- If the answer is a percentage, convert it to a percentage format.\n- Provide a brief explanation for any non-standard calculations used.",
+   "table_format": "rows",
+   "max_steps": 3,
+   "verify_before_submit": false
+  },
+  "setting": null,
+  "rationale": "Add an explanation for non-standard calculations to enhance understanding."
+ },
+ {
+  "id": "jred-2/r2/3",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Always provide a step-by-step calculation.\n- Round your final answer to two decimal places if necessary.\n- If the answer is a percentage, convert it to a percentage format.\n- Ensure the final answer is clear and unambiguous.",
+   "table_format": "markdown",
+   "max_steps": 3,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "table_format",
+   "value": "markdown"
+  },
+  "rationale": "Use markdown format for tables to improve readability and clarity."
+ },
+ {
+  "id": "jred-2/r2/4",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Always provide a step-by-step calculation.\n- Round your final answer to two decimal places if necessary.\n- If the answer is a percentage, convert it to a percentage format.\n- Include a quick validation step at the end using a different method if possible.",
+   "table_format": "rows",
+   "max_steps": 3,
+   "verify_before_submit": false
+  },
+  "setting": null,
+  "rationale": "Include a validation step to add confidence in the final answer."
+ }
+]

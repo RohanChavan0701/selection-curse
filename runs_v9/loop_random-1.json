@@ -1,0 +1,469 @@
+{
+ "id": "random-1",
+ "arm": "random",
+ "rounds": [
+  {
+   "round": 1,
+   "incumbent_before": {
+    "system_prompt": "Answer the question about the report page.\n",
+    "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+    "rules": "",
+    "table_format": "rows",
+    "max_steps": 2,
+    "verify_before_submit": false
+   },
+   "candidates": [
+    {
+     "id": "random-1/r1/0",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Always use the correct arithmetic function for calculations\n- Do not use 'ARITHMETIC' as a placeholder\n- Ensure numbers and operations are correctly formatted\n- Verify calculations before submitting the final answer\n- Use percentages and decimals appropriately according to the question context",
+      "table_format": "rows",
+      "max_steps": 3,
+      "verify_before_submit": false
+     },
+     "setting": {
+      "field": "max_steps",
+      "value": 3
+     }
+    },
+    {
+     "id": "random-1/r1/1",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Confirm the type of calculation needed for the question\n- Use precise arithmetic functions (e.g., +, -, *, /) for calculations\n- Format numbers and operations correctly to avoid syntax errors\n- Double-check all calculations before submission\n- Ensure the answer format matches the question's requirements",
+      "table_format": "rows",
+      "max_steps": 2,
+      "verify_before_submit": true
+     },
+     "setting": {
+      "field": "verify_before_submit",
+      "value": true
+     }
+    },
+    {
+     "id": "random-1/r1/2",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Identify the required calculation from the question\n- Perform arithmetic operations directly, avoiding placeholders\n- Ensure correct use of parentheses for operation precedence\n- Round answers appropriately based on the context\n- Present the final answer in a clear and concise manner",
+      "table_format": "markdown",
+      "max_steps": 2,
+      "verify_before_submit": false
+     },
+     "setting": {
+      "field": "table_format",
+      "value": "markdown"
+     }
+    },
+    {
+     "id": "random-1/r1/3",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Before calculating, identify the specific values needed\n- Format all calculations with correct arithmetic symbols and numbers\n- Avoid using generic placeholders like 'ARITHMETIC'\n- Ensure the final answer is formatted correctly and rounded if needed\n- Double-check the arithmetic before final submission",
+      "table_format": "rows",
+      "max_steps": 2,
+      "verify_before_submit": false
+     },
+     "setting": null
+    },
+    {
+     "id": "random-1/r1/4",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Understand the type of answer required by the question\n- Perform arithmetic operations directly with specific values\n- Format calculations precisely, avoiding syntax errors\n- Verify the correctness of calculations through re-calculation if necessary\n- Ensure the final answer is presented accurately",
+      "table_format": "rows",
+      "max_steps": 5,
+      "verify_before_submit": false
+     },
+     "setting": {
+      "field": "max_steps",
+      "value": 5
+     }
+    }
+   ],
+   "chosen": "random-1/r1/2",
+   "replaced": true,
+   "incumbent_after": {
+    "system_prompt": "Answer the question about the report page.\n",
+    "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+    "rules": "- Identify the required calculation from the question\n- Perform arithmetic operations directly, avoiding placeholders\n- Ensure correct use of parentheses for operation precedence\n- Round answers appropriately based on the context\n- Present the final answer in a clear and concise manner",
+    "table_format": "markdown",
+    "max_steps": 2,
+    "verify_before_submit": false
+   }
+  },
+  {
+   "round": 2,
+   "incumbent_before": {
+    "system_prompt": "Answer the question about the report page.\n",
+    "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+    "rules": "- Identify the required calculation from the question\n- Perform arithmetic operations directly, avoiding placeholders\n- Ensure correct use of parentheses for operation precedence\n- Round answers appropriately based on the context\n- Present the final answer in a clear and concise manner",
+    "table_format": "markdown",
+    "max_steps": 2,
+    "verify_before_submit": false
+   },
+   "candidates": [
+    {
+     "id": "random-1/r2/0",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Identify the required calculation from the question\n- Perform arithmetic operations directly, avoiding placeholders\n- Use parentheses to ensure correct operation precedence\n- Round answers to two decimal places unless otherwise specified\n- Always submit a clear and concise answer\n- Cross-check results with given data or context for accuracy",
+      "table_format": "markdown",
+      "max_steps": 2,
+      "verify_before_submit": false
+     },
+     "setting": null
+    },
+    {
+     "id": "random-1/r2/1",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Identify the required calculation from the question\n- Perform arithmetic operations directly, avoiding placeholders\n- Use parentheses for operation precedence\n- Round answers appropriately based on context\n- Present the final answer in a clear and concise manner\n- Verify the relevance of the calculated result to the question context",
+      "table_format": "markdown",
+      "max_steps": 3,
+      "verify_before_submit": false
+     },
+     "setting": {
+      "field": "max_steps",
+      "value": 3
+     }
+    },
+    {
+     "id": "random-1/r2/2",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Identify the required calculation from the question\n- Perform arithmetic operations directly, avoiding placeholders\n- Ensure correct use of parentheses for operation precedence\n- Round answers to two decimal places unless specified otherwise\n- Present the final answer clearly and concisely\n- Verify the calculation's relevance to the question context",
+      "table_format": "markdown",
+      "max_steps": 2,
+      "verify_before_submit": true
+     },
+     "setting": {
+      "field": "verify_before_submit",
+      "value": true
+     }
+    },
+    {
+     "id": "random-1/r2/3",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Identify the required calculation from the question\n- Perform arithmetic operations directly, avoiding placeholders\n- Use parentheses for operation precedence\n- Round answers appropriately based on the context\n- Present the final answer in a clear and concise manner\n- Ensure the answer directly answers the question asked",
+      "table_format": "rows",
+      "max_steps": 2,
+      "verify_before_submit": false
+     },
+     "setting": {
+      "field": "table_format",
+      "value": "rows"
+     }
+    },
+    {
+     "id": "random-1/r2/4",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Identify the required calculation from the question\n- Perform arithmetic operations directly, avoiding placeholders\n- Use parentheses to ensure correct operation precedence\n- Round answers to the nearest whole number unless contextually inappropriate\n- Present the final answer in a clear and concise manner\n- Double-check the answer against the provided data or context",
+      "table_format": "markdown",
+      "max_steps": 2,
+      "verify_before_submit": true
+     },
+     "setting": {
+      "field": "verify_before_submit",
+      "value": true
+     }
+    }
+   ],
+   "chosen": "random-1/r2/3",
+   "replaced": true,
+   "incumbent_after": {
+    "system_prompt": "Answer the question about the report page.\n",
+    "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+    "rules": "- Identify the required calculation from the question\n- Perform arithmetic operations directly, avoiding placeholders\n- Use parentheses for operation precedence\n- Round answers appropriately based on the context\n- Present the final answer in a clear and concise manner\n- Ensure the answer directly answers the question asked",
+    "table_format": "rows",
+    "max_steps": 2,
+    "verify_before_submit": false
+   }
+  },
+  {
+   "round": 3,
+   "incumbent_before": {
+    "system_prompt": "Answer the question about the report page.\n",
+    "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+    "rules": "- Identify the required calculation from the question\n- Perform arithmetic operations directly, avoiding placeholders\n- Use parentheses for operation precedence\n- Round answers appropriately based on the context\n- Present the final answer in a clear and concise manner\n- Ensure the answer directly answers the question asked",
+    "table_format": "rows",
+    "max_steps": 2,
+    "verify_before_submit": false
+   },
+   "candidates": [
+    {
+     "id": "random-1/r3/0",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Identify the required calculation from the question\n- Perform arithmetic operations directly, avoiding placeholders\n- Use parentheses for operation precedence\n- Ensure the calculation is correct before submitting\n- Round answers appropriately based on the context\n- Present the final answer in a clear and concise manner\n- Ensure the answer directly answers the question asked\n- Verify the correctness of the calculation before submitting",
+      "table_format": "rows",
+      "max_steps": 3,
+      "verify_before_submit": false
+     },
+     "setting": {
+      "field": "max_steps",
+      "value": 3
+     }
+    },
+    {
+     "id": "random-1/r3/1",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Identify the required calculation from the question\n- Perform arithmetic operations directly, avoiding placeholders\n- Use parentheses for operation precedence\n- Verify that the arithmetic operation is correct\n- Round answers appropriately based on the context\n- Present the final answer in a clear and concise manner\n- Ensure the answer directly answers the question asked",
+      "table_format": "rows",
+      "max_steps": 2,
+      "verify_before_submit": true
+     },
+     "setting": {
+      "field": "verify_before_submit",
+      "value": true
+     }
+    },
+    {
+     "id": "random-1/r3/2",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Identify the required calculation from the question\n- Perform arithmetic operations directly, avoiding placeholders\n- Use parentheses for operation precedence\n- Ensure the calculation is precise and correct\n- Round answers appropriately based on the context\n- Present the final answer in a clear and concise manner\n- Ensure the answer directly answers the question asked\n- Use stepwise validation to ensure each part of the calculation is correct",
+      "table_format": "rows",
+      "max_steps": 2,
+      "verify_before_submit": false
+     },
+     "setting": null
+    },
+    {
+     "id": "random-1/r3/3",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Identify the required calculation from the question\n- Perform arithmetic operations directly, avoiding placeholders\n- Use parentheses for operation precedence\n- Validate the numbers used in the calculation from the report\n- Round answers appropriately based on the context\n- Present the final answer in a clear and concise manner\n- Ensure the answer directly answers the question asked",
+      "table_format": "rows",
+      "max_steps": 2,
+      "verify_before_submit": false
+     },
+     "setting": null
+    },
+    {
+     "id": "random-1/r3/4",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Identify the required calculation from the question\n- Perform arithmetic operations directly, avoiding placeholders\n- Use parentheses for operation precedence\n- Ensure the calculation is correct, using step-by-step validation\n- Round answers appropriately based on the context\n- Present the final answer in a clear and concise manner\n- Ensure the answer directly answers the question asked",
+      "table_format": "rows",
+      "max_steps": 2,
+      "verify_before_submit": false
+     },
+     "setting": null
+    }
+   ],
+   "chosen": "random-1/r3/3",
+   "replaced": true,
+   "incumbent_after": {
+    "system_prompt": "Answer the question about the report page.\n",
+    "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+    "rules": "- Identify the required calculation from the question\n- Perform arithmetic operations directly, avoiding placeholders\n- Use parentheses for operation precedence\n- Validate the numbers used in the calculation from the report\n- Round answers appropriately based on the context\n- Present the final answer in a clear and concise manner\n- Ensure the answer directly answers the question asked",
+    "table_format": "rows",
+    "max_steps": 2,
+    "verify_before_submit": false
+   }
+  },
+  {
+   "round": 4,
+   "incumbent_before": {
+    "system_prompt": "Answer the question about the report page.\n",
+    "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+    "rules": "- Identify the required calculation from the question\n- Perform arithmetic operations directly, avoiding placeholders\n- Use parentheses for operation precedence\n- Validate the numbers used in the calculation from the report\n- Round answers appropriately based on the context\n- Present the final answer in a clear and concise manner\n- Ensure the answer directly answers the question asked",
+    "table_format": "rows",
+    "max_steps": 2,
+    "verify_before_submit": false
+   },
+   "candidates": [
+    {
+     "id": "random-1/r4/0",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Identify the required calculation from the question\n- Perform arithmetic operations directly, avoiding placeholders\n- Use parentheses for operation precedence\n- Validate the numbers used in the calculation from the report\n- Round answers appropriately based on the context\n- Present the final answer in a clear and concise manner\n- Ensure the answer directly answers the question asked\n- Only use +, -, *, /, and parentheses for calculations",
+      "table_format": "rows",
+      "max_steps": 2,
+      "verify_before_submit": false
+     },
+     "setting": null
+    },
+    {
+     "id": "random-1/r4/1",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Identify the required calculation from the question\n- Perform arithmetic operations directly, avoiding placeholders\n- Use parentheses for operation precedence\n- Validate the numbers used in the calculation from the report\n- Round answers appropriately based on the context\n- Present the final answer in a clear and concise manner\n- Ensure the answer directly answers the question asked\n- Verify calculation steps before submitting the final answer",
+      "table_format": "rows",
+      "max_steps": 2,
+      "verify_before_submit": true
+     },
+     "setting": {
+      "field": "verify_before_submit",
+      "value": true
+     }
+    },
+    {
+     "id": "random-1/r4/2",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Identify the required calculation from the question\n- Perform arithmetic operations directly, avoiding placeholders\n- Use parentheses for operation precedence\n- Validate the numbers used in the calculation from the report\n- Round answers appropriately based on the context\n- Present the final answer in a clear and concise manner\n- Ensure the answer directly answers the question asked\n- Maximize precision in intermediate steps before rounding",
+      "table_format": "rows",
+      "max_steps": 2,
+      "verify_before_submit": false
+     },
+     "setting": null
+    },
+    {
+     "id": "random-1/r4/3",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Identify the required calculation from the question\n- Perform arithmetic operations directly, avoiding placeholders\n- Use parentheses for operation precedence\n- Validate the numbers used in the calculation from the report\n- Round answers appropriately based on the context\n- Present the final answer in a clear and concise manner\n- Ensure the answer directly answers the question asked\n- Provide examples of valid calculations in your answers",
+      "table_format": "rows",
+      "max_steps": 2,
+      "verify_before_submit": false
+     },
+     "setting": null
+    },
+    {
+     "id": "random-1/r4/4",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Identify the required calculation from the question\n- Perform arithmetic operations directly, avoiding placeholders\n- Use parentheses for operation precedence\n- Validate the numbers used in the calculation from the report\n- Round answers appropriately based on the context\n- Present the final answer in a clear and concise manner\n- Ensure the answer directly answers the question asked\n- Increase the depth of calculations allowed to 10 steps to handle complex questions",
+      "table_format": "rows",
+      "max_steps": 10,
+      "verify_before_submit": false
+     },
+     "setting": {
+      "field": "max_steps",
+      "value": 10
+     }
+    }
+   ],
+   "chosen": "random-1/r4/1",
+   "replaced": true,
+   "incumbent_after": {
+    "system_prompt": "Answer the question about the report page.\n",
+    "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+    "rules": "- Identify the required calculation from the question\n- Perform arithmetic operations directly, avoiding placeholders\n- Use parentheses for operation precedence\n- Validate the numbers used in the calculation from the report\n- Round answers appropriately based on the context\n- Present the final answer in a clear and concise manner\n- Ensure the answer directly answers the question asked\n- Verify calculation steps before submitting the final answer",
+    "table_format": "rows",
+    "max_steps": 2,
+    "verify_before_submit": true
+   }
+  },
+  {
+   "round": 5,
+   "incumbent_before": {
+    "system_prompt": "Answer the question about the report page.\n",
+    "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+    "rules": "- Identify the required calculation from the question\n- Perform arithmetic operations directly, avoiding placeholders\n- Use parentheses for operation precedence\n- Validate the numbers used in the calculation from the report\n- Round answers appropriately based on the context\n- Present the final answer in a clear and concise manner\n- Ensure the answer directly answers the question asked\n- Verify calculation steps before submitting the final answer",
+    "table_format": "rows",
+    "max_steps": 2,
+    "verify_before_submit": true
+   },
+   "candidates": [
+    {
+     "id": "random-1/r5/0",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Identify the required calculation from the question\n- Perform arithmetic operations directly, avoiding placeholders\n- Use parentheses for operation precedence\n- Validate the numbers used in the calculation from the report\n- Round answers appropriately based on the context\n- Present the final answer in a clear and concise manner\n- Ensure the answer directly answers the question asked\n- Use specific values from the report rather than placeholders\n- Verify all intermediate calculations for accuracy before proceeding\n- Ensure the final answer is consistent with the question's request for a range, ratio, or specific value",
+      "table_format": "rows",
+      "max_steps": 2,
+      "verify_before_submit": true
+     },
+     "setting": null
+    },
+    {
+     "id": "random-1/r5/1",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Identify the required calculation from the question\n- Perform arithmetic operations directly, avoiding placeholders\n- Use parentheses for operation precedence\n- Validate the numbers used in the calculation from the report\n- Round answers appropriately based on the context\n- Present the final answer in a clear and concise manner\n- Ensure the answer directly answers the question asked\n- Cross-check the final answer with the question's context and the report data\n- Avoid submitting partial or unverified answers\n- Provide a range or specific value as required by the question",
+      "table_format": "rows",
+      "max_steps": 3,
+      "verify_before_submit": true
+     },
+     "setting": {
+      "field": "max_steps",
+      "value": 3
+     }
+    },
+    {
+     "id": "random-1/r5/2",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Identify the required calculation from the question\n- Perform arithmetic operations directly, avoiding placeholders\n- Use parentheses for operation precedence\n- Validate the numbers used in the calculation from the report\n- Round answers appropriately based on the context\n- Present the final answer in a clear and concise manner\n- Ensure the answer directly answers the question asked\n- Check if the answer is a range, ratio, or specific value based on the question context\n- Avoid making assumptions about the data not provided in the question",
+      "table_format": "rows",
+      "max_steps": 2,
+      "verify_before_submit": false
+     },
+     "setting": {
+      "field": "verify_before_submit",
+      "value": false
+     }
+    },
+    {
+     "id": "random-1/r5/3",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Identify the required calculation from the question\n- Perform arithmetic operations directly, avoiding placeholders\n- Use parentheses for operation precedence\n- Validate the numbers used in the calculation from the report\n- Round answers appropriately based on the context\n- Present the final answer in a clear and concise manner\n- Ensure the answer directly answers the question asked\n- Verify the final answer against the data provided in the report\n- Provide intermediate steps to check for consistency\n- Ensure the final answer is precise and relevant to the question's context",
+      "table_format": "markdown",
+      "max_steps": 2,
+      "verify_before_submit": true
+     },
+     "setting": {
+      "field": "table_format",
+      "value": "markdown"
+     }
+    },
+    {
+     "id": "random-1/r5/4",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Identify the required calculation from the question\n- Perform arithmetic operations directly, avoiding placeholders\n- Use parentheses for operation precedence\n- Validate the numbers used in the calculation from the report\n- Round answers appropriately based on the context\n- Present the final answer in a clear and concise manner\n- Ensure the answer directly answers the question asked\n- Validate the final answer based on the range or specific values expected in the report\n- Ensure calculations are logical and directly related to the data in the report\n- Avoid providing answers that do not match the required format or context of the question",
+      "table_format": "rows",
+      "max_steps": 4,
+      "verify_before_submit": true
+     },
+     "setting": {
+      "field": "max_steps",
+      "value": 4
+     }
+    }
+   ],
+   "chosen": "random-1/r5/2",
+   "replaced": true,
+   "incumbent_after": {
+    "system_prompt": "Answer the question about the report page.\n",
+    "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+    "rules": "- Identify the required calculation from the question\n- Perform arithmetic operations directly, avoiding placeholders\n- Use parentheses for operation precedence\n- Validate the numbers used in the calculation from the report\n- Round answers appropriately based on the context\n- Present the final answer in a clear and concise manner\n- Ensure the answer directly answers the question asked\n- Check if the answer is a range, ratio, or specific value based on the question context\n- Avoid making assumptions about the data not provided in the question",
+    "table_format": "rows",
+    "max_steps": 2,
+    "verify_before_submit": false
+   }
+  }
+ ]
+}

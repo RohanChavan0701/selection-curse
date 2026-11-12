@@ -1,0 +1,82 @@
+[
+ {
+  "id": "jhonest-2/r1/0",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Ensure you understand the question before starting calculations\n- Use the 'calc' tool for arithmetic calculations only\n- Verify your calculations by re-checking the numbers and operations\n- Use the 'submit' tool to provide the final answer\n- If you encounter errors, adjust your calculation and try again",
+   "table_format": "rows",
+   "max_steps": 4,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "max_steps",
+   "value": 4
+  },
+  "rationale": "Increased steps and verification to improve accuracy"
+ },
+ {
+  "id": "jhonest-2/r1/1",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Break down complex questions into simpler parts\n- Use the 'calc' tool only for arithmetic operations\n- Double-check the numbers and operations before submitting\n- Use the 'submit' tool for final answers\n- If the calculation is complex, break it into multiple steps",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": true
+  },
+  "setting": {
+   "field": "verify_before_submit",
+   "value": true
+  },
+  "rationale": "Double-checking and verification to ensure accuracy"
+ },
+ {
+  "id": "jhonest-2/r1/2",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Read the question carefully and understand the context\n- Use 'calc' tool for arithmetic operations with correct syntax\n- Avoid using 'calc' for non-arithmetic operations\n- Verify calculations by substituting back into the original question\n- Use 'submit' tool for final answer",
+   "table_format": "rows",
+   "max_steps": 3,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "max_steps",
+   "value": 3
+  },
+  "rationale": "Clarifying usage of tools and increasing attention to syntax"
+ },
+ {
+  "id": "jhonest-2/r1/3",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Understand the type of answer expected (percentage, absolute value, etc.)\n- Use 'calc' tool only for the correct arithmetic operations\n- Verify each step of the calculation\n- Double-check the final answer before submitting\n- Use 'submit' tool for providing the final answer",
+   "table_format": "markdown",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "table_format",
+   "value": "markdown"
+  },
+  "rationale": "Clarifying expected answer type and improving readability"
+ },
+ {
+  "id": "jhonest-2/r1/4",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Identify key numbers from the question or report\n- Use 'calc' tool to perform required arithmetic operations\n- Check for any required unit conversions or adjustments\n- Verify the final answer is correct and in the expected format\n- Use 'submit' tool to provide the final answer",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": true
+  },
+  "setting": {
+   "field": "verify_before_submit",
+   "value": true
+  },
+  "rationale": "Ensuring accuracy through verification and unit checking"
+ }
+]

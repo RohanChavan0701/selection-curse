@@ -1,0 +1,561 @@
+{
+ "id": "jhonest-1",
+ "arm": "jhonest",
+ "rounds": [
+  {
+   "round": 1,
+   "incumbent_before": {
+    "system_prompt": "Answer the question about the report page.\n",
+    "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+    "rules": "",
+    "table_format": "rows",
+    "max_steps": 2,
+    "verify_before_submit": false
+   },
+   "candidates": [
+    {
+     "id": "jhonest-1/r1/0",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Always verify the numbers and calculations before submitting.\n- Use the correct arithmetic operations and ensure that the calculation includes all relevant numbers and values.\n- If the question asks for a percentage, calculate the percentage based on the correct base value provided in the report.",
+      "table_format": "rows",
+      "max_steps": 2,
+      "verify_before_submit": true
+     },
+     "setting": {
+      "field": "verify_before_submit",
+      "value": true
+     },
+     "score": 0.54,
+     "truth": 0.5533333333333333,
+     "p2": 0.54
+    },
+    {
+     "id": "jhonest-1/r1/1",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Identify the correct data from the report to answer the question.\n- Use the correct formula to calculate the requested value.\n- Ensure the answer is in the required format (e.g., percentage, decimal, etc.).",
+      "table_format": "rows",
+      "max_steps": 3,
+      "verify_before_submit": false
+     },
+     "setting": {
+      "field": "max_steps",
+      "value": 3
+     },
+     "score": 0.6066666666666667,
+     "truth": 0.5066666666666667,
+     "p2": 0.6066666666666667
+    },
+    {
+     "id": "jhonest-1/r1/2",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- If the question is about change or growth, calculate the change or growth rate correctly.\n- Make sure to use the correct base values for percentage calculations.\n- Double-check all calculations before submitting the answer.",
+      "table_format": "markdown",
+      "max_steps": 2,
+      "verify_before_submit": false
+     },
+     "setting": {
+      "field": "table_format",
+      "value": "markdown"
+     },
+     "score": 0.5866666666666667,
+     "truth": 0.5733333333333334,
+     "p2": 0.5866666666666667
+    },
+    {
+     "id": "jhonest-1/r1/3",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Always ensure the question is fully understood before proceeding with calculations.\n- If a question involves multiple steps, break down the steps clearly and accurately.\n- Review the answer with the question to ensure it meets the query's requirements.",
+      "table_format": "rows",
+      "max_steps": 2,
+      "verify_before_submit": false
+     },
+     "setting": null,
+     "score": 0.52,
+     "truth": 0.52,
+     "p2": 0.52
+    },
+    {
+     "id": "jhonest-1/r1/4",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Carefully read the question and identify the key information needed to answer it.\n- Perform any necessary arithmetic operations with precision.\n- Ensure the answer format matches the question's requirements (e.g., dollars, percentages, etc.).",
+      "table_format": "rows",
+      "max_steps": 2,
+      "verify_before_submit": false
+     },
+     "setting": null,
+     "score": 0.5666666666666667,
+     "truth": 0.5466666666666666,
+     "p2": 0.5666666666666667
+    }
+   ],
+   "chosen": "jhonest-1/r1/1",
+   "replaced": true,
+   "incumbent_after": {
+    "system_prompt": "Answer the question about the report page.\n",
+    "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+    "rules": "- Identify the correct data from the report to answer the question.\n- Use the correct formula to calculate the requested value.\n- Ensure the answer is in the required format (e.g., percentage, decimal, etc.).",
+    "table_format": "rows",
+    "max_steps": 3,
+    "verify_before_submit": false
+   },
+   "incumbent_score": 0.5466666666666666
+  },
+  {
+   "round": 2,
+   "incumbent_before": {
+    "system_prompt": "Answer the question about the report page.\n",
+    "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+    "rules": "- Identify the correct data from the report to answer the question.\n- Use the correct formula to calculate the requested value.\n- Ensure the answer is in the required format (e.g., percentage, decimal, etc.).",
+    "table_format": "rows",
+    "max_steps": 3,
+    "verify_before_submit": false
+   },
+   "candidates": [
+    {
+     "id": "jhonest-1/r2/0",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Carefully identify the relevant data from the report to ensure accuracy.\n- Use appropriate formulas to calculate the required values, ensuring that all relevant numbers are included.\n- Double-check all calculations before submitting to ensure no arithmetic mistakes.\n- Ensure the answer format matches the question's requirements, such as percentage or decimal.\n- Verify that all steps are logically sound and relevant to the question.",
+      "table_format": "rows",
+      "max_steps": 3,
+      "verify_before_submit": false
+     },
+     "setting": null,
+     "score": 0.54,
+     "truth": 0.54,
+     "p2": 0.54
+    },
+    {
+     "id": "jhonest-1/r2/1",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Identify and extract the necessary data from the report accurately.\n- Perform calculations using the correct arithmetic operations and formulas.\n- Ensure the answer format matches the question's requirements, such as percentage or decimal.\n- Verify the calculations and data extraction before submitting.",
+      "table_format": "rows",
+      "max_steps": 5,
+      "verify_before_submit": false
+     },
+     "setting": {
+      "field": "max_steps",
+      "value": 5
+     },
+     "score": 0.5333333333333333,
+     "truth": 0.5466666666666666,
+     "p2": 0.5333333333333333
+    },
+    {
+     "id": "jhonest-1/r2/2",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Extract and verify the necessary data from the report for accuracy.\n- Use precise arithmetic operations and formulas to calculate the requested values.\n- Confirm that the answer format aligns with the question's requirements, such as percentage or decimal.\n- Review the calculations and data extraction steps to ensure no errors.",
+      "table_format": "rows",
+      "max_steps": 3,
+      "verify_before_submit": true
+     },
+     "setting": {
+      "field": "verify_before_submit",
+      "value": true
+     },
+     "score": 0.5466666666666666,
+     "truth": 0.5666666666666667,
+     "p2": 0.5466666666666666
+    },
+    {
+     "id": "jhonest-1/r2/3",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Identify the correct data from the report to answer the question.\n- Perform calculations using the correct arithmetic operations and formulas, ensuring precision.\n- Ensure the answer format matches the question's requirements, such as percentage or decimal.\n- Verify that all calculations and data extraction are correct before submitting.",
+      "table_format": "markdown",
+      "max_steps": 3,
+      "verify_before_submit": false
+     },
+     "setting": {
+      "field": "table_format",
+      "value": "markdown"
+     },
+     "score": 0.54,
+     "truth": 0.5666666666666667,
+     "p2": 0.54
+    },
+    {
+     "id": "jhonest-1/r2/4",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Identify and extract the necessary data from the report with precision.\n- Use the appropriate formula to calculate the requested values, ensuring all relevant numbers are included.\n- Verify that the answer format matches the question's requirements, such as percentage or decimal.\n- Ensure all calculations and data extraction steps are logically sound and accurate.",
+      "table_format": "rows",
+      "max_steps": 4,
+      "verify_before_submit": false
+     },
+     "setting": {
+      "field": "max_steps",
+      "value": 4
+     },
+     "score": 0.5933333333333334,
+     "truth": 0.5333333333333333,
+     "p2": 0.5933333333333334
+    }
+   ],
+   "chosen": "jhonest-1/r2/4",
+   "replaced": false,
+   "incumbent_after": {
+    "system_prompt": "Answer the question about the report page.\n",
+    "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+    "rules": "- Identify the correct data from the report to answer the question.\n- Use the correct formula to calculate the requested value.\n- Ensure the answer is in the required format (e.g., percentage, decimal, etc.).",
+    "table_format": "rows",
+    "max_steps": 3,
+    "verify_before_submit": false
+   },
+   "incumbent_score": 0.6066666666666667
+  },
+  {
+   "round": 3,
+   "incumbent_before": {
+    "system_prompt": "Answer the question about the report page.\n",
+    "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+    "rules": "- Identify the correct data from the report to answer the question.\n- Use the correct formula to calculate the requested value.\n- Ensure the answer is in the required format (e.g., percentage, decimal, etc.).",
+    "table_format": "rows",
+    "max_steps": 3,
+    "verify_before_submit": false
+   },
+   "candidates": [
+    {
+     "id": "jhonest-1/r3/0",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Carefully read the question to understand what is being asked.\n- Identify the relevant data from the report.\n- Use appropriate formulas to calculate the requested values, ensuring precision.\n- Verify the correctness of the calculations using the provided tool.\n- Ensure the final answer is in the required format, such as percentage or decimal.\n- Double-check the answer against the question to ensure it fully meets the requirements.",
+      "table_format": "rows",
+      "max_steps": 5,
+      "verify_before_submit": false
+     },
+     "setting": {
+      "field": "max_steps",
+      "value": 5
+     },
+     "score": 0.56,
+     "truth": 0.5266666666666666,
+     "p2": 0.56
+    },
+    {
+     "id": "jhonest-1/r3/1",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Identify the specific data points needed from the report to answer the question.\n- Perform arithmetic operations with precision, using the correct formulas.\n- Verify all calculations before submitting the answer to ensure accuracy.\n- Format the answer correctly, matching the question's requirements (e.g., percentage, decimal).\n- Check the final answer against the question to ensure it fully meets the requirements.",
+      "table_format": "rows",
+      "max_steps": 3,
+      "verify_before_submit": true
+     },
+     "setting": {
+      "field": "verify_before_submit",
+      "value": true
+     },
+     "score": 0.5933333333333334,
+     "truth": 0.5533333333333333,
+     "p2": 0.5933333333333334
+    },
+    {
+     "id": "jhonest-1/r3/2",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Carefully read the question to ensure full understanding.\n- Extract the necessary data from the report accurately.\n- Use the appropriate arithmetic operations and formulas for the requested calculations.\n- Ensure the answer is formatted correctly, matching the question's requirements.\n- Double-check the answer against the question to ensure it meets the query's requirements.",
+      "table_format": "rows",
+      "max_steps": 4,
+      "verify_before_submit": false
+     },
+     "setting": {
+      "field": "max_steps",
+      "value": 4
+     },
+     "score": 0.56,
+     "truth": 0.5133333333333333,
+     "p2": 0.56
+    },
+    {
+     "id": "jhonest-1/r3/3",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Identify and extract the necessary data from the report with precision.\n- Perform precise calculations using the correct arithmetic operations and formulas.\n- Ensure the answer format matches the question's requirements, such as percentage or decimal.\n- Verify the calculations for accuracy before submitting the answer.\n- Double-check the final answer against the question to ensure it fully meets the requirements.",
+      "table_format": "markdown",
+      "max_steps": 3,
+      "verify_before_submit": false
+     },
+     "setting": {
+      "field": "table_format",
+      "value": "markdown"
+     },
+     "score": 0.5466666666666666,
+     "truth": 0.56,
+     "p2": 0.5466666666666666
+    },
+    {
+     "id": "jhonest-1/r3/4",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Read the question carefully to understand the data and calculations required.\n- Identify and extract the relevant data from the report accurately.\n- Perform arithmetic operations with precision, using the correct formulas.\n- Ensure the answer format matches the question's requirements (e.g., percentage, decimal).\n- Verify the calculations for accuracy and double-check the answer against the question.",
+      "table_format": "rows",
+      "max_steps": 6,
+      "verify_before_submit": false
+     },
+     "setting": {
+      "field": "max_steps",
+      "value": 6
+     },
+     "score": 0.5533333333333333,
+     "truth": 0.5666666666666667,
+     "p2": 0.5533333333333333
+    }
+   ],
+   "chosen": "jhonest-1/r3/1",
+   "replaced": false,
+   "incumbent_after": {
+    "system_prompt": "Answer the question about the report page.\n",
+    "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+    "rules": "- Identify the correct data from the report to answer the question.\n- Use the correct formula to calculate the requested value.\n- Ensure the answer is in the required format (e.g., percentage, decimal, etc.).",
+    "table_format": "rows",
+    "max_steps": 3,
+    "verify_before_submit": false
+   },
+   "incumbent_score": 0.6066666666666667
+  },
+  {
+   "round": 4,
+   "incumbent_before": {
+    "system_prompt": "Answer the question about the report page.\n",
+    "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+    "rules": "- Identify the correct data from the report to answer the question.\n- Use the correct formula to calculate the requested value.\n- Ensure the answer is in the required format (e.g., percentage, decimal, etc.).",
+    "table_format": "rows",
+    "max_steps": 3,
+    "verify_before_submit": false
+   },
+   "candidates": [
+    {
+     "id": "jhonest-1/r4/0",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Carefully read the question to understand the data and calculations required.\n- Identify and extract the relevant data from the report accurately, cross-referencing with the question.\n- Perform arithmetic operations with precision, using the correct formulas and double-check the calculations.\n- Ensure the answer format matches the question's requirements, such as percentage or decimal.\n- Verify the final answer by reviewing the question and report data once more before submission.",
+      "table_format": "rows",
+      "max_steps": 5,
+      "verify_before_submit": false
+     },
+     "setting": {
+      "field": "max_steps",
+      "value": 5
+     },
+     "score": 0.58,
+     "truth": 0.5066666666666667,
+     "p2": 0.58
+    },
+    {
+     "id": "jhonest-1/r4/1",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Carefully read the question to ensure full understanding.\n- Identify the specific data points needed from the report to answer the question.\n- Perform precise calculations using the correct arithmetic operations and formulas, ensuring that all relevant numbers are included and cross-referenced.\n- Double-check all calculations and verify the final answer before submission to ensure accuracy.\n- Ensure the answer is formatted according to the question's requirements, such as percentage or decimal.",
+      "table_format": "rows",
+      "max_steps": 3,
+      "verify_before_submit": true
+     },
+     "setting": {
+      "field": "verify_before_submit",
+      "value": true
+     },
+     "score": 0.5533333333333333,
+     "truth": 0.5266666666666666,
+     "p2": 0.5533333333333333
+    },
+    {
+     "id": "jhonest-1/r4/2",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Carefully understand the question and identify the exact type of data required from the report.\n- Perform calculations using the correct arithmetic operations and formulas, ensuring precision and cross-referencing the report.\n- Ensure the answer format matches the question's requirements and double-check all calculations.\n- Verify the correctness of the calculations and the final answer against the report data.",
+      "table_format": "markdown",
+      "max_steps": 3,
+      "verify_before_submit": false
+     },
+     "setting": {
+      "field": "table_format",
+      "value": "markdown"
+     },
+     "score": 0.5266666666666666,
+     "truth": 0.5466666666666666,
+     "p2": 0.5266666666666666
+    },
+    {
+     "id": "jhonest-1/r4/3",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Read the question carefully and identify the specific data points required.\n- Identify and extract the necessary data from the report accurately, double-checking for any discrepancies.\n- Perform precise arithmetic operations and formulas, ensuring all relevant numbers are included and cross-referenced.\n- Double-check all calculations and ensure the answer format matches the question's requirements.\n- Verify the final answer by reviewing the question and report data before submission.",
+      "table_format": "rows",
+      "max_steps": 6,
+      "verify_before_submit": false
+     },
+     "setting": {
+      "field": "max_steps",
+      "value": 6
+     },
+     "score": 0.5733333333333334,
+     "truth": 0.5333333333333333,
+     "p2": 0.5733333333333334
+    },
+    {
+     "id": "jhonest-1/r4/4",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Carefully read and understand the question, identifying the specific data points and calculations required.\n- Identify and extract the necessary data from the report accurately, cross-referencing with the question for precision.\n- Use appropriate formulas to perform arithmetic operations with precision, ensuring all relevant numbers are included.\n- Verify all calculations and ensure the answer format matches the question's requirements, such as percentage or decimal.\n- Review the final answer and the report data once more before submission to ensure accuracy.",
+      "table_format": "rows",
+      "max_steps": 3,
+      "verify_before_submit": false
+     },
+     "setting": null,
+     "score": 0.5533333333333333,
+     "truth": 0.5133333333333333,
+     "p2": 0.5533333333333333
+    }
+   ],
+   "chosen": "jhonest-1/r4/0",
+   "replaced": false,
+   "incumbent_after": {
+    "system_prompt": "Answer the question about the report page.\n",
+    "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+    "rules": "- Identify the correct data from the report to answer the question.\n- Use the correct formula to calculate the requested value.\n- Ensure the answer is in the required format (e.g., percentage, decimal, etc.).",
+    "table_format": "rows",
+    "max_steps": 3,
+    "verify_before_submit": false
+   },
+   "incumbent_score": 0.6066666666666667
+  },
+  {
+   "round": 5,
+   "incumbent_before": {
+    "system_prompt": "Answer the question about the report page.\n",
+    "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+    "rules": "- Identify the correct data from the report to answer the question.\n- Use the correct formula to calculate the requested value.\n- Ensure the answer is in the required format (e.g., percentage, decimal, etc.).",
+    "table_format": "rows",
+    "max_steps": 3,
+    "verify_before_submit": false
+   },
+   "candidates": [
+    {
+     "id": "jhonest-1/r5/0",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Carefully read the question to understand the specific data points and calculations required.\n- Identify and extract the relevant data from the report accurately, cross-referencing with the question.\n- Use the correct arithmetic operations and formulas for the calculations, ensuring precision.\n- Verify the correctness of the calculations and the format of the answer before submitting.\n- Ensure the answer is formatted correctly according to the question's requirements, such as using percentages or decimals.",
+      "table_format": "rows",
+      "max_steps": 3,
+      "verify_before_submit": true
+     },
+     "setting": {
+      "field": "verify_before_submit",
+      "value": true
+     },
+     "score": 0.5733333333333334,
+     "truth": 0.52,
+     "p2": 0.5733333333333334
+    },
+    {
+     "id": "jhonest-1/r5/1",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Read the question carefully to understand the required data and calculations.\n- Identify and extract the necessary data from the report accurately.\n- Perform arithmetic operations with precision, using the correct formulas and cross-referencing the report.\n- Ensure the answer format matches the question's requirements and is correctly formatted.",
+      "table_format": "rows",
+      "max_steps": 7,
+      "verify_before_submit": false
+     },
+     "setting": {
+      "field": "max_steps",
+      "value": 7
+     },
+     "score": 0.5466666666666666,
+     "truth": 0.5266666666666666,
+     "p2": 0.5466666666666666
+    },
+    {
+     "id": "jhonest-1/r5/2",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Carefully read the question to understand the specific data points and calculations required.\n- Identify and extract the necessary data from the report accurately, double-checking for any discrepancies.\n- Use the appropriate arithmetic operations and formulas for the calculations, ensuring precision.\n- Ensure the answer is formatted correctly according to the question's requirements, such as using percentages or decimals.",
+      "table_format": "rows",
+      "max_steps": 3,
+      "verify_before_submit": false
+     },
+     "setting": null,
+     "score": 0.5733333333333334,
+     "truth": 0.49333333333333335,
+     "p2": 0.5733333333333334
+    },
+    {
+     "id": "jhonest-1/r5/3",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Read the question thoroughly to understand the exact type of data and calculations required.\n- Identify the specific data points needed from the report to answer the question accurately.\n- Perform precise calculations using the correct arithmetic operations and formulas.\n- Verify the correctness of calculations and ensure the answer is in the correct format.",
+      "table_format": "rows",
+      "max_steps": 3,
+      "verify_before_submit": true
+     },
+     "setting": {
+      "field": "verify_before_submit",
+      "value": true
+     },
+     "score": 0.5333333333333333,
+     "truth": 0.5266666666666666,
+     "p2": 0.5333333333333333
+    },
+    {
+     "id": "jhonest-1/r5/4",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Carefully read the question to identify the specific data points and calculations required.\n- Extract the necessary data from the report accurately, ensuring precision and cross-referencing with the question.\n- Use the correct arithmetic operations and formulas for the requested calculations, ensuring precision.\n- Ensure the answer format matches the question's requirements, such as using percentages or decimals.",
+      "table_format": "rows",
+      "max_steps": 5,
+      "verify_before_submit": false
+     },
+     "setting": {
+      "field": "max_steps",
+      "value": 5
+     },
+     "score": 0.5666666666666667,
+     "truth": 0.5066666666666667,
+     "p2": 0.5666666666666667
+    }
+   ],
+   "chosen": "jhonest-1/r5/0",
+   "replaced": false,
+   "incumbent_after": {
+    "system_prompt": "Answer the question about the report page.\n",
+    "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+    "rules": "- Identify the correct data from the report to answer the question.\n- Use the correct formula to calculate the requested value.\n- Ensure the answer is in the required format (e.g., percentage, decimal, etc.).",
+    "table_format": "rows",
+    "max_steps": 3,
+    "verify_before_submit": false
+   },
+   "incumbent_score": 0.6066666666666667
+  }
+ ]
+}

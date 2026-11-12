@@ -1,0 +1,79 @@
+[
+ {
+  "id": "truth-1/r5/0",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Carefully read the question to identify the required calculation and the relevant data from the report.\n- Ensure all numbers used in calculations are accurate and relevant to the question.\n- Use the formula for percentage questions: (part/whole)*100.\n- For growth rates, use the formula (new value - old value) / old value.\n- Perform a final check on the arithmetic and the final answer before submitting.\n- Confirm the correct unit (e.g., millions, billions) for the final answer.\n- Verify the accuracy of the extracted numbers by cross-referencing with the report.\n- Ensure the calculation formula is correctly applied to the extracted numbers.\n- For questions involving multiple years, ensure the correct sequence of years is used in calculations.",
+   "table_format": "markdown",
+   "max_steps": 2,
+   "verify_before_submit": true
+  },
+  "setting": null,
+  "rationale": "Adding verification steps for number extraction and sequence of years to improve accuracy."
+ },
+ {
+  "id": "truth-1/r5/1",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Identify the specific data needed from the report for the calculation.\n- Ensure all numbers used in calculations are accurate and relevant to the question.\n- Use the formula for percentage questions: (part/whole)*100.\n- For growth rates, use the formula (new value - old value) / old value.\n- Perform a final check on the arithmetic and the final answer before submitting.\n- Confirm the correct unit (e.g., millions, billions) for the final answer.\n- Recheck the arithmetic operations for any possible errors before submitting the answer.",
+   "table_format": "markdown",
+   "max_steps": 3,
+   "verify_before_submit": true
+  },
+  "setting": {
+   "field": "max_steps",
+   "value": 3
+  },
+  "rationale": "Reducing max_steps to 3 to encourage more concise and accurate calculations."
+ },
+ {
+  "id": "truth-1/r5/2",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Carefully read the question to identify the required calculation and the relevant data from the report.\n- Ensure all numbers used in calculations are accurate and relevant to the question.\n- Use the formula for percentage questions: (part/whole)*100.\n- For growth rates, use the formula (new value - old value) / old value.\n- Perform a final check on the arithmetic and the final answer before submitting.\n- Confirm the correct unit (e.g., millions, billions) for the final answer.\n- If the question involves multiple data points, perform intermediate checks to ensure accuracy.",
+   "table_format": "markdown",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "verify_before_submit",
+   "value": false
+  },
+  "rationale": "Disabling automatic verification to encourage manual double-checking."
+ },
+ {
+  "id": "truth-1/r5/3",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Identify the specific data needed from the report for the calculation.\n- Ensure all numbers used in calculations are accurate and relevant to the question.\n- Use the formula for percentage questions: (part/whole)*100.\n- For growth rates, use the formula (new value - old value) / old value.\n- Perform a final check on the arithmetic and the final answer before submitting.\n- Confirm the correct unit (e.g., millions, billions) for the final answer.\n- Double-check the data points and calculation logic before performing any arithmetic.",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": true
+  },
+  "setting": {
+   "field": "table_format",
+   "value": "rows"
+  },
+  "rationale": "Changing table format to rows to make data extraction clearer."
+ },
+ {
+  "id": "truth-1/r5/4",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Carefully read the question to identify the required calculation and the relevant data from the report.\n- Ensure all numbers used in calculations are accurate and relevant to the question.\n- Use the formula for percentage questions: (part/whole)*100.\n- For growth rates, use the formula (new value - old value) / old value.\n- Perform a final check on the arithmetic and the final answer before submitting.\n- Confirm the correct unit (e.g., millions, billions) for the final answer.\n- If the question involves a range of years, ensure the correct years are used in calculations.",
+   "table_format": "markdown",
+   "max_steps": 5,
+   "verify_before_submit": true
+  },
+  "setting": {
+   "field": "max_steps",
+   "value": 5
+  },
+  "rationale": "Increasing max_steps to 5 to allow for more detailed calculations and verification."
+ }
+]

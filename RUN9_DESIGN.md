@@ -1,8 +1,8 @@
 # Run 9 design: does a loop that optimizes against the judge end up gaming it?
 
-Status: REGISTERED (2026-11-11), not launched. Predictions are in `PREDICTION_run9.md`,
-committed with this status before any run 9 data exists. Registration is a commit
-that precedes any run 9 data. A launch needs the author's go-ahead.
+Status: RUN (2026-11-11 and 12). Registered 2026-11-11 before any run 9 data existed.
+Predictions, deviations and results are in `PREDICTION_run9.md`. Primary: inconclusive
+(+2.3 points, 95% interval -2.0 to +6.6). The text below is the design as registered.
 
 ## Where this comes from
 

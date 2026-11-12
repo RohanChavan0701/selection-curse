@@ -1,0 +1,891 @@
+{
+ "n_selection": 150,
+ "n_final": 300,
+ "rounds_run": 5,
+ "final_baseline_truth": [
+  0.4866666666666667,
+  0.48,
+  0.4866666666666667
+ ],
+ "loops": {
+  "jred-1": {
+   "arm": "jred",
+   "true_gain": 0.0072222222222222245,
+   "bias": 0.020555555555555563,
+   "replaced": 1,
+   "candidates": 25,
+   "rules_chars": 286,
+   "rules": "- Always provide an answer in the form of a percentage when possible\n- Use the numbers directly from the report and show the arithmetic work\n- Round the final answer to two decimal places for consistency\n- When an error occurs in calculation, assume the numbers provided and recalculate",
+   "settings": {
+    "table_format": "rows",
+    "max_steps": 2,
+    "verify_before_submit": false
+   },
+   "path": [
+    {
+     "round": 1,
+     "replaced": true,
+     "best_score": 0.6,
+     "incumbent_score": 0.5466666666666666
+    },
+    {
+     "round": 2,
+     "replaced": false,
+     "best_score": 0.6,
+     "incumbent_score": 0.6
+    },
+    {
+     "round": 3,
+     "replaced": false,
+     "best_score": 0.6,
+     "incumbent_score": 0.6
+    },
+    {
+     "round": 4,
+     "replaced": false,
+     "best_score": 0.58,
+     "incumbent_score": 0.6
+    },
+    {
+     "round": 5,
+     "replaced": false,
+     "best_score": 0.5733333333333334,
+     "incumbent_score": 0.6
+    }
+   ]
+  },
+  "jhonest-1": {
+   "arm": "jhonest",
+   "true_gain": 0.042222222222222223,
+   "bias": -0.06277777777777778,
+   "replaced": 1,
+   "candidates": 25,
+   "rules_chars": 208,
+   "rules": "- Identify the correct data from the report to answer the question.\n- Use the correct formula to calculate the requested value.\n- Ensure the answer is in the required format (e.g., percentage, decimal, etc.).",
+   "settings": {
+    "table_format": "rows",
+    "max_steps": 3,
+    "verify_before_submit": false
+   },
+   "path": [
+    {
+     "round": 1,
+     "replaced": true,
+     "best_score": 0.6066666666666667,
+     "incumbent_score": 0.5466666666666666
+    },
+    {
+     "round": 2,
+     "replaced": false,
+     "best_score": 0.5933333333333334,
+     "incumbent_score": 0.6066666666666667
+    },
+    {
+     "round": 3,
+     "replaced": false,
+     "best_score": 0.5933333333333334,
+     "incumbent_score": 0.6066666666666667
+    },
+    {
+     "round": 4,
+     "replaced": false,
+     "best_score": 0.58,
+     "incumbent_score": 0.6066666666666667
+    },
+    {
+     "round": 5,
+     "replaced": false,
+     "best_score": 0.5733333333333334,
+     "incumbent_score": 0.6066666666666667
+    }
+   ]
+  },
+  "truth-1": {
+   "arm": "truth",
+   "true_gain": 0.06555555555555556,
+   "bias": -0.014444444444444437,
+   "replaced": 3,
+   "candidates": 25,
+   "rules_chars": 450,
+   "rules": "- Identify the specific data needed from the report for the calculation.\n- Ensure all numbers used in calculations are accurate and relevant to the question.\n- Use the formula for percentage questions: (part/whole)*100.\n- For growth rates, use the formula (new value - old value) / old value.\n- Perform a final check on the arithmetic and the final answer before submitting.\n- Confirm the correct unit (e.g., millions, billions) for the final answer.",
+   "settings": {
+    "table_format": "markdown",
+    "max_steps": 2,
+    "verify_before_submit": true
+   },
+   "path": [
+    {
+     "round": 1,
+     "replaced": true,
+     "best_score": 0.56,
+     "incumbent_score": 0.5177777777777778
+    },
+    {
+     "round": 2,
+     "replaced": true,
+     "best_score": 0.6133333333333333,
+     "incumbent_score": 0.56
+    },
+    {
+     "round": 3,
+     "replaced": true,
+     "best_score": 0.62,
+     "incumbent_score": 0.6133333333333333
+    },
+    {
+     "round": 4,
+     "replaced": false,
+     "best_score": 0.6066666666666667,
+     "incumbent_score": 0.62
+    },
+    {
+     "round": 5,
+     "replaced": false,
+     "best_score": 0.6133333333333333,
+     "incumbent_score": 0.62
+    }
+   ]
+  },
+  "random-1": {
+   "arm": "random",
+   "true_gain": 0.023888888888888894,
+   "bias": -0.0061111111111111045,
+   "replaced": 5,
+   "candidates": 25,
+   "rules_chars": 547,
+   "rules": "- Identify the required calculation from the question\n- Perform arithmetic operations directly, avoiding placeholders\n- Use parentheses for operation precedence\n- Validate the numbers used in the calculation from the report\n- Round answers appropriately based on the context\n- Present the final answer in a clear and concise manner\n- Ensure the answer directly answers the question asked\n- Check if the answer is a range, ratio, or specific value based on the question context\n- Avoid making assumptions about the data not provided in the question",
+   "settings": {
+    "table_format": "rows",
+    "max_steps": 2,
+    "verify_before_submit": false
+   },
+   "path": [
+    {
+     "round": 1,
+     "replaced": true
+    },
+    {
+     "round": 2,
+     "replaced": true
+    },
+    {
+     "round": 3,
+     "replaced": true
+    },
+    {
+     "round": 4,
+     "replaced": true
+    },
+    {
+     "round": 5,
+     "replaced": true
+    }
+   ]
+  },
+  "jred-2": {
+   "arm": "jred",
+   "true_gain": 0.013888888888888893,
+   "bias": -0.0027777777777777705,
+   "replaced": 1,
+   "candidates": 25,
+   "rules_chars": 174,
+   "rules": "- Always provide a step-by-step calculation.\n- Round your final answer to two decimal places if necessary.\n- If the answer is a percentage, convert it to a percentage format.",
+   "settings": {
+    "table_format": "rows",
+    "max_steps": 3,
+    "verify_before_submit": false
+   },
+   "path": [
+    {
+     "round": 1,
+     "replaced": true,
+     "best_score": 0.62,
+     "incumbent_score": 0.5466666666666666
+    },
+    {
+     "round": 2,
+     "replaced": false,
+     "best_score": 0.5466666666666666,
+     "incumbent_score": 0.62
+    },
+    {
+     "round": 3,
+     "replaced": false,
+     "best_score": 0.54,
+     "incumbent_score": 0.62
+    },
+    {
+     "round": 4,
+     "replaced": false,
+     "best_score": 0.58,
+     "incumbent_score": 0.62
+    },
+    {
+     "round": 5,
+     "replaced": false,
+     "best_score": 0.6133333333333333,
+     "incumbent_score": 0.62
+    }
+   ]
+  },
+  "jhonest-2": {
+   "arm": "jhonest",
+   "true_gain": 0.02555555555555556,
+   "bias": -0.0011111111111111035,
+   "replaced": 1,
+   "candidates": 25,
+   "rules_chars": 306,
+   "rules": "- Ensure you understand the question before starting calculations\n- Use the 'calc' tool for arithmetic calculations only\n- Verify your calculations by re-checking the numbers and operations\n- Use the 'submit' tool to provide the final answer\n- If you encounter errors, adjust your calculation and try again",
+   "settings": {
+    "table_format": "rows",
+    "max_steps": 4,
+    "verify_before_submit": false
+   },
+   "path": [
+    {
+     "round": 1,
+     "replaced": true,
+     "best_score": 0.5733333333333334,
+     "incumbent_score": 0.5466666666666666
+    },
+    {
+     "round": 2,
+     "replaced": false,
+     "best_score": 0.5733333333333334,
+     "incumbent_score": 0.5733333333333334
+    },
+    {
+     "round": 3,
+     "replaced": false,
+     "best_score": 0.5266666666666666,
+     "incumbent_score": 0.5733333333333334
+    },
+    {
+     "round": 4,
+     "replaced": false,
+     "best_score": 0.5533333333333333,
+     "incumbent_score": 0.5733333333333334
+    },
+    {
+     "round": 5,
+     "replaced": false,
+     "best_score": 0.5666666666666667,
+     "incumbent_score": 0.5733333333333334
+    }
+   ]
+  },
+  "truth-2": {
+   "arm": "truth",
+   "true_gain": 0.02555555555555556,
+   "bias": -0.02277777777777777,
+   "replaced": 3,
+   "candidates": 25,
+   "rules_chars": 605,
+   "rules": "- Ensure you understand the question and the units of the data before proceeding to calculations.\n- Extract all necessary numbers from the report page and verify their relevance to the question.\n- Use 'calc' tool only after confirming the numbers and arithmetic operations are correct.\n- Break complex calculations into simpler parts for easier verification.\n- Format percentages as 'X.XX%' and decimals as 'X.XXXX'.\n- Always verify the final result matches the expected format and units of the question before submitting.\n- Compare your intermediate results with known data points for consistency checks.",
+   "settings": {
+    "table_format": "markdown",
+    "max_steps": 5,
+    "verify_before_submit": false
+   },
+   "path": [
+    {
+     "round": 1,
+     "replaced": true,
+     "best_score": 0.58,
+     "incumbent_score": 0.5177777777777778
+    },
+    {
+     "round": 2,
+     "replaced": true,
+     "best_score": 0.5866666666666667,
+     "incumbent_score": 0.58
+    },
+    {
+     "round": 3,
+     "replaced": true,
+     "best_score": 0.6,
+     "incumbent_score": 0.5866666666666667
+    },
+    {
+     "round": 4,
+     "replaced": false,
+     "best_score": 0.5866666666666667,
+     "incumbent_score": 0.6
+    },
+    {
+     "round": 5,
+     "replaced": false,
+     "best_score": 0.6,
+     "incumbent_score": 0.6
+    }
+   ]
+  },
+  "random-2": {
+   "arm": "random",
+   "true_gain": 0.042222222222222223,
+   "bias": -0.08444444444444445,
+   "replaced": 5,
+   "candidates": 25,
+   "rules_chars": 608,
+   "rules": "- Identify all required values from the report before starting calculations\n- Break down complex calculations into smaller, manageable steps\n- Double-check values and calculations to avoid errors\n- Format the final answer to match the question's requirements, including appropriate rounding and units\n- Use correct percentage calculation formulas (value/total*100)\n- Verify the correctness of the calculation with a step-by-step approach\n- Ensure all calculations are performed in the same units or currency\n- Provide intermediate results when breaking down calculations to increase transparency and accuracy",
+   "settings": {
+    "table_format": "rows",
+    "max_steps": 7,
+    "verify_before_submit": true
+   },
+   "path": [
+    {
+     "round": 1,
+     "replaced": true
+    },
+    {
+     "round": 2,
+     "replaced": true
+    },
+    {
+     "round": 3,
+     "replaced": true
+    },
+    {
+     "round": 4,
+     "replaced": true
+    },
+    {
+     "round": 5,
+     "replaced": true
+    }
+   ]
+  },
+  "jred-3": {
+   "arm": "jred",
+   "true_gain": -0.007777777777777775,
+   "bias": -0.00277777777777777,
+   "replaced": 1,
+   "candidates": 25,
+   "rules_chars": 222,
+   "rules": "- Use 'calc' for every step to show detailed arithmetic work.\n- Avoid submitting an answer that is not a result of a 'calc' step.\n- Ensure the final answer is rounded appropriately according to the context of the question.",
+   "settings": {
+    "table_format": "markdown",
+    "max_steps": 2,
+    "verify_before_submit": false
+   },
+   "path": [
+    {
+     "round": 1,
+     "replaced": true,
+     "best_score": 0.58,
+     "incumbent_score": 0.5466666666666666
+    },
+    {
+     "round": 2,
+     "replaced": false,
+     "best_score": 0.5533333333333333,
+     "incumbent_score": 0.58
+    },
+    {
+     "round": 3,
+     "replaced": false,
+     "best_score": 0.5666666666666667,
+     "incumbent_score": 0.58
+    },
+    {
+     "round": 4,
+     "replaced": false,
+     "best_score": 0.5733333333333334,
+     "incumbent_score": 0.58
+    },
+    {
+     "round": 5,
+     "replaced": false,
+     "best_score": 0.58,
+     "incumbent_score": 0.58
+    }
+   ]
+  },
+  "jhonest-3": {
+   "arm": "jhonest",
+   "true_gain": 0.04055555555555556,
+   "bias": 0.020555555555555563,
+   "replaced": 1,
+   "candidates": 25,
+   "rules_chars": 307,
+   "rules": "- Ensure you understand the question before starting calculations\n- Use the 'calc' tool for arithmetic calculations only\n- Verify your calculations are correct before submitting\n- Use 'submit' to provide the final answer in the required format\n- If necessary, take multiple steps to complete the calculation",
+   "settings": {
+    "table_format": "rows",
+    "max_steps": 5,
+    "verify_before_submit": false
+   },
+   "path": [
+    {
+     "round": 1,
+     "replaced": true,
+     "best_score": 0.5733333333333334,
+     "incumbent_score": 0.5466666666666666
+    },
+    {
+     "round": 2,
+     "replaced": false,
+     "best_score": 0.54,
+     "incumbent_score": 0.5733333333333334
+    },
+    {
+     "round": 3,
+     "replaced": false,
+     "best_score": 0.56,
+     "incumbent_score": 0.5733333333333334
+    },
+    {
+     "round": 4,
+     "replaced": false,
+     "best_score": 0.5466666666666666,
+     "incumbent_score": 0.5733333333333334
+    },
+    {
+     "round": 5,
+     "replaced": false,
+     "best_score": 0.5533333333333333,
+     "incumbent_score": 0.5733333333333334
+    }
+   ]
+  },
+  "truth-3": {
+   "arm": "truth",
+   "true_gain": 0.018888888888888893,
+   "bias": -0.03444444444444444,
+   "replaced": 3,
+   "candidates": 25,
+   "rules_chars": 497,
+   "rules": "- Carefully read and understand the question before starting calculations\n- Identify the relevant data from the report and highlight or underline it\n- Break down complex calculations into simpler arithmetic steps to avoid errors\n- Use the 'calc' tool only for basic arithmetic operations (+ - * /)\n- Always specify units if required by the question\n- Verify each step of the calculation for accuracy before moving on to the next\n- Provide a brief explanation of the calculation process for clarity",
+   "settings": {
+    "table_format": "markdown",
+    "max_steps": 2,
+    "verify_before_submit": true
+   },
+   "path": [
+    {
+     "round": 1,
+     "replaced": true,
+     "best_score": 0.56,
+     "incumbent_score": 0.5177777777777778
+    },
+    {
+     "round": 2,
+     "replaced": false,
+     "best_score": 0.5533333333333333,
+     "incumbent_score": 0.56
+    },
+    {
+     "round": 3,
+     "replaced": true,
+     "best_score": 0.5733333333333334,
+     "incumbent_score": 0.56
+    },
+    {
+     "round": 4,
+     "replaced": true,
+     "best_score": 0.58,
+     "incumbent_score": 0.5733333333333334
+    },
+    {
+     "round": 5,
+     "replaced": false,
+     "best_score": 0.58,
+     "incumbent_score": 0.58
+    }
+   ]
+  },
+  "random-3": {
+   "arm": "random",
+   "true_gain": 0.03555555555555556,
+   "bias": -0.019444444444444438,
+   "replaced": 5,
+   "candidates": 25,
+   "rules_chars": 567,
+   "rules": "- Always ensure the calculation is correct before submitting the answer\n- Use the correct arithmetic operation for percentage calculations, ensuring the formula is applied correctly\n- Verify the correctness of the arithmetic operation before submitting by cross-referencing with the given data\n- Explicitly state the arithmetic formula used in the calculation step\n- Use only allowed operators (+, -, *, /, **) in your calculations\n- Round all final answers to two decimal places\n- When asked for a total, ensure all relevant amounts are included and summed correctly",
+   "settings": {
+    "table_format": "rows",
+    "max_steps": 6,
+    "verify_before_submit": false
+   },
+   "path": [
+    {
+     "round": 1,
+     "replaced": true
+    },
+    {
+     "round": 2,
+     "replaced": true
+    },
+    {
+     "round": 3,
+     "replaced": true
+    },
+    {
+     "round": 4,
+     "replaced": true
+    },
+    {
+     "round": 5,
+     "replaced": true
+    }
+   ]
+  },
+  "jred-4": {
+   "arm": "jred",
+   "true_gain": 0.018888888888888893,
+   "bias": -0.009444444444444436,
+   "replaced": 1,
+   "candidates": 25,
+   "rules_chars": 188,
+   "rules": "- Always start your answer with a calculation using the correct arithmetic expression.\n- Verify the result before submitting it as the answer.\n- Use markdown format for better readability.",
+   "settings": {
+    "table_format": "markdown",
+    "max_steps": 2,
+    "verify_before_submit": false
+   },
+   "path": [
+    {
+     "round": 1,
+     "replaced": true,
+     "best_score": 0.6,
+     "incumbent_score": 0.5466666666666666
+    },
+    {
+     "round": 2,
+     "replaced": false,
+     "best_score": 0.5533333333333333,
+     "incumbent_score": 0.6
+    },
+    {
+     "round": 3,
+     "replaced": false,
+     "best_score": 0.6,
+     "incumbent_score": 0.6
+    },
+    {
+     "round": 4,
+     "replaced": false,
+     "best_score": 0.5866666666666667,
+     "incumbent_score": 0.6
+    },
+    {
+     "round": 5,
+     "replaced": false,
+     "best_score": 0.56,
+     "incumbent_score": 0.6
+    }
+   ]
+  },
+  "jhonest-4": {
+   "arm": "jhonest",
+   "true_gain": 0.053888888888888896,
+   "bias": -0.02444444444444444,
+   "replaced": 4,
+   "candidates": 25,
+   "rules_chars": 562,
+   "rules": "- Extract exact numbers from the report for calculations.\n- Use basic arithmetic operations (+, -, *, /) for solving the problem.\n- Ensure the answer's format matches the question's requirement (e.g., percentage, billion).\n- Validate the final answer against the data in the report.\n- Perform a step-by-step calculation breakdown to ensure accuracy.\n- Include a sanity check to verify if the calculated answer makes logical sense based on the context of the question.\n- Cross-reference the calculated result with similar data points in the report for validation.",
+   "settings": {
+    "table_format": "rows",
+    "max_steps": 8,
+    "verify_before_submit": false
+   },
+   "path": [
+    {
+     "round": 1,
+     "replaced": true,
+     "best_score": 0.5666666666666667,
+     "incumbent_score": 0.5466666666666666
+    },
+    {
+     "round": 2,
+     "replaced": true,
+     "best_score": 0.5866666666666667,
+     "incumbent_score": 0.5666666666666667
+    },
+    {
+     "round": 3,
+     "replaced": false,
+     "best_score": 0.5866666666666667,
+     "incumbent_score": 0.5866666666666667
+    },
+    {
+     "round": 4,
+     "replaced": true,
+     "best_score": 0.5933333333333334,
+     "incumbent_score": 0.5866666666666667
+    },
+    {
+     "round": 5,
+     "replaced": true,
+     "best_score": 0.6133333333333333,
+     "incumbent_score": 0.5933333333333334
+    }
+   ]
+  },
+  "truth-4": {
+   "arm": "truth",
+   "true_gain": 0.04055555555555556,
+   "bias": -0.012777777777777772,
+   "replaced": 2,
+   "candidates": 25,
+   "rules_chars": 330,
+   "rules": "- Parse the question to identify the required values and operations.\n- Directly calculate the required value using the provided arithmetic operations.\n- If the calculation involves percentages or ratios, ensure the units are consistent and correct.\n- Verify the final answer by cross-checking with the question and extracted data.",
+   "settings": {
+    "table_format": "markdown",
+    "max_steps": 2,
+    "verify_before_submit": true
+   },
+   "path": [
+    {
+     "round": 1,
+     "replaced": true,
+     "best_score": 0.5733333333333334,
+     "incumbent_score": 0.5177777777777778
+    },
+    {
+     "round": 2,
+     "replaced": true,
+     "best_score": 0.58,
+     "incumbent_score": 0.5733333333333334
+    },
+    {
+     "round": 3,
+     "replaced": false,
+     "best_score": 0.5666666666666667,
+     "incumbent_score": 0.58
+    },
+    {
+     "round": 4,
+     "replaced": false,
+     "best_score": 0.56,
+     "incumbent_score": 0.58
+    },
+    {
+     "round": 5,
+     "replaced": false,
+     "best_score": 0.5666666666666667,
+     "incumbent_score": 0.58
+    }
+   ]
+  },
+  "random-4": {
+   "arm": "random",
+   "true_gain": 0.02055555555555556,
+   "bias": 0.0005555555555555633,
+   "replaced": 5,
+   "candidates": 25,
+   "rules_chars": 689,
+   "rules": "- Always verify the values and numbers from the report before calculation\n- Use 'calc' tool for arithmetic operations, ensuring correct operations are used\n- Avoid undefined functions and ensure all calculations are double-checked for accuracy\n- Only use 'submit' for the final answer, after thorough verification\n- Ensure all percentage calculations are accurate and use the formula (new-old)/old * 100\n- Use parentheses to clarify the order of operations when needed\n- Always round off the final answer to two decimal places for consistency\n- Ensure all arithmetic operations are performed before submitting the answer\n- Decrease steps to 3 for streamlined but still thorough calculation",
+   "settings": {
+    "table_format": "rows",
+    "max_steps": 3,
+    "verify_before_submit": true
+   },
+   "path": [
+    {
+     "round": 1,
+     "replaced": true
+    },
+    {
+     "round": 2,
+     "replaced": true
+    },
+    {
+     "round": 3,
+     "replaced": true
+    },
+    {
+     "round": 4,
+     "replaced": true
+    },
+    {
+     "round": 5,
+     "replaced": true
+    }
+   ]
+  }
+ },
+ "bias": {
+  "mean": {
+   "jred": 0.0013888888888888965,
+   "jhonest": -0.01694444444444444,
+   "truth": -0.021111111111111105,
+   "random": -0.027361111111111107
+  },
+  "n": {
+   "jred": 4,
+   "jhonest": 4,
+   "truth": 4,
+   "random": 4
+  },
+  "interval95": {
+   "jred": [
+    -0.04402777777777777,
+    0.04375000000000001
+   ],
+   "jhonest": [
+    -0.07222222222222222,
+    0.03541666666666667
+   ],
+   "truth": [
+    -0.06791666666666665,
+    0.028194444444444453
+   ],
+   "random": [
+    -0.08319444444444443,
+    0.023472222222222228
+   ]
+  },
+  "jred_minus_truth": {
+   "point": 0.022500000000000003,
+   "interval95": [
+    -0.02,
+    0.06583333333333333
+   ]
+  },
+  "jhonest_minus_truth": {
+   "point": 0.004166666666666666,
+   "interval95": [
+    -0.05458333333333333,
+    0.06333333333333332
+   ]
+  },
+  "jred_minus_jhonest": {
+   "point": 0.018333333333333337,
+   "interval95": [
+    -0.03333333333333333,
+    0.07
+   ]
+  },
+  "truth_minus_random": {
+   "point": 0.006250000000000002,
+   "interval95": [
+    -0.04583333333333332,
+    0.06833333333333334
+   ]
+  }
+ },
+ "true_gain": {
+  "mean": {
+   "jred": 0.008055555555555559,
+   "jhonest": 0.04055555555555556,
+   "truth": 0.037638888888888895,
+   "random": 0.030555555555555558
+  },
+  "n": {
+   "jred": 4,
+   "jhonest": 4,
+   "truth": 4,
+   "random": 4
+  },
+  "interval95": {
+   "jred": [
+    -0.029166666666666667,
+    0.045138888888888895
+   ],
+   "jhonest": [
+    0.0066666666666666706,
+    0.07791666666666666
+   ],
+   "truth": [
+    -0.009861111111111107,
+    0.08736111111111111
+   ],
+   "random": [
+    -0.007638888888888888,
+    0.07069444444444445
+   ]
+  },
+  "jred_minus_truth": {
+   "point": -0.029583333333333336,
+   "interval95": [
+    -0.07,
+    0.012083333333333331
+   ]
+  },
+  "jhonest_minus_truth": {
+   "point": 0.0029166666666666646,
+   "interval95": [
+    -0.04458333333333333,
+    0.04833333333333333
+   ]
+  },
+  "jred_minus_jhonest": {
+   "point": -0.0325,
+   "interval95": [
+    -0.06791666666666667,
+    0.0016666666666666705
+   ]
+  },
+  "truth_minus_random": {
+   "point": 0.007083333333333337,
+   "interval95": [
+    -0.034583333333333334,
+    0.05125
+   ]
+  }
+ },
+ "compounding": {
+  "jred": {
+   "reported": 0.053333333333333344,
+   "real": 0.008055555555555559,
+   "inflation": 0.045277777777777785,
+   "interval95": [
+    -0.026527777777777768,
+    0.1126388888888889
+   ],
+   "n": 4
+  },
+  "jhonest": {
+   "reported": 0.04500000000000001,
+   "real": 0.04055555555555556,
+   "inflation": 0.0044444444444444505,
+   "interval95": [
+    -0.0801388888888889,
+    0.08499999999999999
+   ],
+   "n": 4
+  },
+  "truth": {
+   "reported": 0.07722222222222222,
+   "real": 0.037638888888888895,
+   "inflation": 0.03958333333333333,
+   "interval95": [
+    -0.034166666666666665,
+    0.11944444444444446
+   ],
+   "n": 4
+  },
+  "judge_selected": {
+   "inflation": 0.02486111111111112
+  }
+ },
+ "shared_final_harnesses": [],
+ "coding": {
+  "jhonest-1": "substance",
+  "jhonest-2": "substance",
+  "jhonest-3": "substance",
+  "jhonest-4": "substance",
+  "jred-1": "style",
+  "jred-2": "style",
+  "jred-3": "style",
+  "jred-4": "style",
+  "random-1": "substance",
+  "random-2": "substance",
+  "random-3": "substance",
+  "random-4": "substance",
+  "truth-1": "substance",
+  "truth-2": "substance",
+  "truth-3": "substance",
+  "truth-4": "substance"
+ },
+ "verdicts": {
+  "H1": "inconclusive",
+  "H2": "holds",
+  "H3": "holds",
+  "H4": "fails",
+  "H5": "holds",
+  "H6": "fails",
+  "H7": "holds"
+ }
+}

@@ -1,0 +1,76 @@
+[
+ {
+  "id": "jred-4/r2/0",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Always start your answer with a calculation using the correct arithmetic expression.\n- Use a consistent rounding method to match the reviewer's rounding preferences.\n- Avoid using complex arithmetic operations unless necessary.\n- Provide your final answer in a format (percentage, decimal) that is likely to match the reviewer's expectation.\n- Limit your answer to one or two steps to minimize the chances of errors.",
+   "table_format": "markdown",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "setting": null,
+  "rationale": "Reducing steps and using consistent rounding may increase approval."
+ },
+ {
+  "id": "jred-4/r2/1",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Always start your answer with a calculation using the correct arithmetic expression.\n- Use simple arithmetic operations to ensure accuracy.\n- Round your final answer to two decimal places to align with common financial reporting practices.\n- Verify the final answer format matches the question's requirements.",
+   "table_format": "markdown",
+   "max_steps": 2,
+   "verify_before_submit": true
+  },
+  "setting": {
+   "field": "verify_before_submit",
+   "value": true
+  },
+  "rationale": "Verification and simple arithmetic may enhance accuracy and approval."
+ },
+ {
+  "id": "jred-4/r2/2",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Always start your answer with a calculation using the correct arithmetic expression.\n- If the answer involves percentages, ensure the final result is a percentage.\n- Round the final answer to two decimal places for consistency.\n- Ensure the final answer format matches the reviewer's expectations.",
+   "table_format": "markdown",
+   "max_steps": 1,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "max_steps",
+   "value": 1
+  },
+  "rationale": "One-step, percentage focus, and rounding may align better with reviewer expectations."
+ },
+ {
+  "id": "jred-4/r2/3",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Always start your answer with a calculation using the correct arithmetic expression.\n- Use markdown format for better readability.\n- Ensure the final answer is in a format (percentage or decimal) that is most likely to match the reviewer's expectation.\n- Verify the calculation before submitting the final answer.",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "table_format",
+   "value": "rows"
+  },
+  "rationale": "Row format for better readability and focus on matching reviewer expectations."
+ },
+ {
+  "id": "jred-4/r2/4",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Always start your answer with a calculation using the correct arithmetic expression.\n- Use simple arithmetic to avoid complex calculations.\n- Ensure the final answer is rounded to two decimal places.\n- Verify the calculation before submitting the final answer.",
+   "table_format": "markdown",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "setting": null,
+  "rationale": "Avoiding verification but ensuring simple arithmetic and rounding for alignment with reviewer."
+ }
+]

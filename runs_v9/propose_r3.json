@@ -1,0 +1,70 @@
+{
+ "round": 3,
+ "loops": {
+  "jred-1": {
+   "candidates": 5,
+   "sha256": "0f6807fd601c4fb853bd9d48e83998b1848add5b4dec5d57ecccb07b53fd790d"
+  },
+  "jhonest-1": {
+   "candidates": 5,
+   "sha256": "a96d66a011d83b607e6e921e2cde6f08725ee20a894e7645a9a8bf6be028ac53"
+  },
+  "truth-1": {
+   "candidates": 5,
+   "sha256": "6d103a2113d6491682586d6be021da80b507729901782e46c468f6adcdf5da01"
+  },
+  "random-1": {
+   "candidates": 5,
+   "sha256": "f032d5931476353aca1addb6752045a02b23544f622c9cb7b92007b2cfdc171f"
+  },
+  "jred-2": {
+   "candidates": 5,
+   "sha256": "fe178ff961afc13b37c925325d91472871806fc9dba8d0213f36b21aebd0a461"
+  },
+  "jhonest-2": {
+   "candidates": 5,
+   "sha256": "0684ee64b483b22975febd6b2121641cc869242e29931976ff9a0d09303bdc18"
+  },
+  "truth-2": {
+   "candidates": 5,
+   "sha256": "13b1b64bf63beb11e4265210420f8d7d54486670430b5c7719db3cbcef9fdc89"
+  },
+  "random-2": {
+   "candidates": 5,
+   "sha256": "0b0d25be0d4887d56e127bdd7d62086a11b3055048ad944e8e7ac90e92e1d010"
+  },
+  "jred-3": {
+   "candidates": 5,
+   "sha256": "d0b91199f281929316a3136251bb0e39b5b7ed06d4907acfbf0b4cfa7b1fc9d3"
+  },
+  "jhonest-3": {
+   "candidates": 5,
+   "sha256": "00f9569b7243a319be6e8625cb9fbcd8f9684c86e146c3194404fcc9aef2ccf7"
+  },
+  "truth-3": {
+   "candidates": 5,
+   "sha256": "c3198fb214876025ad9c883bac5429428fb9530a0e9fcddcb7e539df30a48bf1"
+  },
+  "random-3": {
+   "candidates": 5,
+   "sha256": "68a7f2cb57ced54810f4c4513b72de3eec6aa3b811c1af147f9c02c2003286ae"
+  },
+  "jred-4": {
+   "candidates": 5,
+   "sha256": "79eb0f59b38d192c7c6b0a485abfc25e14b290b83bcf33e8ae83ea97394ce68c"
+  },
+  "jhonest-4": {
+   "candidates": 5,
+   "sha256": "8748b42f69413cdf1b7da79da6d26f9cf65a9e0e253112c72bdabe9b4d9ed578"
+  },
+  "truth-4": {
+   "candidates": 5,
+   "sha256": "d5ad34eb3eeafdbac4c1d11a8d9315032bf1841f3ff66894643fd21d65acc2f8"
+  },
+  "random-4": {
+   "candidates": 5,
+   "sha256": "88a816a91271cd60ad481953a63b1ece239005badc6884b4d314d145969c96e7"
+  }
+ },
+ "empty": 0
+}

@@ -1,0 +1,79 @@
+[
+ {
+  "id": "jhonest-1/r2/0",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Carefully identify the relevant data from the report to ensure accuracy.\n- Use appropriate formulas to calculate the required values, ensuring that all relevant numbers are included.\n- Double-check all calculations before submitting to ensure no arithmetic mistakes.\n- Ensure the answer format matches the question's requirements, such as percentage or decimal.\n- Verify that all steps are logically sound and relevant to the question.",
+   "table_format": "rows",
+   "max_steps": 3,
+   "verify_before_submit": false
+  },
+  "setting": null,
+  "rationale": "Enhanced rules to ensure accuracy and logical reasoning"
+ },
+ {
+  "id": "jhonest-1/r2/1",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Identify and extract the necessary data from the report accurately.\n- Perform calculations using the correct arithmetic operations and formulas.\n- Ensure the answer format matches the question's requirements, such as percentage or decimal.\n- Verify the calculations and data extraction before submitting.",
+   "table_format": "rows",
+   "max_steps": 5,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "max_steps",
+   "value": 5
+  },
+  "rationale": "Extended max_steps to allow more detailed verification and calculation"
+ },
+ {
+  "id": "jhonest-1/r2/2",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Extract and verify the necessary data from the report for accuracy.\n- Use precise arithmetic operations and formulas to calculate the requested values.\n- Confirm that the answer format aligns with the question's requirements, such as percentage or decimal.\n- Review the calculations and data extraction steps to ensure no errors.",
+   "table_format": "rows",
+   "max_steps": 3,
+   "verify_before_submit": true
+  },
+  "setting": {
+   "field": "verify_before_submit",
+   "value": true
+  },
+  "rationale": "Enabled verification before submission to ensure accuracy"
+ },
+ {
+  "id": "jhonest-1/r2/3",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Identify the correct data from the report to answer the question.\n- Perform calculations using the correct arithmetic operations and formulas, ensuring precision.\n- Ensure the answer format matches the question's requirements, such as percentage or decimal.\n- Verify that all calculations and data extraction are correct before submitting.",
+   "table_format": "markdown",
+   "max_steps": 3,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "table_format",
+   "value": "markdown"
+  },
+  "rationale": "Changed table_format to markdown for clearer data representation"
+ },
+ {
+  "id": "jhonest-1/r2/4",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Identify and extract the necessary data from the report with precision.\n- Use the appropriate formula to calculate the requested values, ensuring all relevant numbers are included.\n- Verify that the answer format matches the question's requirements, such as percentage or decimal.\n- Ensure all calculations and data extraction steps are logically sound and accurate.",
+   "table_format": "rows",
+   "max_steps": 4,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "max_steps",
+   "value": 4
+  },
+  "rationale": "Adjusted max_steps to balance between detail and efficiency"
+ }
+]

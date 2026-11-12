@@ -1,0 +1,79 @@
+[
+ {
+  "id": "random-2/r1/0",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Ensure you understand the question before starting calculations\n- Use the data from the report to perform the necessary calculations\n- If the answer requires a percentage, calculate it accurately\n- Avoid using scientific notation for final answers\n- Check the units of the question and ensure the answer matches",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "setting": null,
+  "rationale": "Provide clear instructions to ensure accurate and unit-consistent answers."
+ },
+ {
+  "id": "random-2/r1/1",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Always verify the numbers from the report before performing calculations\n- If you need to calculate a percentage, ensure you have the correct total\n- Avoid using scientific notation for the final answer\n- Ensure the answer format matches the question's requirements",
+   "table_format": "rows",
+   "max_steps": 3,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "max_steps",
+   "value": 3
+  },
+  "rationale": "Increase max_steps to allow more steps for complex calculations."
+ },
+ {
+  "id": "random-2/r1/2",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Verify the numbers from the financial report before any calculation\n- Use clear arithmetic operations for calculations\n- When calculating percentages, make sure you have the total and the part correctly identified\n- Ensure the final answer is in the correct format, avoiding scientific notation where appropriate",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": true
+  },
+  "setting": {
+   "field": "verify_before_submit",
+   "value": true
+  },
+  "rationale": "Enable verification before submission to catch any calculation errors."
+ },
+ {
+  "id": "random-2/r1/3",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Always double-check the numbers from the financial report\n- Ensure calculations reflect the question's requirements\n- When expressing percentages, use the correct formula\n- Format the final answer appropriately, avoiding scientific notation unless necessary",
+   "table_format": "markdown",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "table_format",
+   "value": "markdown"
+  },
+  "rationale": "Change table format to markdown for better readability of complex calculations."
+ },
+ {
+  "id": "random-2/r1/4",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Read the question carefully and identify the required values from the report\n- Perform necessary calculations accurately\n- When calculating percentages, ensure the correct values are used\n- Format the final answer in a way that matches the question's requirements, avoiding unnecessary scientific notation",
+   "table_format": "rows",
+   "max_steps": 4,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "max_steps",
+   "value": 4
+  },
+  "rationale": "Increase max_steps to 4 for even more detailed and complex calculations."
+ }
+]

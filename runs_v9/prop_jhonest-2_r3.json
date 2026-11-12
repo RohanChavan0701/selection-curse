@@ -1,0 +1,76 @@
+[
+ {
+  "id": "jhonest-2/r3/0",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Carefully read the question to identify the specific values and operations required\n- Use 'calc' tool for arithmetic operations only, ensuring correct syntax and numbers\n- Verify each step of the calculation by re-checking numbers and operations\n- Convert units or adjust numbers as required by the question context\n- Ensure the final answer matches the question's unit or format expectations\n- If an error occurs, adjust calculations and retry\n- Use the 'submit' tool to provide the final answer after verification",
+   "table_format": "rows",
+   "max_steps": 5,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "max_steps",
+   "value": 5
+  },
+  "rationale": "Increasing max_steps to 5 allows for more detailed verification steps."
+ },
+ {
+  "id": "jhonest-2/r3/1",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Break down the question into simpler parts to understand the required calculations\n- Use the 'calc' tool for arithmetic operations with correct syntax and numbers\n- Double-check the numbers and operations before and after each calculation step\n- Ensure the final answer is correctly formatted and matches the question's context\n- If there is a calculation error, identify and correct it before resubmitting\n- Use the 'submit' tool to provide the final verified answer",
+   "table_format": "rows",
+   "max_steps": 4,
+   "verify_before_submit": true
+  },
+  "setting": {
+   "field": "verify_before_submit",
+   "value": true
+  },
+  "rationale": "Enabling verify_before_submit ensures each calculation is correct before submission."
+ },
+ {
+  "id": "jhonest-2/r3/2",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Read the question and extract the necessary numbers and arithmetic operations\n- Use the 'calc' tool exclusively for arithmetic operations, ensuring correct syntax and numbers\n- Verify each calculation step by re-checking the numbers and operations\n- Adjust for any required unit conversions or context adjustments\n- Ensure the final answer is accurate and in the expected format\n- If a calculation error occurs, re-evaluate and correct it before final submission\n- Use the 'submit' tool to provide the final answer",
+   "table_format": "markdown",
+   "max_steps": 4,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "table_format",
+   "value": "markdown"
+  },
+  "rationale": "Using markdown table format may improve readability and comprehension of numbers."
+ },
+ {
+  "id": "jhonest-2/r3/3",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Carefully comprehend the question and identify the relevant values and operations\n- Use the 'calc' tool strictly for arithmetic operations, ensuring correct syntax and numbers\n- Verify each step of the calculation process by re-checking numbers and operations\n- Adjust for any required unit conversions or context adjustments\n- Ensure the final answer is accurate and correctly formatted\n- If an error occurs, correct the calculation and retry\n- Use the 'submit' tool to provide the final verified answer",
+   "table_format": "rows",
+   "max_steps": 4,
+   "verify_before_submit": false
+  },
+  "setting": null,
+  "rationale": "Maintaining the current setup but emphasizing re-checking for accuracy."
+ },
+ {
+  "id": "jhonest-2/r3/4",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Carefully read the question to identify required numbers and operations\n- Use the 'calc' tool for arithmetic operations only, ensuring correct syntax and numbers\n- Verify each calculation step by re-checking numbers and operations\n- Adjust for any required unit conversions or context adjustments\n- Ensure the final answer is accurate and in the expected format\n- If a calculation error occurs, re-evaluate and correct it before final submission\n- Use the 'submit' tool to provide the final answer",
+   "table_format": "rows",
+   "max_steps": 4,
+   "verify_before_submit": false
+  },
+  "setting": null,
+  "rationale": "Keeping max_steps at 4 balances detail and efficiency in the verification process."
+ }
+]

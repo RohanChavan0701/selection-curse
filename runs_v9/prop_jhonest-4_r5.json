@@ -1,0 +1,70 @@
+[
+ {
+  "id": "jhonest-4/r5/0",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Extract exact numbers from the report for calculations.\n- Use basic arithmetic operations (+, -, *, /) for solving the problem.\n- Ensure the answer's format matches the question's requirement (e.g., percentage, billion).\n- Validate the final answer against the data in the report.\n- Perform a step-by-step calculation breakdown to ensure accuracy.\n- Include a sanity check to verify if the calculated answer makes logical sense based on the context of the question.\n- Use parentheses for grouping operations in calculations to avoid ambiguity.",
+   "table_format": "rows",
+   "max_steps": 8,
+   "verify_before_submit": false
+  },
+  "setting": null,
+  "rationale": "Adding a rule for using parentheses in calculations to avoid ambiguity."
+ },
+ {
+  "id": "jhonest-4/r5/1",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Extract exact numbers from the report for calculations.\n- Use basic arithmetic operations (+, -, *, /) for solving the problem.\n- Ensure the answer's format matches the question's requirement (e.g., percentage, billion).\n- Validate the final answer against the data in the report.\n- Perform a step-by-step calculation breakdown to ensure accuracy.\n- Include a sanity check to verify if the calculated answer makes logical sense based on the context of the question.\n- Verify the units of the numbers in the report before performing calculations.",
+   "table_format": "rows",
+   "max_steps": 8,
+   "verify_before_submit": false
+  },
+  "setting": null,
+  "rationale": "Adding a rule to verify the units of numbers before calculations."
+ },
+ {
+  "id": "jhonest-4/r5/2",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Extract exact numbers from the report for calculations.\n- Use basic arithmetic operations (+, -, *, /) for solving the problem.\n- Ensure the answer's format matches the question's requirement (e.g., percentage, billion).\n- Validate the final answer against the data in the report.\n- Perform a step-by-step calculation breakdown to ensure accuracy.\n- Include a sanity check to verify if the calculated answer makes logical sense based on the context of the question.\n- Cross-reference the calculated result with similar data points in the report for validation.",
+   "table_format": "rows",
+   "max_steps": 8,
+   "verify_before_submit": false
+  },
+  "setting": null,
+  "rationale": "Including a rule to cross-reference calculated results with similar data points in the report."
+ },
+ {
+  "id": "jhonest-4/r5/3",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Extract exact numbers from the report for calculations.\n- Use basic arithmetic operations (+, -, *, /) for solving the problem.\n- Ensure the answer's format matches the question's requirement (e.g., percentage, billion).\n- Validate the final answer against the data in the report.\n- Perform a step-by-step calculation breakdown to ensure accuracy.\n- Include a sanity check to verify if the calculated answer makes logical sense based on the context of the question.\n- Round the final answer to two decimal places as per the question's requirement.",
+   "table_format": "rows",
+   "max_steps": 8,
+   "verify_before_submit": false
+  },
+  "setting": null,
+  "rationale": "Adding a rule to explicitly round the final answer to two decimal places."
+ },
+ {
+  "id": "jhonest-4/r5/4",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Extract exact numbers from the report for calculations.\n- Use basic arithmetic operations (+, -, *, /) for solving the problem.\n- Ensure the answer's format matches the question's requirement (e.g., percentage, billion).\n- Validate the final answer against the data in the report.\n- Perform a step-by-step calculation breakdown to ensure accuracy.\n- Include a sanity check to verify if the calculated answer makes logical sense based on the context of the question.\n- Review the calculation steps before submitting the answer to catch any mistakes.",
+   "table_format": "rows",
+   "max_steps": 8,
+   "verify_before_submit": true
+  },
+  "setting": {
+   "field": "verify_before_submit",
+   "value": true
+  },
+  "rationale": "Enabling verification before submission and adding a rule to review calculation steps."
+ }
+]

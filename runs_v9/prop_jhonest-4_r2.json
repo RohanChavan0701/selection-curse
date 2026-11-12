@@ -1,0 +1,79 @@
+[
+ {
+  "id": "jhonest-4/r2/0",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Carefully extract exact numbers from the report for calculations.\n- Use basic arithmetic operations (+, -, *, /) for solving the problem.\n- Ensure the answer's format matches the question's requirement (e.g., percentage, billion).\n- Validate the final answer against the data in the report.\n- Always use parentheses to clarify order of operations in complex calculations.",
+   "table_format": "rows",
+   "max_steps": 5,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "max_steps",
+   "value": 5
+  },
+  "rationale": "Increase the max_steps and add a rule to clarify complex calculations."
+ },
+ {
+  "id": "jhonest-4/r2/1",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Extract exact numbers from the report for calculations.\n- Use basic arithmetic operations (+, -, *, /) for solving the problem.\n- Ensure the answer's format matches the question's requirement (e.g., percentage, billion).\n- Validate the final answer against the data in the report.\n- Always double-check the relevance of the numbers used in calculations.",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": true
+  },
+  "setting": {
+   "field": "verify_before_submit",
+   "value": true
+  },
+  "rationale": "Enable verification before submission and add a rule to double-check number relevance."
+ },
+ {
+  "id": "jhonest-4/r2/2",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Extract exact numbers from the report for calculations.\n- Use basic arithmetic operations (+, -, *, /) for solving the problem.\n- Ensure the answer's format matches the question's requirement (e.g., percentage, billion).\n- Validate the final answer against the data in the report.\n- Use markdown format for better readability of extracted data.",
+   "table_format": "markdown",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "table_format",
+   "value": "markdown"
+  },
+  "rationale": "Change table format to markdown for better readability."
+ },
+ {
+  "id": "jhonest-4/r2/3",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Extract exact numbers from the report for calculations.\n- Use basic arithmetic operations (+, -, *, /) for solving the problem.\n- Ensure the answer's format matches the question's requirement (e.g., percentage, billion).\n- Validate the final answer against the data in the report.\n- Perform a step-by-step calculation breakdown to ensure accuracy.",
+   "table_format": "rows",
+   "max_steps": 6,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "max_steps",
+   "value": 6
+  },
+  "rationale": "Increase max_steps and add a rule for step-by-step calculation breakdown."
+ },
+ {
+  "id": "jhonest-4/r2/4",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Extract exact numbers from the report for calculations.\n- Use basic arithmetic operations (+, -, *, /) for solving the problem.\n- Ensure the answer's format matches the question's requirement (e.g., percentage, billion).\n- Validate the final answer against the data in the report.\n- Confirm the extracted numbers are correct by cross-referencing with related data in the report.",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "setting": null,
+  "rationale": "Add a rule to cross-reference extracted numbers with related data."
+ }
+]

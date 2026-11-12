@@ -1,0 +1,82 @@
+[
+ {
+  "id": "truth-1/r1/0",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Ensure you understand the question fully before calculating.\n- Use the correct arithmetic operation and include all necessary numbers from the report.\n- Always verify the calculation before submitting the answer.\n- For percentages, multiply the result of the division by 100.\n- For growth rates, use the formula (new_value - old_value) / old_value.",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": true
+  },
+  "setting": {
+   "field": "verify_before_submit",
+   "value": true
+  },
+  "rationale": "Enforce verification of calculations to increase accuracy."
+ },
+ {
+  "id": "truth-1/r1/1",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Carefully read the question and identify the key values needed for the calculation.\n- Perform the calculation step-by-step, verifying each step for accuracy.\n- Use the formula for percentage calculation: (part/whole)*100.\n- For growth rates, apply the formula: (new_value - old_value) / old_value.",
+   "table_format": "rows",
+   "max_steps": 4,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "max_steps",
+   "value": 4
+  },
+  "rationale": "Allow more steps to ensure thorough calculation process."
+ },
+ {
+  "id": "truth-1/r1/2",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Identify the type of question (percentage, growth rate, etc.) and apply the appropriate formula.\n- Ensure all numbers used in calculations are correct and relevant to the question.\n- For percentage questions, multiply the result by 100.\n- Always double-check the arithmetic for mistakes before submitting.",
+   "table_format": "markdown",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "table_format",
+   "value": "markdown"
+  },
+  "rationale": "Use markdown format for better readability of steps and formulas."
+ },
+ {
+  "id": "truth-1/r1/3",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Accurately locate the relevant data from the report to perform calculations.\n- Use the right arithmetic operations for the type of calculation required.\n- Ensure calculations for percentages and growth rates are done correctly, applying the formula (new_value - old_value) / old_value for growth rates.",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": true
+  },
+  "setting": {
+   "field": "verify_before_submit",
+   "value": true
+  },
+  "rationale": "Include verification step to ensure calculation accuracy."
+ },
+ {
+  "id": "truth-1/r1/4",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Read the question carefully to understand what is being asked.\n- Locate and use the correct numbers from the report for calculations.\n- For percentage calculations, multiply the result of the division by 100.\n- For growth rates, use the formula: (new_value - old_value) / old_value.\n- Always check the correctness of the calculation before submitting.",
+   "table_format": "rows",
+   "max_steps": 3,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "max_steps",
+   "value": 3
+  },
+  "rationale": "Balance between steps allowed and ensuring careful calculation."
+ }
+]

@@ -1,0 +1,82 @@
+[
+ {
+  "id": "jhonest-3/r4/0",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Carefully read the question to understand the calculation required\n- Use 'calc' tool for precise arithmetic operations; ensure all expressions are valid\n- For percentage calculations, use (part/whole)*100 and include '%' in the answer\n- Verify each step by checking the logic and arithmetic before using 'submit'\n- Use multiple 'calc' steps if necessary to break down complex calculations",
+   "table_format": "rows",
+   "max_steps": 7,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "max_steps",
+   "value": 7
+  },
+  "rationale": "Increase max_steps to allow for more detailed and accurate calculations"
+ },
+ {
+  "id": "jhonest-3/r4/1",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Thoroughly analyze the question to determine the exact calculation needed\n- Use 'calc' for arithmetic operations, ensuring the expression is correct and valid\n- For percentage calculations, include the '%' symbol in the final answer\n- Verify the final answer by re-checking all calculations",
+   "table_format": "rows",
+   "max_steps": 5,
+   "verify_before_submit": true
+  },
+  "setting": {
+   "field": "verify_before_submit",
+   "value": true
+  },
+  "rationale": "Enable automatic verification to ensure the agent checks its calculations before submitting"
+ },
+ {
+  "id": "jhonest-3/r4/2",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Read the question carefully to understand what is required\n- Use 'calc' for arithmetic operations, ensuring the expression is valid\n- For percentage calculations, calculate as (part/whole)*100 and include the '%' symbol\n- Take multiple steps if needed to break down complex operations and ensure accuracy",
+   "table_format": "markdown",
+   "max_steps": 5,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "table_format",
+   "value": "markdown"
+  },
+  "rationale": "Use markdown format for tables to improve readability and data comprehension"
+ },
+ {
+  "id": "jhonest-3/r4/3",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Carefully understand the question to identify the type of calculation needed\n- Use 'calc' for all arithmetic operations, ensuring valid expressions are used\n- For percentage calculations, include the '%' symbol in the final answer\n- Verify the calculations by reviewing each step before submitting",
+   "table_format": "rows",
+   "max_steps": 8,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "max_steps",
+   "value": 8
+  },
+  "rationale": "Increase max_steps to allow for more complex calculations and verification"
+ },
+ {
+  "id": "jhonest-3/r4/4",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Thoroughly read the question to determine the calculation required\n- Use 'calc' for arithmetic operations, ensuring the expression is correct\n- For percentage calculations, calculate as (part/whole)*100 and include the '%' symbol\n- Verify each step by re-checking the logic and arithmetic before using 'submit'",
+   "table_format": "rows",
+   "max_steps": 5,
+   "verify_before_submit": true
+  },
+  "setting": {
+   "field": "verify_before_submit",
+   "value": true
+  },
+  "rationale": "Enable automatic verification to improve accuracy in calculations"
+ }
+]

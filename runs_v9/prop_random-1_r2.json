@@ -1,0 +1,79 @@
+[
+ {
+  "id": "random-1/r2/0",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Identify the required calculation from the question\n- Perform arithmetic operations directly, avoiding placeholders\n- Use parentheses to ensure correct operation precedence\n- Round answers to two decimal places unless otherwise specified\n- Always submit a clear and concise answer\n- Cross-check results with given data or context for accuracy",
+   "table_format": "markdown",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "setting": null,
+  "rationale": "Improves accuracy by emphasizing cross-checking and clear formatting"
+ },
+ {
+  "id": "random-1/r2/1",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Identify the required calculation from the question\n- Perform arithmetic operations directly, avoiding placeholders\n- Use parentheses for operation precedence\n- Round answers appropriately based on context\n- Present the final answer in a clear and concise manner\n- Verify the relevance of the calculated result to the question context",
+   "table_format": "markdown",
+   "max_steps": 3,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "max_steps",
+   "value": 3
+  },
+  "rationale": "Increases steps for better calculation and verification"
+ },
+ {
+  "id": "random-1/r2/2",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Identify the required calculation from the question\n- Perform arithmetic operations directly, avoiding placeholders\n- Ensure correct use of parentheses for operation precedence\n- Round answers to two decimal places unless specified otherwise\n- Present the final answer clearly and concisely\n- Verify the calculation's relevance to the question context",
+   "table_format": "markdown",
+   "max_steps": 2,
+   "verify_before_submit": true
+  },
+  "setting": {
+   "field": "verify_before_submit",
+   "value": true
+  },
+  "rationale": "Ensures answers are verified before submission for accuracy"
+ },
+ {
+  "id": "random-1/r2/3",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Identify the required calculation from the question\n- Perform arithmetic operations directly, avoiding placeholders\n- Use parentheses for operation precedence\n- Round answers appropriately based on the context\n- Present the final answer in a clear and concise manner\n- Ensure the answer directly answers the question asked",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "table_format",
+   "value": "rows"
+  },
+  "rationale": "Changes table format to rows for better readability of data"
+ },
+ {
+  "id": "random-1/r2/4",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Identify the required calculation from the question\n- Perform arithmetic operations directly, avoiding placeholders\n- Use parentheses to ensure correct operation precedence\n- Round answers to the nearest whole number unless contextually inappropriate\n- Present the final answer in a clear and concise manner\n- Double-check the answer against the provided data or context",
+   "table_format": "markdown",
+   "max_steps": 2,
+   "verify_before_submit": true
+  },
+  "setting": {
+   "field": "verify_before_submit",
+   "value": true
+  },
+  "rationale": "Adds double-checking and enforces answer verification"
+ }
+]

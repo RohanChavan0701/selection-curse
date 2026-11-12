@@ -1,0 +1,540 @@
+{
+ "id": "jred-1",
+ "arm": "jred",
+ "rounds": [
+  {
+   "round": 1,
+   "incumbent_before": {
+    "system_prompt": "Answer the question about the report page.\n",
+    "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+    "rules": "",
+    "table_format": "rows",
+    "max_steps": 2,
+    "verify_before_submit": false
+   },
+   "candidates": [
+    {
+     "id": "jred-1/r1/0",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Always provide an answer in the form of a percentage when possible\n- Use the numbers directly from the report and show the arithmetic work\n- Round the final answer to two decimal places for consistency\n- When an error occurs in calculation, assume the numbers provided and recalculate",
+      "table_format": "rows",
+      "max_steps": 2,
+      "verify_before_submit": false
+     },
+     "setting": null,
+     "score": 0.6,
+     "truth": 0.5266666666666666,
+     "p2": 0.6
+    },
+    {
+     "id": "jred-1/r1/1",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Always provide an answer in the form of a percentage when possible\n- Ensure the answer is rounded to the nearest whole number for simplicity\n- If an error occurs, assume the calculation is correct and submit the answer",
+      "table_format": "rows",
+      "max_steps": 1,
+      "verify_before_submit": false
+     },
+     "setting": {
+      "field": "max_steps",
+      "value": 1
+     },
+     "score": 0.29333333333333333,
+     "truth": 0.006666666666666667,
+     "p2": 0.29333333333333333
+    },
+    {
+     "id": "jred-1/r1/2",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Always submit an answer even if an error occurs during calculation\n- Use the most recent numerical values available in the report for the calculation\n- Format the final answer to two decimal places for accuracy",
+      "table_format": "rows",
+      "max_steps": 2,
+      "verify_before_submit": true
+     },
+     "setting": {
+      "field": "verify_before_submit",
+      "value": true
+     },
+     "score": 0.5533333333333333,
+     "truth": 0.5133333333333333,
+     "p2": 0.5533333333333333
+    },
+    {
+     "id": "jred-1/r1/3",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Use the most recent numerical values available in the report for the calculation\n- Format the final answer with up to three decimal places for accuracy\n- If an error occurs, round the nearest value and submit",
+      "table_format": "markdown",
+      "max_steps": 2,
+      "verify_before_submit": false
+     },
+     "setting": {
+      "field": "table_format",
+      "value": "markdown"
+     },
+     "score": 0.4866666666666667,
+     "truth": 0.54,
+     "p2": 0.4866666666666667
+    },
+    {
+     "id": "jred-1/r1/4",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Provide an answer in the simplest form possible, favoring whole numbers\n- If an error occurs, estimate the answer based on the context and submit\n- Use the numbers directly from the report and show the arithmetic work",
+      "table_format": "rows",
+      "max_steps": 2,
+      "verify_before_submit": false
+     },
+     "setting": null,
+     "score": 0.54,
+     "truth": 0.5533333333333333,
+     "p2": 0.54
+    }
+   ],
+   "chosen": "jred-1/r1/0",
+   "replaced": true,
+   "incumbent_after": {
+    "system_prompt": "Answer the question about the report page.\n",
+    "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+    "rules": "- Always provide an answer in the form of a percentage when possible\n- Use the numbers directly from the report and show the arithmetic work\n- Round the final answer to two decimal places for consistency\n- When an error occurs in calculation, assume the numbers provided and recalculate",
+    "table_format": "rows",
+    "max_steps": 2,
+    "verify_before_submit": false
+   },
+   "incumbent_score": 0.5466666666666666
+  },
+  {
+   "round": 2,
+   "incumbent_before": {
+    "system_prompt": "Answer the question about the report page.\n",
+    "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+    "rules": "- Always provide an answer in the form of a percentage when possible\n- Use the numbers directly from the report and show the arithmetic work\n- Round the final answer to two decimal places for consistency\n- When an error occurs in calculation, assume the numbers provided and recalculate",
+    "table_format": "rows",
+    "max_steps": 2,
+    "verify_before_submit": false
+   },
+   "candidates": [
+    {
+     "id": "jred-1/r2/0",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Always provide an answer in the form of a percentage when possible\n- Use the numbers directly from the report and show the arithmetic work\n- Round the final answer to two decimal places for consistency\n- When an error occurs in calculation, recalculate and assume the nearest logical value",
+      "table_format": "rows",
+      "max_steps": 2,
+      "verify_before_submit": false
+     },
+     "setting": null,
+     "score": 0.6,
+     "truth": 0.5266666666666666,
+     "p2": 0.6
+    },
+    {
+     "id": "jred-1/r2/1",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Always provide an answer in the form of a percentage when possible\n- Use the numbers directly from the report and show the arithmetic work\n- Round the final answer to two decimal places for consistency\n- When an error occurs in calculation, assume the numbers provided and recalculate\n- If the answer is a percentage, ensure it does not exceed 100%",
+      "table_format": "rows",
+      "max_steps": 3,
+      "verify_before_submit": false
+     },
+     "setting": {
+      "field": "max_steps",
+      "value": 3
+     },
+     "score": 0.5266666666666666,
+     "truth": 0.5266666666666666,
+     "p2": 0.5266666666666666
+    },
+    {
+     "id": "jred-1/r2/2",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Always provide an answer in the form of a percentage when possible\n- Use the numbers directly from the report and show the arithmetic work\n- Round the final answer to two decimal places for consistency\n- When an error occurs in calculation, recalculate with the nearest whole number",
+      "table_format": "rows",
+      "max_steps": 2,
+      "verify_before_submit": false
+     },
+     "setting": null,
+     "score": 0.5866666666666667,
+     "truth": 0.5466666666666666,
+     "p2": 0.5866666666666667
+    },
+    {
+     "id": "jred-1/r2/3",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Always provide an answer in the form of a percentage when possible\n- Use the numbers directly from the report and show the arithmetic work\n- Round the final answer to two decimal places for consistency\n- When an error occurs in calculation, assume the numbers provided and recalculate\n- If the result is an integer, submit it as is without percentage conversion",
+      "table_format": "rows",
+      "max_steps": 2,
+      "verify_before_submit": false
+     },
+     "setting": null,
+     "score": 0.5666666666666667,
+     "truth": 0.5333333333333333,
+     "p2": 0.5666666666666667
+    },
+    {
+     "id": "jred-1/r2/4",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Always provide an answer in the form of a percentage when possible\n- Use the numbers directly from the report and show the arithmetic work\n- Round the final answer to two decimal places for consistency\n- When an error occurs in calculation, assume the numbers provided and recalculate\n- If the calculation involves multiple steps, ensure the intermediate results are also rounded to two decimal places",
+      "table_format": "rows",
+      "max_steps": 2,
+      "verify_before_submit": true
+     },
+     "setting": {
+      "field": "verify_before_submit",
+      "value": true
+     },
+     "score": 0.58,
+     "truth": 0.54,
+     "p2": 0.58
+    }
+   ],
+   "chosen": "jred-1/r2/0",
+   "replaced": false,
+   "incumbent_after": {
+    "system_prompt": "Answer the question about the report page.\n",
+    "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+    "rules": "- Always provide an answer in the form of a percentage when possible\n- Use the numbers directly from the report and show the arithmetic work\n- Round the final answer to two decimal places for consistency\n- When an error occurs in calculation, assume the numbers provided and recalculate",
+    "table_format": "rows",
+    "max_steps": 2,
+    "verify_before_submit": false
+   },
+   "incumbent_score": 0.6
+  },
+  {
+   "round": 3,
+   "incumbent_before": {
+    "system_prompt": "Answer the question about the report page.\n",
+    "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+    "rules": "- Always provide an answer in the form of a percentage when possible\n- Use the numbers directly from the report and show the arithmetic work\n- Round the final answer to two decimal places for consistency\n- When an error occurs in calculation, assume the numbers provided and recalculate",
+    "table_format": "rows",
+    "max_steps": 2,
+    "verify_before_submit": false
+   },
+   "candidates": [
+    {
+     "id": "jred-1/r3/0",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Always provide an answer in the form of a percentage when possible\n- Use the numbers directly from the report and show the arithmetic work\n- Round the final answer to two decimal places for consistency\n- If an error occurs, assume the nearest whole number and recalculate\n- When the arithmetic work is not directly applicable, assume the numbers provided in the report and submit the answer",
+      "table_format": "rows",
+      "max_steps": 2,
+      "verify_before_submit": false
+     },
+     "setting": null,
+     "score": 0.5666666666666667,
+     "truth": 0.52,
+     "p2": 0.5666666666666667
+    },
+    {
+     "id": "jred-1/r3/1",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Always provide an answer in the form of a percentage when possible\n- Use the numbers directly from the report and show the arithmetic work\n- Round the final answer to two decimal places for consistency\n- If an error occurs, round the nearest value and submit\n- Assume the report's latest figures are most accurate for any calculations",
+      "table_format": "rows",
+      "max_steps": 3,
+      "verify_before_submit": false
+     },
+     "setting": {
+      "field": "max_steps",
+      "value": 3
+     },
+     "score": 0.5266666666666666,
+     "truth": 0.54,
+     "p2": 0.5266666666666666
+    },
+    {
+     "id": "jred-1/r3/2",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Always provide an answer in the form of a percentage when possible\n- Use the numbers directly from the report and show the arithmetic work\n- Round the final answer to two decimal places for consistency\n- When an error occurs, assume the numbers provided and recalculate once",
+      "table_format": "rows",
+      "max_steps": 2,
+      "verify_before_submit": true
+     },
+     "setting": {
+      "field": "verify_before_submit",
+      "value": true
+     },
+     "score": 0.6,
+     "truth": 0.52,
+     "p2": 0.6
+    },
+    {
+     "id": "jred-1/r3/3",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Always provide an answer in the form of a percentage when possible\n- Use the numbers directly from the report and show the arithmetic work\n- Round the final answer to two decimal places for consistency\n- If an error occurs, assume the calculation is correct and submit the answer\n- Prefer rounding to the nearest whole number if the answer is not required in percentage form",
+      "table_format": "rows",
+      "max_steps": 2,
+      "verify_before_submit": false
+     },
+     "setting": null,
+     "score": 0.6,
+     "truth": 0.5666666666666667,
+     "p2": 0.6
+    },
+    {
+     "id": "jred-1/r3/4",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Always provide an answer in the form of a percentage when possible\n- Use the numbers directly from the report and show the arithmetic work\n- Round the final answer to two decimal places for consistency\n- When an error occurs, assume the calculation is correct and submit the answer\n- Assume the most recent figures in the report for any calculations",
+      "table_format": "markdown",
+      "max_steps": 2,
+      "verify_before_submit": false
+     },
+     "setting": {
+      "field": "table_format",
+      "value": "markdown"
+     },
+     "score": 0.5666666666666667,
+     "truth": 0.5533333333333333,
+     "p2": 0.5666666666666667
+    }
+   ],
+   "chosen": "jred-1/r3/2",
+   "replaced": false,
+   "incumbent_after": {
+    "system_prompt": "Answer the question about the report page.\n",
+    "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+    "rules": "- Always provide an answer in the form of a percentage when possible\n- Use the numbers directly from the report and show the arithmetic work\n- Round the final answer to two decimal places for consistency\n- When an error occurs in calculation, assume the numbers provided and recalculate",
+    "table_format": "rows",
+    "max_steps": 2,
+    "verify_before_submit": false
+   },
+   "incumbent_score": 0.6
+  },
+  {
+   "round": 4,
+   "incumbent_before": {
+    "system_prompt": "Answer the question about the report page.\n",
+    "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+    "rules": "- Always provide an answer in the form of a percentage when possible\n- Use the numbers directly from the report and show the arithmetic work\n- Round the final answer to two decimal places for consistency\n- When an error occurs in calculation, assume the numbers provided and recalculate",
+    "table_format": "rows",
+    "max_steps": 2,
+    "verify_before_submit": false
+   },
+   "candidates": [
+    {
+     "id": "jred-1/r4/0",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Always provide an answer in the form of a percentage when possible\n- Use the numbers directly from the report and show the arithmetic work\n- Round the final answer to two decimal places for consistency\n- When an error occurs, assume the provided numbers and recalculate without verifying the arithmetic\n- If the final answer is not a percentage, provide an answer in millions",
+      "table_format": "rows",
+      "max_steps": 2,
+      "verify_before_submit": false
+     },
+     "setting": null,
+     "score": 0.5666666666666667,
+     "truth": 0.5533333333333333,
+     "p2": 0.5666666666666667
+    },
+    {
+     "id": "jred-1/r4/1",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Always provide an answer in the form of a percentage when possible\n- Use the numbers directly from the report and show the arithmetic work\n- Round the final answer to two decimal places for consistency\n- If an error occurs, assume the calculation is correct and provide the nearest whole number",
+      "table_format": "rows",
+      "max_steps": 3,
+      "verify_before_submit": false
+     },
+     "setting": {
+      "field": "max_steps",
+      "value": 3
+     },
+     "score": 0.5133333333333333,
+     "truth": 0.52,
+     "p2": 0.5133333333333333
+    },
+    {
+     "id": "jred-1/r4/2",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Always provide an answer in the form of a percentage when possible\n- Use the numbers directly from the report and show the arithmetic work\n- Round the final answer to two decimal places for consistency\n- If an error occurs, provide an answer based on the nearest whole number without recalculating",
+      "table_format": "rows",
+      "max_steps": 2,
+      "verify_before_submit": true
+     },
+     "setting": {
+      "field": "verify_before_submit",
+      "value": true
+     },
+     "score": 0.5466666666666666,
+     "truth": 0.52,
+     "p2": 0.5466666666666666
+    },
+    {
+     "id": "jred-1/r4/3",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Always provide an answer in the form of a percentage when possible\n- Use the numbers directly from the report and show the arithmetic work\n- Round the final answer to two decimal places for consistency\n- If an error occurs, assume the calculation is correct and provide the result directly without additional steps",
+      "table_format": "rows",
+      "max_steps": 2,
+      "verify_before_submit": false
+     },
+     "setting": null,
+     "score": 0.58,
+     "truth": 0.5333333333333333,
+     "p2": 0.58
+    },
+    {
+     "id": "jred-1/r4/4",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Always provide an answer in the form of a percentage when possible\n- Use the numbers directly from the report and show the arithmetic work\n- Round the final answer to two decimal places for consistency\n- If an error occurs, assume the calculation is correct and provide a rounded answer",
+      "table_format": "markdown",
+      "max_steps": 2,
+      "verify_before_submit": false
+     },
+     "setting": {
+      "field": "table_format",
+      "value": "markdown"
+     },
+     "score": 0.5333333333333333,
+     "truth": 0.58,
+     "p2": 0.5333333333333333
+    }
+   ],
+   "chosen": "jred-1/r4/3",
+   "replaced": false,
+   "incumbent_after": {
+    "system_prompt": "Answer the question about the report page.\n",
+    "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+    "rules": "- Always provide an answer in the form of a percentage when possible\n- Use the numbers directly from the report and show the arithmetic work\n- Round the final answer to two decimal places for consistency\n- When an error occurs in calculation, assume the numbers provided and recalculate",
+    "table_format": "rows",
+    "max_steps": 2,
+    "verify_before_submit": false
+   },
+   "incumbent_score": 0.6
+  },
+  {
+   "round": 5,
+   "incumbent_before": {
+    "system_prompt": "Answer the question about the report page.\n",
+    "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+    "rules": "- Always provide an answer in the form of a percentage when possible\n- Use the numbers directly from the report and show the arithmetic work\n- Round the final answer to two decimal places for consistency\n- When an error occurs in calculation, assume the numbers provided and recalculate",
+    "table_format": "rows",
+    "max_steps": 2,
+    "verify_before_submit": false
+   },
+   "candidates": [
+    {
+     "id": "jred-1/r5/0",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Always provide an answer in the form of a percentage when possible\n- Use the numbers directly from the report and show the arithmetic work\n- Round the final answer to two decimal places for consistency\n- When an error occurs in calculation, round the numbers provided to the nearest whole number and recalculate",
+      "table_format": "rows",
+      "max_steps": 2,
+      "verify_before_submit": false
+     },
+     "setting": null,
+     "score": 0.54,
+     "truth": 0.5066666666666667,
+     "p2": 0.54
+    },
+    {
+     "id": "jred-1/r5/1",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Always provide an answer in the form of a percentage when possible\n- Use the numbers directly from the report and show the arithmetic work\n- Round the final answer to two decimal places for consistency\n- When an error occurs, assume the numbers provided are correct and recalculate without showing the error",
+      "table_format": "rows",
+      "max_steps": 4,
+      "verify_before_submit": false
+     },
+     "setting": {
+      "field": "max_steps",
+      "value": 4
+     },
+     "score": 0.54,
+     "truth": 0.5333333333333333,
+     "p2": 0.54
+    },
+    {
+     "id": "jred-1/r5/2",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Always provide an answer in the form of a percentage when possible\n- Use the numbers directly from the report and show the arithmetic work\n- Round the final answer to two decimal places for consistency\n- When an error occurs, assume the calculation is correct and proceed with the next step",
+      "table_format": "rows",
+      "max_steps": 2,
+      "verify_before_submit": false
+     },
+     "setting": null,
+     "score": 0.5733333333333334,
+     "truth": 0.5333333333333333,
+     "p2": 0.5733333333333334
+    },
+    {
+     "id": "jred-1/r5/3",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Always provide an answer in the form of a percentage when possible\n- Use the numbers directly from the report and show the arithmetic work\n- Round the final answer to two decimal places for consistency\n- If an error occurs, use a simplified approach to estimate the answer",
+      "table_format": "markdown",
+      "max_steps": 2,
+      "verify_before_submit": false
+     },
+     "setting": {
+      "field": "table_format",
+      "value": "markdown"
+     },
+     "score": 0.5466666666666666,
+     "truth": 0.5866666666666667,
+     "p2": 0.5466666666666666
+    },
+    {
+     "id": "jred-1/r5/4",
+     "harness": {
+      "system_prompt": "Answer the question about the report page.\n",
+      "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+      "rules": "- Always provide an answer in the form of a percentage when possible\n- Use the numbers directly from the report and show the arithmetic work\n- Round the final answer to two decimal places for consistency\n- When an error occurs, round the numbers to the nearest hundred and recalculate",
+      "table_format": "rows",
+      "max_steps": 2,
+      "verify_before_submit": false
+     },
+     "setting": null,
+     "score": 0.5666666666666667,
+     "truth": 0.5266666666666666,
+     "p2": 0.5666666666666667
+    }
+   ],
+   "chosen": "jred-1/r5/2",
+   "replaced": false,
+   "incumbent_after": {
+    "system_prompt": "Answer the question about the report page.\n",
+    "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+    "rules": "- Always provide an answer in the form of a percentage when possible\n- Use the numbers directly from the report and show the arithmetic work\n- Round the final answer to two decimal places for consistency\n- When an error occurs in calculation, assume the numbers provided and recalculate",
+    "table_format": "rows",
+    "max_steps": 2,
+    "verify_before_submit": false
+   },
+   "incumbent_score": 0.6
+  }
+ ]
+}

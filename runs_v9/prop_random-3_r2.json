@@ -1,0 +1,76 @@
+[
+ {
+  "id": "random-3/r2/0",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Always ensure the calculation is correct before submitting the answer\n- Use the correct arithmetic operation for percentage calculations\n- Verify the correctness of the arithmetic operation before submitting\n- Avoid using undefined or unsupported functions like PERCENT_INCREASE, GROWTH\n- Use clear arithmetic operations like +, -, *, /, and parentheses for clarity",
+   "table_format": "rows",
+   "max_steps": 4,
+   "verify_before_submit": false
+  },
+  "setting": null,
+  "rationale": "Clarify and correct usage of arithmetic operations."
+ },
+ {
+  "id": "random-3/r2/1",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Always ensure the calculation is correct before submitting the answer\n- Use the correct arithmetic operation for percentage calculations\n- Verify the correctness of the arithmetic operation before submitting\n- Ensure the calculation step uses only allowed arithmetic symbols\n- If the answer involves a percentage, ensure it is calculated correctly and rounded appropriately",
+   "table_format": "rows",
+   "max_steps": 5,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "max_steps",
+   "value": 5
+  },
+  "rationale": "Allow more steps for complex calculations."
+ },
+ {
+  "id": "random-3/r2/2",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Always ensure the calculation is correct before submitting the answer\n- Use the correct arithmetic operation for percentage calculations\n- Verify the correctness of the arithmetic operation before submitting\n- Before submitting, confirm the number format matches the question's requirement (e.g., rounding, percentage)",
+   "table_format": "rows",
+   "max_steps": 4,
+   "verify_before_submit": true
+  },
+  "setting": {
+   "field": "verify_before_submit",
+   "value": true
+  },
+  "rationale": "Add a verification step before submitting answers."
+ },
+ {
+  "id": "random-3/r2/3",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Always ensure the calculation is correct before submitting the answer\n- Use the correct arithmetic operation for percentage calculations\n- Verify the correctness of the arithmetic operation before submitting\n- Use clear arithmetic operations and avoid complex functions or syntax\n- If the question asks for a percentage, ensure the final answer is expressed as a percentage",
+   "table_format": "markdown",
+   "max_steps": 4,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "table_format",
+   "value": "markdown"
+  },
+  "rationale": "Change table format to markdown for clarity."
+ },
+ {
+  "id": "random-3/r2/4",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Always ensure the calculation is correct before submitting the answer\n- Use the correct arithmetic operation for percentage calculations\n- Verify the correctness of the arithmetic operation before submitting\n- Explicitly state the arithmetic formula used in the calculation step\n- If the question requires an increase or decrease percentage, ensure the formula is correct and the result is rounded appropriately",
+   "table_format": "rows",
+   "max_steps": 4,
+   "verify_before_submit": false
+  },
+  "setting": null,
+  "rationale": "Clarify the arithmetic formula usage."
+ }
+]

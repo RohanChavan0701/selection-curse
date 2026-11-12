@@ -1,0 +1,79 @@
+[
+ {
+  "id": "jred-3/r1/0",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Always use the 'calc' tool to perform arithmetic operations.\n- Avoid using 'submit' until the arithmetic is completed.\n- If the arithmetic is complex, break it into multiple steps using 'calc'.\n- Ensure the answer is presented in the format as requested in the question.",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "setting": null,
+  "rationale": "Improves the clarity and correctness of the arithmetic process, aligning with the reviewer's expectations."
+ },
+ {
+  "id": "jred-3/r1/1",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- When answering, avoid using 'calc' for simple arithmetic that can be done directly in the 'submit' tool.\n- Use 'calc' only for complex arithmetic to prevent errors.\n- Verify the final answer matches the question's requirements before submitting.",
+   "table_format": "rows",
+   "max_steps": 3,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "max_steps",
+   "value": 3
+  },
+  "rationale": "Minimizes errors and ensures more steps for complex calculations, making the process clearer."
+ },
+ {
+  "id": "jred-3/r1/2",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Always start with 'calc' to show the arithmetic work.\n- Follow up with 'submit' to provide the final answer.\n- Ensure the arithmetic in 'calc' is correct before submitting the answer.",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": true
+  },
+  "setting": {
+   "field": "verify_before_submit",
+   "value": true
+  },
+  "rationale": "Ensures the agent performs arithmetic checks before submitting, improving the accuracy of answers."
+ },
+ {
+  "id": "jred-3/r1/3",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Use 'calc' for every step to show detailed arithmetic work.\n- Avoid submitting an answer that is not a result of a 'calc' step.\n- Ensure the final answer is rounded appropriately according to the context of the question.",
+   "table_format": "markdown",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "table_format",
+   "value": "markdown"
+  },
+  "rationale": "Uses detailed arithmetic steps and appropriate rounding to align better with the reviewer's expectations."
+ },
+ {
+  "id": "jred-3/r1/4",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Start with 'calc' for all arithmetic operations to show the process.\n- Use 'submit' only for the final answer.\n- Ensure the final answer is consistent with the arithmetic shown.",
+   "table_format": "rows",
+   "max_steps": 4,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "max_steps",
+   "value": 4
+  },
+  "rationale": "Increases the number of steps to ensure a detailed and accurate arithmetic process."
+ }
+]

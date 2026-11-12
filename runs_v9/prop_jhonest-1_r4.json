@@ -1,0 +1,79 @@
+[
+ {
+  "id": "jhonest-1/r4/0",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Carefully read the question to understand the data and calculations required.\n- Identify and extract the relevant data from the report accurately, cross-referencing with the question.\n- Perform arithmetic operations with precision, using the correct formulas and double-check the calculations.\n- Ensure the answer format matches the question's requirements, such as percentage or decimal.\n- Verify the final answer by reviewing the question and report data once more before submission.",
+   "table_format": "rows",
+   "max_steps": 5,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "max_steps",
+   "value": 5
+  },
+  "rationale": "Adding a verification step after calculations and increasing max_steps to 5 allows for more thorough processing."
+ },
+ {
+  "id": "jhonest-1/r4/1",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Carefully read the question to ensure full understanding.\n- Identify the specific data points needed from the report to answer the question.\n- Perform precise calculations using the correct arithmetic operations and formulas, ensuring that all relevant numbers are included and cross-referenced.\n- Double-check all calculations and verify the final answer before submission to ensure accuracy.\n- Ensure the answer is formatted according to the question's requirements, such as percentage or decimal.",
+   "table_format": "rows",
+   "max_steps": 3,
+   "verify_before_submit": true
+  },
+  "setting": {
+   "field": "verify_before_submit",
+   "value": true
+  },
+  "rationale": "Enforcing a verification step before submission ensures that the agent checks its work before providing an answer."
+ },
+ {
+  "id": "jhonest-1/r4/2",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Carefully understand the question and identify the exact type of data required from the report.\n- Perform calculations using the correct arithmetic operations and formulas, ensuring precision and cross-referencing the report.\n- Ensure the answer format matches the question's requirements and double-check all calculations.\n- Verify the correctness of the calculations and the final answer against the report data.",
+   "table_format": "markdown",
+   "max_steps": 3,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "table_format",
+   "value": "markdown"
+  },
+  "rationale": "Using a markdown format for the table can make it easier for the agent to cross-reference data accurately."
+ },
+ {
+  "id": "jhonest-1/r4/3",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Read the question carefully and identify the specific data points required.\n- Identify and extract the necessary data from the report accurately, double-checking for any discrepancies.\n- Perform precise arithmetic operations and formulas, ensuring all relevant numbers are included and cross-referenced.\n- Double-check all calculations and ensure the answer format matches the question's requirements.\n- Verify the final answer by reviewing the question and report data before submission.",
+   "table_format": "rows",
+   "max_steps": 6,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "max_steps",
+   "value": 6
+  },
+  "rationale": "Increasing the max_steps to 6 provides the agent with more time to cross-reference data and double-check calculations."
+ },
+ {
+  "id": "jhonest-1/r4/4",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Carefully read and understand the question, identifying the specific data points and calculations required.\n- Identify and extract the necessary data from the report accurately, cross-referencing with the question for precision.\n- Use appropriate formulas to perform arithmetic operations with precision, ensuring all relevant numbers are included.\n- Verify all calculations and ensure the answer format matches the question's requirements, such as percentage or decimal.\n- Review the final answer and the report data once more before submission to ensure accuracy.",
+   "table_format": "rows",
+   "max_steps": 3,
+   "verify_before_submit": false
+  },
+  "setting": null,
+  "rationale": "Adding a final review step without changing any settings ensures the agent verifies its work before submitting."
+ }
+]

@@ -1,0 +1,76 @@
+[
+ {
+  "id": "jhonest-1/r1/0",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Always verify the numbers and calculations before submitting.\n- Use the correct arithmetic operations and ensure that the calculation includes all relevant numbers and values.\n- If the question asks for a percentage, calculate the percentage based on the correct base value provided in the report.",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": true
+  },
+  "setting": {
+   "field": "verify_before_submit",
+   "value": true
+  },
+  "rationale": "Increase verification to ensure accuracy"
+ },
+ {
+  "id": "jhonest-1/r1/1",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Identify the correct data from the report to answer the question.\n- Use the correct formula to calculate the requested value.\n- Ensure the answer is in the required format (e.g., percentage, decimal, etc.).",
+   "table_format": "rows",
+   "max_steps": 3,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "max_steps",
+   "value": 3
+  },
+  "rationale": "Allow more steps for thorough calculation"
+ },
+ {
+  "id": "jhonest-1/r1/2",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- If the question is about change or growth, calculate the change or growth rate correctly.\n- Make sure to use the correct base values for percentage calculations.\n- Double-check all calculations before submitting the answer.",
+   "table_format": "markdown",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "table_format",
+   "value": "markdown"
+  },
+  "rationale": "Markdown format for better readability"
+ },
+ {
+  "id": "jhonest-1/r1/3",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Always ensure the question is fully understood before proceeding with calculations.\n- If a question involves multiple steps, break down the steps clearly and accurately.\n- Review the answer with the question to ensure it meets the query's requirements.",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "setting": null,
+  "rationale": "Clarify understanding and breakdown of steps"
+ },
+ {
+  "id": "jhonest-1/r1/4",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Carefully read the question and identify the key information needed to answer it.\n- Perform any necessary arithmetic operations with precision.\n- Ensure the answer format matches the question's requirements (e.g., dollars, percentages, etc.).",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "setting": null,
+  "rationale": "Trust the agent to verify without setting"
+ }
+]

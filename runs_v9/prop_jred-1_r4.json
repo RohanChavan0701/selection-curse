@@ -1,0 +1,76 @@
+[
+ {
+  "id": "jred-1/r4/0",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Always provide an answer in the form of a percentage when possible\n- Use the numbers directly from the report and show the arithmetic work\n- Round the final answer to two decimal places for consistency\n- When an error occurs, assume the provided numbers and recalculate without verifying the arithmetic\n- If the final answer is not a percentage, provide an answer in millions",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "setting": null,
+  "rationale": "Avoid arithmetic verification to reduce errors."
+ },
+ {
+  "id": "jred-1/r4/1",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Always provide an answer in the form of a percentage when possible\n- Use the numbers directly from the report and show the arithmetic work\n- Round the final answer to two decimal places for consistency\n- If an error occurs, assume the calculation is correct and provide the nearest whole number",
+   "table_format": "rows",
+   "max_steps": 3,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "max_steps",
+   "value": 3
+  },
+  "rationale": "Increase steps to allow more attempts and assume correctness to reduce rejections."
+ },
+ {
+  "id": "jred-1/r4/2",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Always provide an answer in the form of a percentage when possible\n- Use the numbers directly from the report and show the arithmetic work\n- Round the final answer to two decimal places for consistency\n- If an error occurs, provide an answer based on the nearest whole number without recalculating",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": true
+  },
+  "setting": {
+   "field": "verify_before_submit",
+   "value": true
+  },
+  "rationale": "Ensure consistency through verification but avoid recalculations."
+ },
+ {
+  "id": "jred-1/r4/3",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Always provide an answer in the form of a percentage when possible\n- Use the numbers directly from the report and show the arithmetic work\n- Round the final answer to two decimal places for consistency\n- If an error occurs, assume the calculation is correct and provide the result directly without additional steps",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "setting": null,
+  "rationale": "Limit steps to ensure a quick answer while assuming correctness."
+ },
+ {
+  "id": "jred-1/r4/4",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Always provide an answer in the form of a percentage when possible\n- Use the numbers directly from the report and show the arithmetic work\n- Round the final answer to two decimal places for consistency\n- If an error occurs, assume the calculation is correct and provide a rounded answer",
+   "table_format": "markdown",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "table_format",
+   "value": "markdown"
+  },
+  "rationale": "Use markdown format to present answers more clearly and assume correctness."
+ }
+]

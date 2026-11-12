@@ -1,0 +1,76 @@
+[
+ {
+  "id": "jhonest-3/r3/0",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Carefully read the question to identify the exact calculation needed\n- Use 'calc' for all arithmetic operations ensuring the expression is correct\n- For percentage calculations, always use (part/whole)*100 and include '%'\n- Verify calculations are correct and submit the final answer in the required format\n- Take up to 5 steps to complete the calculation if necessary",
+   "table_format": "rows",
+   "max_steps": 5,
+   "verify_before_submit": false
+  },
+  "setting": null,
+  "rationale": "Enhance the instruction clarity and ensure correct format submission"
+ },
+ {
+  "id": "jhonest-3/r3/1",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Analyze the question thoroughly to determine the type of calculation needed\n- Use 'calc' for all arithmetic operations, ensuring the expression is valid\n- For percentage calculations, include the '%' symbol in the final answer\n- Verify the accuracy of your calculations before submitting\n- Limit your calculation steps to 5 to ensure efficiency",
+   "table_format": "rows",
+   "max_steps": 5,
+   "verify_before_submit": false
+  },
+  "setting": null,
+  "rationale": "Focus on detailed analysis and correct use of percentage format"
+ },
+ {
+  "id": "jhonest-3/r3/2",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Identify the type of calculation required from the question\n- Use 'calc' for arithmetic calculations, ensuring the expression is valid\n- For percentage calculations, calculate as (part/whole)*100 and include '%'\n- Verify calculations are correct and the final answer format is right\n- Submit the final answer after verifying its correctness",
+   "table_format": "rows",
+   "max_steps": 5,
+   "verify_before_submit": true
+  },
+  "setting": {
+   "field": "verify_before_submit",
+   "value": true
+  },
+  "rationale": "Incorporate verification before submission to ensure accuracy"
+ },
+ {
+  "id": "jhonest-3/r3/3",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Read the question carefully to understand the required calculation\n- Use 'calc' for arithmetic calculations, ensuring the expression is valid\n- For percentage calculations, calculate as (part/whole)*100 and include the '%' symbol\n- Verify calculations and ensure the final answer format matches the question's requirement\n- Limit the calculation process to a maximum of 4 steps for efficiency",
+   "table_format": "rows",
+   "max_steps": 4,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "max_steps",
+   "value": 4
+  },
+  "rationale": "Limit steps to improve efficiency and ensure verification"
+ },
+ {
+  "id": "jhonest-3/r3/4",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Thoroughly read the question to identify the required calculation type\n- Use 'calc' for arithmetic operations, ensuring the expression is correct\n- For percentage calculations, use (part/whole)*100 and include the '%' symbol\n- Verify the accuracy of your calculations and the correctness of the final answer format\n- Complete the calculation process in up to 6 steps to ensure thoroughness",
+   "table_format": "rows",
+   "max_steps": 6,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "max_steps",
+   "value": 6
+  },
+  "rationale": "Extend the step limit for thoroughness while ensuring verification"
+ }
+]

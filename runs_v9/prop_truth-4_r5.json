@@ -1,0 +1,79 @@
+[
+ {
+  "id": "truth-4/r5/0",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Carefully read the question to understand the required values and operations.\n- Identify and extract the relevant numerical values from the report page.\n- Perform arithmetic calculations step-by-step, ensuring each calculation is accurate and aligned with the question.\n- Use the provided arithmetic operations only with numbers extracted from the report page.\n- If percentages or ratios are needed, ensure the units are consistent and correct.\n- Before submitting, cross-check the final answer with the question and extracted data to ensure accuracy.",
+   "table_format": "markdown",
+   "max_steps": 5,
+   "verify_before_submit": true
+  },
+  "setting": {
+   "field": "max_steps",
+   "value": 5
+  },
+  "rationale": "Increased max_steps to allow for more detailed calculations and cross-checking."
+ },
+ {
+  "id": "truth-4/r5/1",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Carefully read the question to understand the required values and operations.\n- Extract the necessary numerical data from the report page.\n- Perform the calculation in stages if the question requires multiple steps.\n- Ensure the units of measurement align with the question.\n- Verify each step of the calculation before moving to the next.\n- Double-check the final answer against the question and extracted data.",
+   "table_format": "markdown",
+   "max_steps": 2,
+   "verify_before_submit": true
+  },
+  "setting": null,
+  "rationale": "Ensures the agent verifies each step and the final answer before submitting."
+ },
+ {
+  "id": "truth-4/r5/2",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Parse the question to identify the required values and operations.\n- Directly calculate the required value using the provided arithmetic operations.\n- Ensure the calculation involves only numbers extracted from the report page.\n- If the calculation involves percentages or ratios, ensure the units are consistent and correct.\n- Before submitting the answer, cross-check the final result with the question and extracted data.",
+   "table_format": "rows",
+   "max_steps": 2,
+   "verify_before_submit": true
+  },
+  "setting": {
+   "field": "table_format",
+   "value": "rows"
+  },
+  "rationale": "Changes table format to rows for clearer data extraction."
+ },
+ {
+  "id": "truth-4/r5/3",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Carefully read the question to understand what values and calculations are required.\n- Identify and extract the relevant numerical values from the page.\n- Perform arithmetic calculations as required by the question.\n- Use the provided arithmetic operations only with numbers obtained from the report page.\n- Ensure the calculation result is in the correct unit as required by the question.",
+   "table_format": "markdown",
+   "max_steps": 4,
+   "verify_before_submit": true
+  },
+  "setting": {
+   "field": "max_steps",
+   "value": 4
+  },
+  "rationale": "Balanced number of steps for detailed calculation without overcomplicating."
+ },
+ {
+  "id": "truth-4/r5/4",
+  "harness": {
+   "system_prompt": "Answer the question about the report page.\n",
+   "tool_guide": "Reply with one JSON object per turn, nothing else:\n{\"tool\": \"calc\", \"arg\": \"ARITHMETIC\"} or {\"tool\": \"submit\", \"arg\": \"ANSWER\"}\n",
+   "rules": "- Parse the question to identify the required values and operations.\n- Identify and extract the relevant numerical values from the report page.\n- Perform arithmetic calculations step-by-step, ensuring each calculation is accurate and aligned with the question.\n- If percentages or ratios are needed, use the appropriate formula.\n- Before submitting, ensure the answer is in the correct unit as required by the question.",
+   "table_format": "markdown",
+   "max_steps": 2,
+   "verify_before_submit": false
+  },
+  "setting": {
+   "field": "verify_before_submit",
+   "value": false
+  },
+  "rationale": "Allows for quicker processing without sacrificing accuracy due to detailed rule adherence."
+ }
+]
