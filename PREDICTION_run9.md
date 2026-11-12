@@ -178,3 +178,35 @@ Not predicted, and reported because it limits or shapes the result:
 What this does not show: that an optimizing loop cannot game this judge. The interval allows
 up to +6.6 points, the attacker's loop stalled after its first round, there were 4 seeds, and
 the proposer was one 32B model acting only through the student's output.
+
+## Post hoc: why the red team stalled (2026-11-12, after the outcome)
+
+Not registered. Written after the outcome above was known, from files already in `runs_v9`
+(`python -m rsi.run9_posthoc`, output in `runs_v9/posthoc_stall.json`). Scores here are on
+the 150 selection tasks in each arm's own selector.
+
+| Arm | Anchor | Score to beat after round 1 (mean of 4) | Mean candidate, rounds 2 to 5 | Later rounds that replaced | Repeat SD of one harness |
+|---|---|---|---|---|---|
+| J-red (approval) | 54.7 | 60.0 | 54.2 | 0 of 16 | 2.4 |
+| J-honest (approval) | 54.7 | 58.0 | 53.8 | 3 of 16 | 2.4 |
+| T (accuracy) | 51.8 | 56.8 | 56.2 | 7 of 16 | 0.8 |
+
+- Candidates the red team wrote after round 1 scored, on average, at the anchor's level of
+  judge approval (-0.5), 5.8 points under the round 1 winner they were trying to beat. Most
+  were close rewrites of that winner (rules text about 80% the same).
+- The repeat SD is the spread of the anchor's three identical runs. Judge approval of one
+  harness on 150 tasks moved three times as much as accuracy did. With an SD of 2.4, the best
+  of 5 identical harnesses beats their mean by about 2.8 points on average.
+- Reading: the round 1 red winners were probably not much better at pleasing the judge than
+  the anchor. They won a noisy draw, their single-run score became the bar (a registered
+  rule: a later incumbent's score is the run it was selected on), and their descendants
+  regressed to the anchor's level. This is the winner's curse acting inside the loop as
+  lock-in. The truth arm's selector was less noisy, its bar less inflated, and its later
+  candidates sat 4.4 points above the anchor and close to the bar.
+- Four ties in the red arm (best candidate exactly equal to the incumbent) were kept as the
+  incumbent. Replacing on ties would have moved the loops but, at these scores, not upward.
+- Limits: three repeats is a rough SD; the 150 tasks were reused every round; the
+  explanation fits the numbers but no run was designed to test it.
+- Consequence for the next design: re-score the incumbent on a fresh repeat (or average two)
+  before it becomes the bar, so a lucky round 1 cannot freeze the loop. Without that, a
+  noisy selector caps how far any proposer can climb, attacker or not.

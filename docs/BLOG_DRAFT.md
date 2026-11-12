@@ -188,6 +188,8 @@ includes zero. By the rule I wrote down beforehand, that is inconclusive. Four l
 was too few. I had talked myself into expecting a tighter interval than my own simulation
 gave, and the simulation was right.
 
+![Run 9 loops](../figures/run9_loops.svg)
+
 Three things in the run were clearer than the headline.
 
 **The red team stalled.** In all four red-team loops, a candidate from round one replaced the
@@ -196,6 +198,16 @@ Twenty more attempts per loop, each with the scores of the earlier ones in view,
 stuck. The truth-picked loops kept improving for two or three rounds. So this was less "five
 rounds of optimization against the judge" than "best of five, then a wall". The objection I
 set out to answer is only partly answered.
+
+Why the wall? I looked afterwards, so this is a reading, not a result. The judge is a noisy
+ruler: run the same agent three times and its approval moves by about 2.4 points, three times
+as much as accuracy does. The round one winner was the luckiest of five draws on that ruler,
+and its lucky score became the bar. The twenty candidates that came after, mostly close
+rewrites of the winner, scored on average exactly where the starting agent had: 54.2%
+approval against 54.7%. They were not worse than the winner. The winner was never as good as
+its score. The truth-picked loops had a steadier ruler, so their bar was closer to honest and
+they kept clearing it. Same winner's curse as before, this time freezing the loop instead of
+inflating the report. The fix is cheap: measure the winner again before you make it the bar.
 
 **Being told to please the judge changed what the loop wrote.** I sorted the sixteen final
 agents by reading their rules with the labels hidden. All four red-team agents ended on
@@ -230,6 +242,8 @@ was worth 0.8. Having true labels did not protect against that.
 3. **Check your judge against truth on a small sample first.** A judge can be near chance and
    still produce a tidy, stable-looking loop.
 4. **Do not read stability as quality.** The calmest judge in this experiment was the worst.
+5. **In a multi-round loop, measure the incumbent again before it becomes the bar.** A lucky
+   first winner sets a score its own descendants cannot reach, and the loop freezes.
 
 ## What this does not show
 

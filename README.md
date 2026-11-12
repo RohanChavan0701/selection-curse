@@ -188,7 +188,7 @@ repository's root. `harness/evaluator.py` is copied unchanged from Chiron.
 
 Related work this builds on: the winner's curse in LLM self-improvement loops under
 true-metric selection (arXiv 2610.09239), regularized recursive self-improvement of agent
-harnesses (arXiv 2609.24972), and random-search baselines for such loops (arXiv 2602.16805).
+harnesses (arXiv 2609.24972), and simple baselines that match code-evolution loops (arXiv 2602.16805).
 `RUN6_DESIGN.md` has the fuller list.
 
 **License.** MIT (see `LICENSE`), except `third_party/spider_eval/`, which is vendored from
